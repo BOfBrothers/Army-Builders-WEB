@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Army Builders gratuits pour jeux de figurines historiques : SAGA, Lion Rampant et V for Victory.">
+  <meta name="color-scheme" content="light">
+  <title>Army Builders — Jeux de figurines historiques</title>
+  <style>
+    :root{--bg:#f3f0e8;--panel:#fffdfa;--ink:#27332f;--muted:#586760;--accent:#3d6251;--border:#d8ded6;--highlight:#e6ede7}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+    .top{background:linear-gradient(145deg,#243c33,#395d4b);color:#fff;padding:24px 24px 72px;text-align:center}
+    .inner{max-width:1050px;margin:auto}
+    .header-controls{display:flex;justify-content:flex-end;margin-bottom:16px}
+    .language-switcher{display:flex;align-items:center;gap:6px;background:#ffffff1d;border:1px solid #ffffff50;border-radius:14px;padding:5px}
+    .flag{appearance:none;background:transparent;border:2px solid transparent;border-radius:9px;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:45px;padding:5px 6px;font-weight:700;font-size:.7rem;line-height:1.15;font-family:inherit}
+    .flag .emoji{font-size:1.48rem;line-height:1.2}
+    .flag:hover{background:#ffffff24}
+    .flag:focus-visible{outline:3px solid #ffe0a6;outline-offset:2px}
+    .flag[aria-pressed="true"]{background:#ffffff2b;border-color:#fff}
+    .eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;font-weight:700;opacity:.85}
+    h1{font-size:clamp(2.35rem,6vw,4.25rem);line-height:1.08;margin:12px 0 16px;letter-spacing:-.04em}
+    .top p{max-width:700px;margin:0 auto;color:#e9f0e9;font-size:1.12rem}
+    main{max-width:1100px;margin:-34px auto 0;padding:0 24px 64px;position:relative}
+    .notice{background:var(--highlight);border:1px solid #c3d1c6;border-radius:12px;padding:14px 18px;margin-bottom:28px;color:#334c3d}
+    .notice strong{font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    article{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 5px 20px #1b35200b;display:flex;flex-direction:column;min-height:300px}
+    .illustration{font-size:2rem;line-height:1;margin-bottom:22px}
+    h2{font-size:1.42rem;letter-spacing:-.02em;margin:0 0 9px}
+    article p{color:var(--muted);margin:0 0 20px;flex:1}
+    .tag{display:inline-flex;align-self:flex-start;background:#eef1eb;color:#3e5e4b;border-radius:6px;font-size:.78rem;font-weight:700;padding:5px 9px;margin-bottom:12px}
+    .pending{display:inline-block;width:100%;text-align:center;background:#e6e9e4;color:#52665b;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem;cursor:default}
+    .language{color:var(--muted);font-size:.81rem;margin:12px 0 0;line-height:1.5}
+    section.info{padding:42px 10px 0;max-width:800px;margin:auto;text-align:center}
+    section.info h2{font-size:1.2rem;margin-bottom:8px}
+    section.info p{color:var(--muted);margin:0}
+    footer{max-width:1100px;margin:auto;padding:24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;text-align:center}
+    @media(max-width:840px){.grid{grid-template-columns:1fr;max-width:570px;margin:auto}article{min-height:0}.top{padding:16px 22px 62px}.header-controls{margin-bottom:26px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="inner">
+      <div class="header-controls">
+        <nav class="language-switcher" aria-label="Choix de la langue" id="language-switcher">
+          <button class="flag" type="button" data-locale="fr" aria-label="Français" aria-pressed="true" title="Français"><span class="emoji" aria-hidden="true">🇫🇷</span><span>FR</span></button>
+          <button class="flag" type="button" data-locale="en" aria-label="English" aria-pressed="false" title="English"><span class="emoji" aria-hidden="true">🇬🇧</span><span>EN</span></button>
+          <button class="flag" type="button" data-locale="es" aria-label="Español" aria-pressed="false" title="Español"><span class="emoji" aria-hidden="true">🇪🇸</span><span>ES</span></button>
+          <button class="flag" type="button" data-locale="de" aria-label="Deutsch" aria-pressed="false" title="Deutsch"><span class="emoji" aria-hidden="true">🇩🇪</span><span>DE</span></button>
+        </nav>
+      </div>
+      <div class="eyebrow" data-i18n="eyebrow">Outils pour jeux de figurines</div>
+      <h1>Army Builders</h1>
+      <p data-i18n="intro">Des outils gratuits pour composer vos armées et bandes dans les jeux de figurines historiques.</p>
+    </div>
+  </header>
+  <main>
+    <div class="notice" role="status"><strong data-i18n="noticeTitle">Site en préparation.</strong> <span data-i18n="noticeBody">Les Army Builders seront mis à disposition progressivement, après vérification de leurs versions publiques.</span></div>
+    <div class="grid">
+      <article>
+        <div class="illustration" aria-hidden="true">⚔️</div>
+        <h2>SAGA</h2>
+        <span class="tag" data-i18n="multilingual">Multilingue</span>
+        <p data-i18n="sagaDescription">Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.</p>
+        <span class="pending" data-i18n="comingSoon" data-i18n-aria="sagaComing" aria-label="SAGA : lien à venir">Accès prochainement</span>
+        <div class="language">Français · English · Español · Deutsch<br><span data-i18n="translationCheck">Traductions en cours de vérification.</span></div>
+      </article>
+      <article>
+        <div class="illustration" aria-hidden="true">🛡️</div>
+        <h2>Lion Rampant</h2>
+        <span class="tag">Army Builder</span>
+        <p data-i18n="lionDescription">Un espace dédié à la préparation des forces pour Lion Rampant.</p>
+        <span class="pending" data-i18n="comingSoon" data-i18n-aria="lionComing" aria-label="Lion Rampant : lien à venir">Accès prochainement</span>
+      </article>
+      <article>
+        <div class="illustration" aria-hidden="true">🎖️</div>
+        <h2>V for Victory</h2>
+        <span class="tag" data-i18n="inDevelopment">En développement</span>
+        <p data-i18n="vfvDescription">Construction des formations de la Seconde Guerre mondiale, avec leurs options et supports.</p>
+        <span class="pending" data-i18n="comingSoon" data-i18n-aria="vfvComing" aria-label="V for Victory : lien à venir">Accès prochainement</span>
+      </article>
+    </div>
+    <section class="info">
+      <h2 data-i18n="freeTitle">Libres d'accès pour les joueurs</h2>
+      <p data-i18n="freeDescription">Ces outils sont proposés gratuitement à la communauté. Les fichiers de développement et les documents de référence ne font pas partie du site public.</p>
+    </section>
+  </main>
+  <footer data-i18n="footer">Projet indépendant, non affilié aux éditeurs des jeux mentionnés.</footer>
+  <script>
+    'use strict';
+    // Les traductions de cette page sont indépendantes de celles des Army Builders.
+    const translations = {
+      fr: {
+        pageTitle:'Army Builders — Jeux de figurines historiques',
+        pageDescription:'Army Builders gratuits pour jeux de figurines historiques : SAGA, Lion Rampant et V for Victory.',
+        switcher:'Choix de la langue',
+        eyebrow:'Outils pour jeux de figurines',
+        intro:'Des outils gratuits pour composer vos armées et bandes dans les jeux de figurines historiques.',
+        noticeTitle:'Site en préparation.',
+        noticeBody:'Les Army Builders seront mis à disposition progressivement, après vérification de leurs versions publiques.',
+        multilingual:'Multilingue',
+        sagaDescription:'Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.',
+        comingSoon:'Accès prochainement',
+        sagaComing:'SAGA : lien à venir',
+        lionComing:'Lion Rampant : lien à venir',
+        vfvComing:'V for Victory : lien à venir',
+        translationCheck:'Traductions en cours de vérification.',
+        lionDescription:'Un espace dédié à la préparation des forces pour Lion Rampant.',
+        inDevelopment:'En développement',
+        vfvDescription:'Construction des formations de la Seconde Guerre mondiale, avec leurs options et supports.',
+        freeTitle:"Libres d'accès pour les joueurs",
+        freeDescription:'Ces outils sont proposés gratuitement à la communauté. Les fichiers de développement et les documents de référence ne font pas partie du site public.',
+        footer:'Projet indépendant, non affilié aux éditeurs des jeux mentionnés.'
+      },
+      en: {
+        pageTitle:'Army Builders — Historical tabletop wargames',
+        pageDescription:'Free army builders for historical tabletop wargames: SAGA, Lion Rampant and V for Victory.',
+        switcher:'Choose language',
+        eyebrow:'Tabletop wargaming tools',
+        intro:'Free tools to build your armies and warbands for historical tabletop wargames.',
+        noticeTitle:'Website under construction.',
+        noticeBody:'The army builders will become available as their public versions are checked and approved.',
+        multilingual:'Multilingual',
+        sagaDescription:'Build your SAGA warbands. Save and import army lists as JSON files.',
+        comingSoon:'Coming soon',
+        sagaComing:'SAGA: link coming soon',
+        lionComing:'Lion Rampant: link coming soon',
+        vfvComing:'V for Victory: link coming soon',
+        translationCheck:'Translations are still being reviewed.',
+        lionDescription:'A dedicated space to build your Lion Rampant forces.',
+        inDevelopment:'In development',
+        vfvDescription:'Build Second World War formations, including their options and support units.',
+        freeTitle:'Free for players',
+        freeDescription:'These tools are available to the community free of charge. Development files and reference documents are not published on this site.',
+        footer:'Independent project, not affiliated with the publishers of the games mentioned.'
+      },
+      es: {
+        pageTitle:'Army Builders — Juegos de miniaturas históricos',
+        pageDescription:'Creadores de ejércitos gratuitos para juegos de miniaturas históricos: SAGA, Lion Rampant y V for Victory.',
+        switcher:'Elegir idioma',
+        eyebrow:'Herramientas para juegos de miniaturas',
+        intro:'Herramientas gratuitas para crear tus ejércitos y bandas en juegos de miniaturas históricos.',
+        noticeTitle:'Sitio web en preparación.',
+        noticeBody:'Los creadores de ejércitos estarán disponibles progresivamente, tras la revisión de sus versiones públicas.',
+        multilingual:'Multilingüe',
+        sagaDescription:'Crea tus bandas de SAGA. Guarda e importa tus listas en formato JSON.',
+        comingSoon:'Próximamente',
+        sagaComing:'SAGA: enlace próximamente',
+        lionComing:'Lion Rampant: enlace próximamente',
+        vfvComing:'V for Victory: enlace próximamente',
+        translationCheck:'Traducciones pendientes de revisión.',
+        lionDescription:'Un espacio dedicado a preparar tus fuerzas de Lion Rampant.',
+        inDevelopment:'En desarrollo',
+        vfvDescription:'Crea formaciones de la Segunda Guerra Mundial, con sus opciones y unidades de apoyo.',
+        freeTitle:'Acceso gratuito para los jugadores',
+        freeDescription:'Estas herramientas se ofrecen gratuitamente a la comunidad. Los archivos de desarrollo y documentos de referencia no forman parte del sitio público.',
+        footer:'Proyecto independiente, no afiliado a las editoriales de los juegos mencionados.'
+      },
+      de: {
+        pageTitle:'Army Builders — Historische Tabletop-Spiele',
+        pageDescription:'Kostenlose Armeeplaner für historische Tabletop-Spiele: SAGA, Lion Rampant und V for Victory.',
+        switcher:'Sprache wählen',
+        eyebrow:'Werkzeuge für Tabletop-Spiele',
+        intro:'Kostenlose Werkzeuge zum Zusammenstellen deiner Armeen und Kriegerbanden für historische Tabletop-Spiele.',
+        noticeTitle:'Website im Aufbau.',
+        noticeBody:'Die Armeeplaner werden nach und nach veröffentlicht, sobald die öffentlichen Versionen geprüft sind.',
+        multilingual:'Mehrsprachig',
+        sagaDescription:'Stelle deine SAGA-Kriegerbanden zusammen. Speichere und importiere Armeelisten im JSON-Format.',
+        comingSoon:'Demnächst verfügbar',
+        sagaComing:'SAGA: Link folgt',
+        lionComing:'Lion Rampant: Link folgt',
+        vfvComing:'V for Victory: Link folgt',
+        translationCheck:'Die Übersetzungen werden noch überprüft.',
+        lionDescription:'Ein eigener Bereich zum Zusammenstellen deiner Streitkräfte für Lion Rampant.',
+        inDevelopment:'In Entwicklung',
+        vfvDescription:'Stelle Formationen des Zweiten Weltkriegs mit ihren Optionen und Unterstützungseinheiten zusammen.',
+        freeTitle:'Kostenlos für Spieler',
+        freeDescription:'Diese Werkzeuge stehen der Community kostenlos zur Verfügung. Entwicklungsdateien und Referenzdokumente werden auf dieser öffentlichen Website nicht veröffentlicht.',
+        footer:'Unabhängiges Projekt ohne Verbindung zu den Verlagen der genannten Spiele.'
+      }
+    };
+    const storageKey='army-builders-site-lang';
+    const locales=Object.keys(translations);
+    function readSavedLanguage(){
+      try { return localStorage.getItem(storageKey); }
+      catch (_) { return null; } // Le mode fichier local peut bloquer le stockage.
+    }
+    function saveLanguage(lang){
+      try { localStorage.setItem(storageKey,lang); }
+      catch (_) { /* Le choix reste actif pour la session courante. */ }
+    }
+    function browserLanguage(){
+      const preferred=navigator.languages || [navigator.language || 'fr'];
+      for (const candidate of preferred) {
+        const short=String(candidate).toLowerCase().split('-')[0];
+        if (locales.includes(short)) return short;
+      }
+      return 'fr';
+    }
+    function setLanguage(lang,save=false){
+      if (!translations[lang]) lang='fr';
+      const tr=translations[lang];
+      document.documentElement.lang=lang;
+      document.title=tr.pageTitle;
+      document.querySelector('meta[name="description"]').content=tr.pageDescription;
+      document.getElementById('language-switcher').setAttribute('aria-label',tr.switcher);
+      document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=tr[el.dataset.i18n];});
+      document.querySelectorAll('[data-i18n-aria]').forEach(el=>{el.setAttribute('aria-label',tr[el.dataset.i18nAria]);});
+      document.querySelectorAll('[data-locale]').forEach(el=>{el.setAttribute('aria-pressed',String(el.dataset.locale===lang));});
+      if (save) saveLanguage(lang);
+    }
+    document.querySelectorAll('[data-locale]').forEach(el=>{
+      el.addEventListener('click',()=>setLanguage(el.dataset.locale,true));
+    });
+    const saved=readSavedLanguage();
+    setLanguage(locales.includes(saved) ? saved : browserLanguage());
+  </script>
+</body>
+</html>
