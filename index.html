@@ -34,6 +34,10 @@
     .pending{display:inline-block;width:100%;text-align:center;background:#e6e9e4;color:#52665b;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem;cursor:default}
     .launch{display:inline-block;width:100%;text-align:center;background:var(--accent);color:#fff;text-decoration:none;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem}
     .launch:hover{filter:brightness(1.12)}.launch:focus-visible{outline:3px solid #ffe0a6;outline-offset:3px}
+    .publisher-credit{display:flex;flex-direction:column;gap:5px;margin:0 0 16px;color:var(--muted);font-size:.8rem;line-height:1.45}
+    .publisher-credit a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;font-weight:650}
+    .publisher-credit a:hover{text-decoration-thickness:2px}
+    .publisher-credit a:focus-visible{outline:3px solid #ffe0a6;outline-offset:2px}
     .language{color:var(--muted);font-size:.81rem;margin:12px 0 0;line-height:1.5}
     section.info{padding:42px 10px 0;max-width:800px;margin:auto;text-align:center}
     section.info h2{font-size:1.2rem;margin-bottom:8px}
@@ -66,6 +70,7 @@
         <h2>SAGA</h2>
         <span class="tag" data-i18n="multilingual">Multilingue</span>
         <p data-i18n="sagaDescription">Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.</p>
+        <div class="publisher-credit"><span data-i18n="sagaCredit">Outil indépendant de composition de bandes pour SAGA, un jeu édité par Studio Tomahawk.</span><a href="https://www.studio-tomahawk.com/saga/" target="_blank" rel="noopener noreferrer" data-i18n="sagaOfficial">Découvrir SAGA chez Studio Tomahawk ↗</a></div>
         <a class="launch" href="Saga/" data-i18n="openSaga" data-i18n-aria="sagaOpenLabel" aria-label="Ouvrir le constructeur SAGA">Ouvrir SAGA</a>
         <div class="language">Français · English · Español · Deutsch<br><span data-i18n="translationCheck">Traductions en cours de vérification.</span></div>
       </article>
@@ -81,6 +86,7 @@
         <h2>V for Victory</h2>
         <span class="tag" data-i18n="inDevelopment">En développement</span>
         <p data-i18n="vfvDescription">Construction des formations de la Seconde Guerre mondiale, avec leurs options et supports.</p>
+        <div class="publisher-credit"><span data-i18n="vfvCredit">Outil indépendant de composition de forces pour V for Victory, un jeu édité par Studio Tomahawk.</span><a href="https://www.studio-tomahawk.com/v-for-victory/" target="_blank" rel="noopener noreferrer" data-i18n="vfvOfficial">Découvrir V for Victory chez Studio Tomahawk ↗</a></div>
         <span class="pending" data-i18n="comingSoon" data-i18n-aria="vfvComing" aria-label="V for Victory : lien à venir">Accès prochainement</span>
       </article>
     </div>
@@ -104,6 +110,8 @@
         noticeBody:'SAGA est disponible en version bêta ; les autres constructeurs seront ajoutés progressivement.',
         multilingual:'Multilingue',
         sagaDescription:'Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.',
+        sagaCredit:'Outil indépendant de composition de bandes pour SAGA, un jeu édité par Studio Tomahawk.',
+        sagaOfficial:'Découvrir SAGA chez Studio Tomahawk ↗',
         comingSoon:'Accès prochainement',
         openSaga:'Ouvrir SAGA',
         sagaOpenLabel:'Ouvrir le constructeur SAGA',
@@ -114,6 +122,8 @@
         lionDescription:'Un espace dédié à la préparation des forces pour Lion Rampant.',
         inDevelopment:'En développement',
         vfvDescription:'Construction des formations de la Seconde Guerre mondiale, avec leurs options et supports.',
+        vfvCredit:'Outil indépendant de composition de forces pour V for Victory, un jeu édité par Studio Tomahawk.',
+        vfvOfficial:'Découvrir V for Victory chez Studio Tomahawk ↗',
         freeTitle:"Libres d'accès pour les joueurs",
         freeDescription:'Ces outils sont proposés gratuitement à la communauté. Les fichiers de développement et les documents de référence ne font pas partie du site public.',
         footer:'Projet indépendant, non affilié aux éditeurs des jeux mentionnés.'
@@ -128,6 +138,8 @@
         noticeBody:'SAGA is available in beta; the other army builders will be added progressively.',
         multilingual:'Multilingual',
         sagaDescription:'Build your SAGA warbands. Save and import army lists as JSON files.',
+        sagaCredit:'Independent warband-building tool for SAGA, a game published by Studio Tomahawk.',
+        sagaOfficial:'Discover SAGA at Studio Tomahawk ↗',
         comingSoon:'Coming soon',
         openSaga:'Open SAGA',
         sagaOpenLabel:'Open the SAGA army builder',
@@ -138,6 +150,8 @@
         lionDescription:'A dedicated space to build your Lion Rampant forces.',
         inDevelopment:'In development',
         vfvDescription:'Build Second World War formations, including their options and support units.',
+        vfvCredit:'Independent force-building tool for V for Victory, a game published by Studio Tomahawk.',
+        vfvOfficial:'Discover V for Victory at Studio Tomahawk ↗',
         freeTitle:'Free for players',
         freeDescription:'These tools are available to the community free of charge. Development files and reference documents are not published on this site.',
         footer:'Independent project, not affiliated with the publishers of the games mentioned.'
@@ -152,6 +166,8 @@
         noticeBody:'SAGA está disponible en versión beta; los demás creadores se añadirán progresivamente.',
         multilingual:'Multilingüe',
         sagaDescription:'Crea tus bandas de SAGA. Guarda e importa tus listas en formato JSON.',
+        sagaCredit:'Herramienta independiente para crear bandas de SAGA, un juego publicado por Studio Tomahawk.',
+        sagaOfficial:'Descubrir SAGA en Studio Tomahawk ↗',
         comingSoon:'Próximamente',
         openSaga:'Abrir SAGA',
         sagaOpenLabel:'Abrir el creador de bandas SAGA',
@@ -162,6 +178,8 @@
         lionDescription:'Un espacio dedicado a preparar tus fuerzas de Lion Rampant.',
         inDevelopment:'En desarrollo',
         vfvDescription:'Crea formaciones de la Segunda Guerra Mundial, con sus opciones y unidades de apoyo.',
+        vfvCredit:'Herramienta independiente para crear fuerzas de V for Victory, un juego publicado por Studio Tomahawk.',
+        vfvOfficial:'Descubrir V for Victory en Studio Tomahawk ↗',
         freeTitle:'Acceso gratuito para los jugadores',
         freeDescription:'Estas herramientas se ofrecen gratuitamente a la comunidad. Los archivos de desarrollo y documentos de referencia no forman parte del sitio público.',
         footer:'Proyecto independiente, no afiliado a las editoriales de los juegos mencionados.'
@@ -176,6 +194,8 @@
         noticeBody:'SAGA ist als Beta-Version verfügbar; weitere Armeeplaner folgen schrittweise.',
         multilingual:'Mehrsprachig',
         sagaDescription:'Stelle deine SAGA-Kriegerbanden zusammen. Speichere und importiere Armeelisten im JSON-Format.',
+        sagaCredit:'Unabhängiges Werkzeug zum Zusammenstellen von Kriegerbanden für SAGA, ein von Studio Tomahawk veröffentlichtes Spiel.',
+        sagaOfficial:'SAGA bei Studio Tomahawk entdecken ↗',
         comingSoon:'Demnächst verfügbar',
         openSaga:'SAGA öffnen',
         sagaOpenLabel:'SAGA-Armeeplaner öffnen',
@@ -186,6 +206,8 @@
         lionDescription:'Ein eigener Bereich zum Zusammenstellen deiner Streitkräfte für Lion Rampant.',
         inDevelopment:'In Entwicklung',
         vfvDescription:'Stelle Formationen des Zweiten Weltkriegs mit ihren Optionen und Unterstützungseinheiten zusammen.',
+        vfvCredit:'Unabhängiges Werkzeug zur Zusammenstellung von Streitkräften für V for Victory, ein von Studio Tomahawk veröffentlichtes Spiel.',
+        vfvOfficial:'V for Victory bei Studio Tomahawk entdecken ↗',
         freeTitle:'Kostenlos für Spieler',
         freeDescription:'Diese Werkzeuge stehen der Community kostenlos zur Verfügung. Entwicklungsdateien und Referenzdokumente werden auf dieser öffentlichen Website nicht veröffentlicht.',
         footer:'Unabhängiges Projekt ohne Verbindung zu den Verlagen der genannten Spiele.'
