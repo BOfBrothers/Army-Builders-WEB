@@ -32,6 +32,8 @@
     article p{color:var(--muted);margin:0 0 20px;flex:1}
     .tag{display:inline-flex;align-self:flex-start;background:#eef1eb;color:#3e5e4b;border-radius:6px;font-size:.78rem;font-weight:700;padding:5px 9px;margin-bottom:12px}
     .pending{display:inline-block;width:100%;text-align:center;background:#e6e9e4;color:#52665b;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem;cursor:default}
+    .launch{display:inline-block;width:100%;text-align:center;background:var(--accent);color:#fff;text-decoration:none;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem}
+    .launch:hover{filter:brightness(1.12)}.launch:focus-visible{outline:3px solid #ffe0a6;outline-offset:3px}
     .language{color:var(--muted);font-size:.81rem;margin:12px 0 0;line-height:1.5}
     section.info{padding:42px 10px 0;max-width:800px;margin:auto;text-align:center}
     section.info h2{font-size:1.2rem;margin-bottom:8px}
@@ -57,14 +59,14 @@
     </div>
   </header>
   <main>
-    <div class="notice" role="status"><strong data-i18n="noticeTitle">Site en préparation.</strong> <span data-i18n="noticeBody">Les Army Builders seront mis à disposition progressivement, après vérification de leurs versions publiques.</span></div>
+    <div class="notice" role="status"><strong data-i18n="noticeTitle">Site en préparation.</strong> <span data-i18n="noticeBody">SAGA est disponible en version bêta ; les autres constructeurs seront ajoutés progressivement.</span></div>
     <div class="grid">
       <article>
         <div class="illustration" aria-hidden="true">⚔️</div>
         <h2>SAGA</h2>
         <span class="tag" data-i18n="multilingual">Multilingue</span>
         <p data-i18n="sagaDescription">Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.</p>
-        <span class="pending" data-i18n="comingSoon" data-i18n-aria="sagaComing" aria-label="SAGA : lien à venir">Accès prochainement</span>
+        <a class="launch" href="saga/" data-i18n="openSaga" data-i18n-aria="sagaOpenLabel" aria-label="Ouvrir le constructeur SAGA">Ouvrir SAGA</a>
         <div class="language">Français · English · Español · Deutsch<br><span data-i18n="translationCheck">Traductions en cours de vérification.</span></div>
       </article>
       <article>
@@ -99,10 +101,12 @@
         eyebrow:'Outils pour jeux de figurines',
         intro:'Des outils gratuits pour composer vos armées et bandes dans les jeux de figurines historiques.',
         noticeTitle:'Site en préparation.',
-        noticeBody:'Les Army Builders seront mis à disposition progressivement, après vérification de leurs versions publiques.',
+        noticeBody:'SAGA est disponible en version bêta ; les autres constructeurs seront ajoutés progressivement.',
         multilingual:'Multilingue',
         sagaDescription:'Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.',
         comingSoon:'Accès prochainement',
+        openSaga:'Ouvrir SAGA',
+        sagaOpenLabel:'Ouvrir le constructeur SAGA',
         sagaComing:'SAGA : lien à venir',
         lionComing:'Lion Rampant : lien à venir',
         vfvComing:'V for Victory : lien à venir',
@@ -121,10 +125,12 @@
         eyebrow:'Tabletop wargaming tools',
         intro:'Free tools to build your armies and warbands for historical tabletop wargames.',
         noticeTitle:'Website under construction.',
-        noticeBody:'The army builders will become available as their public versions are checked and approved.',
+        noticeBody:'SAGA is available in beta; the other army builders will be added progressively.',
         multilingual:'Multilingual',
         sagaDescription:'Build your SAGA warbands. Save and import army lists as JSON files.',
         comingSoon:'Coming soon',
+        openSaga:'Open SAGA',
+        sagaOpenLabel:'Open the SAGA army builder',
         sagaComing:'SAGA: link coming soon',
         lionComing:'Lion Rampant: link coming soon',
         vfvComing:'V for Victory: link coming soon',
@@ -143,10 +149,12 @@
         eyebrow:'Herramientas para juegos de miniaturas',
         intro:'Herramientas gratuitas para crear tus ejércitos y bandas en juegos de miniaturas históricos.',
         noticeTitle:'Sitio web en preparación.',
-        noticeBody:'Los creadores de ejércitos estarán disponibles progresivamente, tras la revisión de sus versiones públicas.',
+        noticeBody:'SAGA está disponible en versión beta; los demás creadores se añadirán progresivamente.',
         multilingual:'Multilingüe',
         sagaDescription:'Crea tus bandas de SAGA. Guarda e importa tus listas en formato JSON.',
         comingSoon:'Próximamente',
+        openSaga:'Abrir SAGA',
+        sagaOpenLabel:'Abrir el creador de bandas SAGA',
         sagaComing:'SAGA: enlace próximamente',
         lionComing:'Lion Rampant: enlace próximamente',
         vfvComing:'V for Victory: enlace próximamente',
@@ -165,10 +173,12 @@
         eyebrow:'Werkzeuge für Tabletop-Spiele',
         intro:'Kostenlose Werkzeuge zum Zusammenstellen deiner Armeen und Kriegerbanden für historische Tabletop-Spiele.',
         noticeTitle:'Website im Aufbau.',
-        noticeBody:'Die Armeeplaner werden nach und nach veröffentlicht, sobald die öffentlichen Versionen geprüft sind.',
+        noticeBody:'SAGA ist als Beta-Version verfügbar; weitere Armeeplaner folgen schrittweise.',
         multilingual:'Mehrsprachig',
         sagaDescription:'Stelle deine SAGA-Kriegerbanden zusammen. Speichere und importiere Armeelisten im JSON-Format.',
         comingSoon:'Demnächst verfügbar',
+        openSaga:'SAGA öffnen',
+        sagaOpenLabel:'SAGA-Armeeplaner öffnen',
         sagaComing:'SAGA: Link folgt',
         lionComing:'Lion Rampant: Link folgt',
         vfvComing:'V for Victory: Link folgt',
