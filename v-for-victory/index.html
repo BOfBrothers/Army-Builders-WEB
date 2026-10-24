@@ -728,7 +728,7 @@ header .topnote{font-size:11px;line-height:1.4;flex:1 1 390px;min-width:280px;co
   #printSheet table thead{display:table-header-group}
   #printSheet table tr{break-inside:avoid}
 }
-</style></head><body><header class="vfv-header"><div class="vfv-brand"><span class="vfv-intro">Recrutement assisté pour</span><h1>V for Victory</h1><span class="vfv-credit">Règle d’escarmouche de la Seconde Guerre mondiale créée par Studio Tomahawk</span><span class="vfv-version">V01.dev19m · Organigramme & plan B · à tester</span></div></header><main>
+</style></head><body><header class="vfv-header"><div class="vfv-brand"><span class="vfv-intro">Recrutement assisté pour</span><h1>V for Victory</h1><span class="vfv-credit">Règle d’escarmouche de la Seconde Guerre mondiale créée par Studio Tomahawk</span><span class="vfv-version">dev.19q · France : trois formations · à tester</span></div></header><main>
 <section class="panel catalogue noPrint"><h2>1 · Construire la force</h2><div class="force-name-panel"><label for="forceName">Nom de votre groupement (facultatif)</label><input id="forceName" type="text" maxlength="90" placeholder="Ex. Groupe de combat Alpha" autocomplete="off"></div>
 <div class="nation-switchboard" id="nationSwitchboard"><div class="nation-tile" data-nation-card="GER"><div class="nation-head"><div class="nation-icon" aria-hidden="true"><img alt="" draggable="false" src="images/bbb927b5e580939014ef.jpg"></div><div><div class="nation-name">Allemagne</div><div class="nation-sub">4 formations validées</div></div></div><select id="nationSelect_GER" aria-label="Formations allemandes"></select></div><div class="nation-tile" data-nation-card="USA"><div class="nation-head"><div class="nation-icon" aria-hidden="true"><img alt="" draggable="false" src="images/6a5f8757d4bbe5f42dd0.webp"></div><div><div class="nation-name">États-Unis</div><div class="nation-sub">3 formations</div></div></div><select id="nationSelect_USA" aria-label="Formations américaines"></select></div><div class="nation-tile" data-nation-card="UK"><div class="nation-head"><div class="nation-icon" aria-hidden="true"><img alt="" draggable="false" src="images/a57f06376e7c26d56173.webp"></div><div><div class="nation-name">Royaume-Uni</div><div class="nation-sub">4 formations · P.84–87</div></div></div><select id="nationSelect_UK" aria-label="Formations britanniques" disabled></select></div><div class="nation-tile" data-nation-card="URSS"><div class="nation-head"><div class="nation-icon" aria-hidden="true"><img alt="" draggable="false" src="images/a6eb53ef86aa074b1de1.webp"></div><div><div class="nation-name">URSS</div><div class="nation-sub">Infanterie p.94 · version à tester</div></div></div><select id="nationSelect_URSS" aria-label="Formations soviétiques" disabled></select></div></div><div class="formation-switch nation-hidden-select" aria-hidden="true"><label for="formationSelect">Formation et nation</label><select id="formationSelect"><option value="GER_INF">Infanterie (P.74)</option><option value="GER_MEC">Infanterie mécanisée (P.75)</option><option value="GER_AER">Infanterie aéroportée (P.76)</option><option value="GER_ASS">Infanterie d’assaut (P.77)</option><option value="USA_INF">🇺🇸 Américains · Infanterie (P.102)</option><option value="USA_MEC">🇺🇸 Américains · Infanterie mécanisée (P.103)</option><option value="SOV_INF">Infanterie soviétique (P.94)</option><option value="SOV_ASS">Infanterie d’assaut soviétique (P.95)</option></select></div><div class="mode-compact"><div><label for="mode">Mode</label><select id="mode"><option value="libre">Force libre</option><option value="scenario1">Scénario 1</option></select></div><div><label for="budget">Budget ★</label><input id="budget" type="number" min="0" max="99" value="6"></div></div>
 <p id="scenarioNote" class="muted"></p>
@@ -2164,4 +2164,1053 @@ $$('mecTransports').addEventListener('change',e=>{
 $$('mecPurchasedLots').addEventListener('click',e=>{const b=e.target.closest('[data-mec-drop-lot]');if(!b||!usesTypedLots())return;const i=Number(b.dataset.mecDropLot);if(i<0||i>=S.lotTypes.length)return;S.lotTypes.splice(i,1);S.lots=S.lotTypes.length;render()});
 
 function effectiveBudget(){return rule()?((usesTypedLots()||isUSAMec())?Math.max(0,2+F.equilibrage_etoiles):2):S.budget+usaBonus()}
-</script></body></html>
+</script><script id="fr-source" type="application/json">{"formation":{"id":"PS_FR_INF_1939_1940","ouvrage":"POLOGNE_SICILE","nation":"France","page_imprimee":6,"source":"sources/p 06.jpg","statut":"COMPOSITION_LUE_GROUPE1_CONFIRME_UTILISATEUR","base":[{"nom":"Commandement","equipes":[{"nom":"Leader","chef_armement":"PST","autres_disponibles":[],"places_renfort":[],"effectif_base":1,"effectif_max":1},{"nom":"Équipe de commandement","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL"],"places_renfort":["FSL"],"effectif_base":3,"effectif_max":4}]},{"nom":"Groupe1","equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL","FSL"],"places_renfort":["FSL","FSL"],"effectif_base":4,"effectif_max":6},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL","FSL"],"effectif_base":4,"effectif_max":6}],"preuve_composition":"PS_DOC005 + Groupe2 visiblep6"},{"nom":"Groupe2","equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL","FSL"],"places_renfort":["FSL","FSL"],"effectif_base":4,"effectif_max":6},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL","FSL"],"effectif_base":4,"effectif_max":6}]}],"groupes_appui":[{"nom":"Groupe3","cout_etoiles":3,"equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL"],"places_renfort":["FSL","FSL","FSL"],"effectif_base":3,"effectif_max":6},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL","FSL"],"effectif_base":4,"effectif_max":6}],"effectif_base":7,"effectif_max":12}],"appuis":[{"id":"MMG","maximum":1,"cout":{"type":"ETOILES","valeur":1},"modele":"Hotchkiss1914","equipes":[{"nom":"MMG","chef_armement":"MMG","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":3,"effectif_max":4}]},{"id":"MORTIER","maximum":1,"choix":[{"arme":"Mo.Léger","cout_etoiles":1},{"arme":"Mo.Moyen","cout_etoiles":2}],"equipes":[{"nom":"Mortier","chef_armement":"Mo.M","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":3,"effectif_max":4}],"note":"Le dessin est étiquetéMo.M ; le titre autorise aussi le léger. Conserver le choix sans inventer deux achats distincts."},{"id":"F_AC","maximum":1,"cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"F-AC","chef_armement":"F-AC","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":[],"effectif_base":2,"effectif_max":2}]},{"id":"SNIPER","maximum":1,"cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"Sniper","chef_armement":"SNIPER","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":[],"effectif_base":2,"effectif_max":2}]},{"id":"CANON_ULTRA_LEGER","maximum":2,"modele":"25mm","cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"Canon","chef_armement":"A/C Ultra-Léger","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":4,"effectif_max":5}]},{"id":"CANON_LEGER","maximum":1,"modele":"47mm","cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Canon","chef_armement":"A/C Léger","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":4,"effectif_max":5}]},{"id":"RECO_MOTORISABLE","maximum":1,"cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Reco","chef_armement":"FSL","autres_disponibles":["LMG"],"places_renfort":["FSL"],"effectif_base":2,"effectif_max":3}],"bloc_optionnel":{"cout_etoiles":1,"autres_disponibles":["FSL","FSL"],"places_renfort":["FSL"],"chef_supplementaire_visible":false,"pictogramme_moto":true,"lecture":"BLOC_ADDITIONNEL_DE_LA_MEME_EQUIPE_A_RECOUPER","condition":"Ne pas le transformer en deuxième équipe indépendante : aucun chef distinct visible."},"pictogramme_moto":true},{"id":"RECO_A_PIED","maximum":2,"cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Reco","chef_armement":"FSL","autres_disponibles":["FSL","FSL"],"places_renfort":["FSL"],"effectif_base":3,"effectif_max":4}]}],"renforts":{"min_achats":0,"max_achats":4,"cout_etoiles":1,"figurines_par_lot":3,"arme":"FSL"},"regles_ids":["PS_FR001","PS_FR002","PS_FR003","PS_FR004","PS_FR005","PS_FR006","PS_FR007","PS_FR008","PS_FR009","PS_FR010"],"effectif_base_force":20,"effectif_base_hors_groupe1":12,"modeles_armes":{"LMG":["FM24/29","Chauchat"],"Mo.P":"VB1940"},"note_armes":"Conserver la catégorie impriméeLMG ; le nom historique FM24/29 ne suffit pas à la remplacer par le profil génériqueFM.","renvoi_supports_extension":10,"effectif_max_groupes_base":29,"usage":"REFERENCE_INTERNE ; ne pas importer automatiquement comme configuration de Builder validée","regles_communes":"Lire en complément le corpus V25 ; respecter les différences de période/ouvrage.","source_organigramme":"PHOTO_ORIGINALE ; groupes superposés distincts identiques selon confirmation utilisateur","points_a_arbitrer":[]},"regles":[{"id":"PS_FR001","page_extension":5,"source_image":"sources/p 05.jpg","titre":"Usage de l’OdB français","regle":"L’OdB France1939–1940 peut également représenter les forces de Vichy1940–1942 et les Forces Françaises Libres dans leurs engagements aux côtés des Alliés.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","nature":"PORTEE_LISTE","note":"Conserver cette possibilité explicite sans créer des restrictions d’équipement absentes de la page ; à recouper avec périodes des supports."},{"id":"PS_FR002","page_extension":5,"source_image":"sources/p 05.jpg","titre":"Troupes coloniales","regle":"Accès seulement à la liste Infanterie. Réussite automatique sur le dé de Jusqu’au bout. Le premier renfort divisionnaire acheté coûte une étoile de plus.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","restriction_liste":"INFANTERIE","jusqu_au_bout":"SUCCES_AUTOMATIQUE","surcout":{"achat":"PREMIER_RENFORT_DIVISIONNAIRE","etoiles":1},"note":"Ne pas appliquer le surcoût aux lots de3figurines ni à chaque appui de section."},{"id":"PS_FR003","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Sur la défensive","regle":"Une fois par tour, lors d’un tir d’opportunité, lancer1D8. En cas de réussite, ne pas appliquer le modificateur du tir d’opportunité.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","frequence":"UNE_FOIS_PAR_TOUR","de":"1D8","effet":"IGNORER_MODIFICATEUR_OPPORTUNITE_SI_REUSSITE","liens_base":["ORD002","TIR005"],"note":"Ne pas transformer ce test en réussite automatique du tir et ne pas annuler les autres modificateurs."},{"id":"PS_FR004","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Jusqu’au bout","regle":"Avant la résolution d’un assaut, lancer1D8 ; en cas de réussite l’unité est considérée Élite.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","de":"1D8","contexte":"ASSAUT_EN_COURS","liens_base":["SPE004"],"note":"Ne pas attribuer une amélioration permanente d’expérience à l’armée. L’exception coloniale porte sur la réussite du test."},{"id":"PS_FR005","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Lance-grenades","regle":"Les Mo.P sont des lance-grenadesVB1940.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","categorie":"Mo.P","modele":"VB1940"},{"id":"PS_FR006","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Conversion de fusils en PM","regle":"Retirer au maximum deux figurines pour cette option. Chaque figurine retirée finance jusqu’à deux remplacements FSL→PM.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","limite_retraits_pour_cette_option":2,"conversions_par_retrait":2,"conversion":{"depuis":"FSL","vers":"PM"},"note":"Ne pas confondre la limite de cette option avec les recrutements distincts au losange."},{"id":"PS_FR007","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Options Reco","regle":"Les équipes Reco ont la règle Reco,62LDR dans le texte. L’une peut remplacer sa LMG par1FSL pour une étoile de moins. L’une peut être transportée sur une ou plusieurs motos. Une moto devient side-car en ajoutant une figurine de renfort.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","nombre_equipes_downgrade_lmg_max":1,"remplacement":{"depuis":"LMG","vers":"FSL","variation_etoiles":-1},"equipes_motorisables_max":1,"conversion_sidecar":{"cout":"UNE_FIGURINE_DE_RENFORT"},"renvois_base":[62],"dependances":["PS_MOTO001","PS_MOTO008"],"note":"LDR dans cette ligne est la variante littérale du DLR défini p2 ; cible documentaire livre principal p62."},{"id":"PS_FR008","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Expérience Recrue","regle":"Une force usée ou de réservistes peut passer son expérience à Recrue ; le Groupe3 devient gratuit.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","experience":"RECRUE","groupe3_cout_etoiles":0},{"id":"PS_FR009","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Supports divisionnaires","regle":"La force a accès aux supports divisionnaires de l’extension p10.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","dependances":["EXTENSION_10_NON_ENCORE_TRAITEE"]},{"id":"PS_FR010","page_extension":6,"source_image":"sources/p 06.jpg","titre":"Lots de renfort","regle":"Cartouche0–4 : un achat coûte une étoile et fournit trois figurines FSL, à affecter aux emplacements de renfort autorisés.","lecture":"CONTROLE_VISUEL_DIRECT_ET_RELECTURE","champ_application":"EXTENSION_POLOGNE_SICILE","achats_min":0,"achats_max":4,"cout_etoiles_par_achat":1,"figurines_par_achat":3,"armement":"FSL","maximum_figurines_achetees":12,"nature":"LECTURE_CARTOUCHE_AVEC_GRAMMAIRE_DE_RECRUTEMENT_V25"}],"points_controles":[{"id":"PS_Q001","page":6,"type":"SOURCE_GRAPHIQUE_MASQUEE","objet":"Composition complète Groupe1 français","preuve":"preuves/fr_groupes.png","constat":"Le groupe2 masque le groupe1 dans l’image originale ; ce défaut ne vient pas d’un OCR.","verification_effectuee":"Deux lectures visuelles, dont recadrage natif ; dépôt privé lu. La décisionOVERLAP existe sous décisions_allemandes et ne constitue pas une confirmation française.","prochaine_action":"Recouper avec le texte des pages françaises et la FAQ de l’extension avant question à Didier.","question_si_non_resolu":"Les deux équipes du Groupe1 français sont-elles exactement identiques à celles du Groupe2, avec leurs mêmes armes et places de renfort ?","bloque":"CERTIFICATION_RECRUTEMENT_COMPLET_FR_INF","demande_utilisateur_necessaire_maintenant":false,"statut":"RESOLU_CONFIRMATION_UTILISATEUR","resolution":"Groupes distincts et identiques en tous points selon Didier ; Groupe1 copié du Groupe2.","pages":[6],"nature_preuve":"CONTROLE_DOCUMENTAIRE"},{"id":"PS_Q002","page":6,"type":"SEMANTIQUE_ORGANIGRAMME_A_RECOUPER","objet":"Bloc supplémentaire du Reco motorisable","preuve":"preuves/fr_reco.png","constat":"Bloc de gauche chefFSL+LMG+FSLoptionnel ; à droite du pointillé,1étoile et pictogrammemoto,2FSLdisponibles+1FSLoptionnel, sans secondchef.","lecture_proposee":"Extension de la même équipe pour une deuxième moto, coût supplémentaire1étoile.","prochaine_action":"Comparer autres organigrammes moto et règlep3 avant encodage exécutable.","interdiction":"Ne pas créer une deuxième équipe autonome avec un chef inventé.","demande_utilisateur_necessaire_maintenant":false,"statut":"RESOLU_RECOUPEMENT_INTERNE","resolution":"Concordance règle motos page3 et blocs analogues6/32/50/52 : seconde moto de la même équipe, pas deuxième chef.","pages":[6],"nature_preuve":"CONTROLE_DOCUMENTAIRE"},{"id":"PS_Q020","pages":[3,75],"type":"CONTRADICTION_DEUX_TABLEAUX","objet":"Profil F-AC E /1D6 ou C /aucun dé","constat":"Profil détaillé3 : capacitéE et combat rapproché1D6. Résumé Afrique v3.5 page75 : capacitéC et tiret au combat rapproché. V25 ARMP005 concorde avec page3, E/1D6.","proposition":"Profil détaillé page3 proposé comme règle de travail ; résumé75 conservé comme source contradictoire, pas correction officielle inventée.","question_si_non_resolu":"Le profil F-AC de page3 (E,1D6) prévaut-il sur le résumé75 (C,aucun dé) ?","demande_utilisateur_necessaire_maintenant":false,"statut":"RESOLU_DECISION_UTILISATEUR","nature_preuve":"CONTRADICTION_INTERNE_DOCUMENTEE","resolution":"Retenir le profil détaillé page 3 : capacité antichar E et combat rapproché 1D6.","date_validation":"2026-10-24","origine_validation":"Réponse utilisateur « oui tout a fait » aux deux propositions de la réponse précédente.","portee_validation":"BASE_DE_TRAVAIL_VALIDEE ; pas un erratum officiel de l’auteur","contradiction_originale_conservee":true}],"vehicles":[{"id":"PS_FR_AMD","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"AMD Panhard165/175/178","cout_etoiles":2,"blindage":1,"roulement":"ROUES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":["Reco"],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_P16","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"Panhard-SchneiderP16","cout_etoiles":2,"blindage":1,"roulement":"SEMI_CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":["Reco"],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_AMR33","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"AMR33","cout_etoiles":2,"blindage":1,"roulement":"CHENILLES","armes_principales":["MMG-T"],"armes_secondaires":"","regles_speciales":["Reco"],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_FCM36","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"FCM36","cout_etoiles":3,"blindage":2,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":[],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_AMC35","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"AMC35","cout_etoiles":2,"blindage":1,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":[],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_H35","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"HotchkissH35/H39","cout_etoiles":3,"blindage":2,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":[],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_S35","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"SomuaS35","cout_etoiles":3,"blindage":2,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":[],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_D2","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"RenaultD2","cout_etoiles":3,"blindage":2,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":[],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_R35","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":10,"nom":"RenaultR35/R39/R40","cout_etoiles":3,"blindage":2,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":[],"source_image":"sources/p 10.jpg","lecture":"CONTROLE_VISUEL_DIRECT","points_a_arbitrer":[],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_B1","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"B1BIS","cout_etoiles":6,"blindage":3,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":["Ho.Moyen-C","MMGcoaxiale-T"],"regles_speciales":[],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","cout_symboles":"1bleue+1rouge","note":"Les deuxMMGcoaxiales sont dans deux rubriques distinctes ; conserver le tableau sans fusion.","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_LORRAINE38L","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"Lorraine38L","cout_etoiles":1,"blindage":1,"roulement":"CHENILLES","armes_principales":["A/C Léger-T","MMGcoaxiale-T"],"armes_secondaires":"","regles_speciales":["Ouvert","Transport6"],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","note":"Armement transcrit telqu’imprimé, sans correction historique présumée.","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_LAFFY","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"LaffyS20","cout_etoiles":0,"blindage":0,"roulement":"ROUES","armes_principales":[],"armes_secondaires":"","regles_speciales":["Ouvert","Transport10"],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","options":[{"type":"choix_arme_principale","choix":[{"arme":"A/C Légerarrière-T","surcout_etoiles":1},{"arme":"MMG-P","surcout_etoiles":1}]},{"arme":"MMGarrière-P","surcout_etoiles":1,"rubrique":"SECONDAIRE"}],"cout_source":"AUCUNE_ETOILE_BASE_IMPRIMEE","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_VOITURE","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"Voiture","cout_etoiles":0,"blindage":0,"roulement":"ROUES","armes_principales":[],"armes_secondaires":"","regles_speciales":["Ouvert","Transport4"],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","cout_source":"AUCUNE_ETOILE_BASE_IMPRIMEE","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_CAMION","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"Camion","cout_etoiles":0,"blindage":0,"roulement":"ROUES","armes_principales":[],"armes_secondaires":"","regles_speciales":["Ouvert","Transport12"],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","cout_source":"AUCUNE_ETOILE_BASE_IMPRIMEE","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_MOTO","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"Moto/Side-car","cout_etoiles":0,"blindage":0,"roulement":"MOTO_SIDECAR","armes_principales":[],"armes_secondaires":"","regles_speciales":["Reco","Ouvert","Équipage2/3"],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","cout_source":"AUCUNE_ETOILE_BASE_IMPRIMEE","règles_de_jeu_prioritaires":"PS_MOTO001–008 : infanteriemontée, pasvéhiculeciblableordinaire","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"},{"id":"PS_FR_CHENILLETTE","nation":"France","ouvrage":"POLOGNE_SICILE","page_imprimee":11,"nom":"Chenillette","cout_etoiles":0,"blindage":0,"roulement":"SEMI_CHENILLES","armes_principales":[],"armes_secondaires":"","regles_speciales":["Ouvert","Transport10"],"source_image":"sources/p 11.jpg","lecture":"CONTROLE_VISUEL_DIRECT","cout_source":"AUCUNE_ETOILE_BASE_IMPRIMEE","note":"Pictogrammemixte imprimé : ne pas remplacer par chenilles d’après le seul nom.","points_a_arbitrer":["PS_Q005"],"statut_import":"LECTURE_SOURCE_A_CONTROLE_EXECUTABLE"}]}</script>
+<script id="dragons-source" type="application/json">{"id":"PS_FR_DRAGONS_1939_1940","ouvrage":"POLOGNE_SICILE","nation":"France","page_imprimee":7,"source":"sources/p 07.jpg","statut":"COMPOSITION_LUE_GROUPE1_CONFIRME_UTILISATEUR","base":[{"nom":"Commandement","equipes":[{"nom":"Leader","chef_armement":"PST","autres_disponibles":[],"places_renfort":[],"effectif_base":1,"effectif_max":1},{"nom":"Équipecommandement","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL","FSL","FSL"],"effectif_base":4,"effectif_max":7}],"transports":{"nombre":1,"choix_texte":["Camion","Chenillette"]}},{"nom":"Groupe1","equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL"],"places_renfort":["FSL","FSL","FSL","FSL"],"effectif_base":3,"effectif_max":7},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["LMG","FSL","FSL"],"effectif_base":4,"effectif_max":7}],"transports":{"nombre":2,"choix_texte":["Camion","Chenillette"]},"preuve_composition":"PS_DOC005"},{"nom":"Groupe2","equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL"],"places_renfort":["FSL","FSL","FSL","FSL"],"effectif_base":3,"effectif_max":7},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["LMG","FSL","FSL"],"effectif_base":4,"effectif_max":7}],"transports":{"nombre":2,"choix_texte":["Camion","Chenillette"]}}],"groupes_appui":[{"nom":"Groupe3","cout_etoiles":3,"equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL"],"places_renfort":["FSL","FSL","FSL","FSL"],"effectif_base":3,"effectif_max":7},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["LMG","FSL","FSL"],"effectif_base":4,"effectif_max":7}],"transports":{"nombre":2,"choix_texte":["Camion","Chenillette"]}}],"appuis":[{"id":"MMG","maximum":1,"cout":{"type":"ETOILES","valeur":1},"modele":"Hotchkiss1914","equipes":[{"nom":"MMG","chef_armement":"MMG","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":3,"effectif_max":4}]},{"id":"MORTIER","maximum":1,"choix":[{"arme":"Mo.Léger","cout_etoiles":1},{"arme":"Mo.Moyen","cout_etoiles":2}],"equipes":[{"nom":"Mortier","chef_armement":"Mo.M","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":3,"effectif_max":4}],"note":"Le dessin est étiquetéMo.M ; le titre autorise aussi le léger. Conserver le choix sans inventer deux achats distincts."},{"id":"F_AC","maximum":1,"cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"F-AC","chef_armement":"F-AC","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":[],"effectif_base":2,"effectif_max":2}]},{"id":"SNIPER","maximum":1,"cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"Sniper","chef_armement":"SNIPER","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":[],"effectif_base":2,"effectif_max":2}]},{"id":"RECO_MOTORISABLE","maximum":1,"cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Reco","chef_armement":"FSL","autres_disponibles":["LMG"],"places_renfort":["FSL"],"effectif_base":2,"effectif_max":3}],"bloc_optionnel":{"cout_etoiles":1,"autres_disponibles":["FSL","FSL"],"places_renfort":["FSL"],"chef_supplementaire_visible":false,"pictogramme_moto":true,"lecture":"BLOC_ADDITIONNEL_DE_LA_MEME_EQUIPE_A_RECOUPER","condition":"Ne pas le transformer en deuxième équipe indépendante : aucun chef distinct visible."},"pictogramme_moto":true}],"renforts":{"min_achats":0,"max_achats":4,"cout_etoiles":1,"choix":[{"FSL":3},{"LMG":1}]},"regles_ids":["PS_FR004","PS_FR005","PS_FR007","PS_FR009","PS_FR011","PS_FR012","PS_FR013"],"effectif_base_force":19,"modeles_armes":{"LMG":["FM24/29","Chauchat"],"Mo.P":"VB1940"},"note_armes":"Conserver la catégorie impriméeLMG ; le nom historique FM24/29 ne suffit pas à la remplacer par le profil génériqueFM.","renvoi_supports_extension":10,"effectif_max_groupes_base":36,"usage":"REFERENCE_INTERNE ; ne pas importer automatiquement comme configuration de Builder validée","regles_communes":"Lire en complément le corpus V25 ; respecter les différences de période/ouvrage.","source_organigramme":"PHOTO_ORIGINALE ; groupes superposés distincts identiques selon confirmation utilisateur","points_a_arbitrer":[]}</script>
+<script id="motor-source" type="application/json">{"id":"PS_FR_MOTORISEE_1939_1940","ouvrage":"POLOGNE_SICILE","nation":"France","page_imprimee":8,"source":"sources/p 08.jpg","statut":"COMPOSITION_LUE_GROUPE1_CONFIRME_UTILISATEUR","base":[{"nom":"Commandement","equipes":[{"nom":"Leader","chef_armement":"PST","autres_disponibles":[],"places_renfort":[],"effectif_base":1,"effectif_max":1},{"nom":"Équipe de commandement","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL"],"places_renfort":["FSL"],"effectif_base":3,"effectif_max":4}],"transports":{"nombre":1,"profil":"PS_FR_CAMION"}},{"nom":"Groupe1","equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL","FSL"],"places_renfort":["FSL"],"effectif_base":4,"effectif_max":5},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL"],"effectif_base":4,"effectif_max":5}],"preuve_composition":"PS_DOC005","transports":{"nombre":1,"profil":"PS_FR_CAMION"}},{"nom":"Groupe2","equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL","FSL"],"places_renfort":["FSL"],"effectif_base":4,"effectif_max":5},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL"],"effectif_base":4,"effectif_max":5}],"transports":{"nombre":1,"profil":"PS_FR_CAMION"}}],"groupes_appui":[{"nom":"Groupe3","cout_etoiles":3,"equipes":[{"nom":"Équipe1","chef_armement":"FSL","autres_disponibles":["LMG","FSL"],"places_renfort":["FSL","FSL"],"effectif_base":3,"effectif_max":5},{"nom":"Équipe2","chef_armement":"FSL","autres_disponibles":["Mo.P","FSL","FSL"],"places_renfort":["FSL"],"effectif_base":4,"effectif_max":5}],"transports":{"nombre":1,"profil":"PS_FR_CAMION"},"effectif_base":7,"effectif_max":10}],"appuis":[{"id":"MMG","maximum":1,"cout":{"type":"ETOILES","valeur":1},"modele":"Hotchkiss1914","equipes":[{"nom":"MMG","chef_armement":"MMG","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":3,"effectif_max":4}]},{"id":"MORTIER","maximum":1,"choix":[{"arme":"Mo.Léger","cout_etoiles":1},{"arme":"Mo.Moyen","cout_etoiles":2}],"equipes":[{"nom":"Mortier","chef_armement":"Mo.M","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":3,"effectif_max":4}],"note":"Le dessin est étiquetéMo.M ; le titre autorise aussi le léger. Conserver le choix sans inventer deux achats distincts."},{"id":"F_AC","maximum":1,"cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"F-AC","chef_armement":"F-AC","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":[],"effectif_base":2,"effectif_max":2}]},{"id":"SNIPER","maximum":1,"cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"Sniper","chef_armement":"SNIPER","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":[],"effectif_base":2,"effectif_max":2}]},{"id":"CANON_ULTRA_LEGER","maximum":2,"modele":"25mm","cout":{"type":"RETRAIT_FIGURINES","valeur":2},"equipes":[{"nom":"Canon","chef_armement":"A/C Ultra-Léger","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":4,"effectif_max":5}]},{"id":"CANON_LEGER","maximum":2,"modele":"47mm","cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Canon","chef_armement":"A/C Léger","autres_disponibles":["SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE","SERVANT_SANS_ARME_INDIQUEE"],"places_renfort":["SERVANT_SANS_ARME_INDIQUEE"],"effectif_base":4,"effectif_max":5}]},{"id":"RECO_MOTORISABLE","maximum":1,"cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Reco","chef_armement":"FSL","autres_disponibles":["LMG"],"places_renfort":["FSL"],"effectif_base":2,"effectif_max":3}],"bloc_optionnel":{"cout_etoiles":1,"autres_disponibles":["FSL","FSL"],"places_renfort":["FSL"],"chef_supplementaire_visible":false,"pictogramme_moto":true,"lecture":"BLOC_ADDITIONNEL_DE_LA_MEME_EQUIPE_A_RECOUPER","condition":"Ne pas le transformer en deuxième équipe indépendante : aucun chef distinct visible."},"pictogramme_moto":true},{"id":"RECO_VOITURE","maximum":1,"cout":{"type":"ETOILES","valeur":1},"equipes":[{"nom":"Reco","chef_armement":"FSL","autres_disponibles":["LMG","FSL"],"places_renfort":["FSL"],"effectif_base":3,"effectif_max":4}],"transport":"PS_FR_VOITURE"}],"renforts":{"min_achats":0,"max_achats":4,"cout_etoiles":1,"figurines_par_lot":3,"arme":"FSL"},"regles_ids":["PS_FR004","PS_FR005","PS_FR006","PS_FR008","PS_FR009","PS_FR011","PS_FR014"],"effectif_base_force":20,"modeles_armes":{"LMG":["FM24/29","Chauchat"],"Mo.P":"VB1940"},"note_armes":"Conserver la catégorie impriméeLMG ; le nom historique FM24/29 ne suffit pas à la remplacer par le profil génériqueFM.","renvoi_supports_extension":10,"effectif_max_groupes_base":25,"usage":"REFERENCE_INTERNE ; ne pas importer automatiquement comme configuration de Builder validée","regles_communes":"Lire en complément le corpus V25 ; respecter les différences de période/ouvrage.","source_organigramme":"PHOTO_ORIGINALE ; groupes superposés distincts identiques selon confirmation utilisateur","points_a_arbitrer":[]}</script>
+<script>/* dev.19o — De la Pologne à la Sicile. Source pages 3, 5, 6, 10–11.
+   Extension scoped to PS_FR_INF_1939_1940; existing formations delegate unchanged. */
+(() => {
+ 'use strict';
+ const src = JSON.parse($$('fr-source').textContent);
+ const ID = 'PS_FR_INF_1939_1940';
+ const isFR = () => S.formation === ID;
+ const defaults = () => ({colonial:false,motorized:false,secondMoto:false,recoDowngrade:false,reserveSpent:0});
+ S.fr = defaults();
+ const normalizeTeam = t => ({...t, nom:t.nom.replace(/Équipe(\d)/,'Équipe $1'), chef_armement:t.chef_armement.replace('SNIPER','Sniper')});
+ const formation = {
+  ...src.formation, periode:'1939–1940',theatre:'Europe / Vichy / FFL',section:'Infanterie',equilibrage_etoiles:0,
+  base:src.formation.base.map(g=>({...g,nom:g.nom.replace(/Groupe(\d)/,'Groupe $1'),cout_etoiles:0,equipes:g.equipes.map(normalizeTeam)})),
+  groupes_appui:src.formation.groupes_appui.map(g=>({...g,nom:'Groupe 3',equipes:g.equipes.map(normalizeTeam)})),
+  appuis:[], renforts:{minimum:0,maximum:4,cout_etoiles:1,alternatives:[{nombre:3,armement:'FSL'}]},
+  experience:{elite_cout:0,recrue_groupe_gratuit:'Groupe 3'}
+ };
+ function parseWeapon(text) {
+  const montage = /-([TCP])-?$/.exec(text)?.[1] || null;
+  return {code_generique:text.replace(/-([TCP])-?$/,'').replace(/coaxiale/,'').replace(/arrière/,'').trim(),montage,coaxiale:text.includes('coaxiale'),face:text.includes('arrière')?'arrière':null,optionnelle:false};
+ }
+ const frVehicles = src.vehicles.filter(v=>v.id!=='PS_FR_MOTO').map(v=>({
+  id:v.id,nation:'France',nom_source:v.nom,page_imprimee:v.page_imprimee,cout_base_etoiles:v.cout_etoiles,blindage:v.blindage,
+  roulement:({ROUES:'Roues',CHENILLES:'Chenilles',SEMI_CHENILLES:'Semi-chenilles'})[v.roulement],
+  armes_principales:(v.armes_principales||[]).map(parseWeapon),armes_secondaires:(Array.isArray(v.armes_secondaires)?v.armes_secondaires:[]).map(parseWeapon),
+  regles_speciales:v.regles_speciales,transport_capacite:Number(v.regles_speciales.join(' ').match(/Transport(\d+)/)?.[1])||null
+ }));
+ // User arbitration 2026-10-24, PS_Q005: remove both printed turret weapons.
+ // Keep the verbatim source JSON unchanged; this is not an official erratum.
+ const lorraine = frVehicles.find(v=>v.id==='PS_FR_LORRAINE38L');
+ lorraine.armes_principales=[];
+ lorraine.armes_secondaires=[];
+ const laffy = frVehicles.find(v=>v.id==='PS_FR_LAFFY');
+ laffy.armes_principales=[{...parseWeapon('A/C Légerarrière-T'),optionnelle:true,cout_option_etoiles:1,groupe_alternative:'laffy_primary'},{...parseWeapon('MMG-P'),optionnelle:true,cout_option_etoiles:1,groupe_alternative:'laffy_primary'}];
+ laffy.armes_secondaires=[{...parseWeapon('MMGarrière-P'),optionnelle:true,cout_option_etoiles:1}];
+ // Original array constants are mutable; only add a new namespace.
+ FORMATION_IDS.push(ID); NATION_FORMATIONS.FR=[[ID,'Infanterie · 1939–1940 (P.6)']]; FORMATION_NATION[ID]='FR';
+ const oldData = formationDataById;
+ formationDataById = id => id===ID?formation:oldData(id);
+ const oldVehicles = vehicleSource;
+ vehicleSource = () => isFR()?frVehicles:oldVehicles();
+ const oldCategory = vehicleCategory;
+ vehicleCategory = v => v.id.startsWith('PS_FR_')?(v.regles_speciales.includes('Reco')?'Reconnaissance':v.transport_capacite?'Transports':'Blindés de combat'):oldCategory(v);
+ const oldIllustration = vehicleIllustration;
+ vehicleIllustration = v => v.id.startsWith('PS_FR_')?'<div class="fr-profile-symbol" aria-hidden="true">'+(v.transport_capacite?'▰':'▣')+'</div>':oldIllustration(v);
+ const oldAppImage = appuiIllustration;
+ appuiIllustration = o => isFR()?'<div class="card-visual note"><span>'+escapeHTML(o.model.modele||o.name)+'</span></div>':oldAppImage(o);
+ const oldToken=token;
+ token=(w,cls='',group='')=>{
+  let h=oldToken(w,cls,group);if(!isFR())return h;
+  return h.replaceAll('MG42',String(w).startsWith('MMG')?'Hotchkiss 1914':'24/29 / Chauchat');
+ };
+
+ function offersFR() {
+  const list=[{id:'group3',name:'Groupe 3',cost:S.experience==='recrue'?0:3,max:1,model:formation.groupes_appui[0],type:'group'}];
+  const names={MMG:'MMG',MORTIER:'Mortier',F_AC:'F-AC',SNIPER:'Sniper',CANON_ULTRA_LEGER:'Canon A/C ultra-léger',CANON_LEGER:'Canon A/C léger',RECO_MOTORISABLE:'Reco motorisable',RECO_A_PIED:'Reco à pied'};
+  src.formation.appuis.forEach((a,i)=>{
+   let team=normalizeTeam(a.equipes[0]);
+   const diamond=a.cout?.type==='RETRAIT_FIGURINES';
+   const inventoryType=({F_AC:'AC',MORTIER:'Mo.M',CANON_ULTRA_LEGER:'Canon A/C',CANON_LEGER:'Canon A/C'})[a.id]||names[a.id];
+   const common={id:'app'+i,name:names[a.id],cost:diamond?0:(a.cout?.valeur||0),max:a.maximum,type:'app',diamond,
+    model:{nom:names[a.id],type:inventoryType,modele:a.id==='F_AC'?'Fusil antichar (F-AC)':a.modele,equipe:team}};
+   if(a.id==='MORTIER') {
+    for(const [key,code,cost] of [['light','Mo.Léger',1],['medium','Mo.M',2]])list.push({...common,id:'app1_'+key,name:'Mortier '+(key==='light'?'léger':'moyen'),cost,sharedGroup:'fr_mortar',model:{...common.model,modele:'Mortier '+(key==='light'?'léger':'moyen'),equipe:{...team,chef_armement:code}}});
+   } else {
+    if(a.id==='RECO_MOTORISABLE') {
+     team={...team,autres_disponibles:[...team.autres_disponibles],places_renfort:[...team.places_renfort]};
+     if(S.fr.recoDowngrade)team.autres_disponibles[0]='FSL';
+     if(S.fr.secondMoto){team.autres_disponibles.push('FSL','FSL');team.places_renfort.push('FSL');team.effectif_base+=2;team.effectif_max+=3;}
+     common.cost=1+(S.fr.secondMoto?1:0)-(S.fr.recoDowngrade?1:0);
+     common.model={...common.model,equipe:team,regles_speciales:['Reco']};
+    }
+    if(a.id==='RECO_A_PIED')common.model.regles_speciales=['Reco'];
+    list.push(common);
+   }
+  });
+  return list;
+ }
+ const oldOffers=offers;
+ offers=()=>isFR()?offersFR():oldOffers();
+ const oldGroupCount=offerGroupCount, oldLimit=offerQuantityLimit;
+ offerGroupCount=o=>isFR()&&o.sharedGroup?offersFR().filter(a=>a.sharedGroup===o.sharedGroup).reduce((n,a)=>n+(S.owned[a.id]||0),0):oldGroupCount(o);
+ offerQuantityLimit=o=>isFR()&&o.sharedGroup?Math.max(0,o.max-offerGroupCount(o)+(S.owned[o.id]||0)):oldLimit(o);
+ const oldTotals=totals;
+ totals=()=>{const t=oldTotals();if(isFR()) {t.spent+=S.fr.colonial&&S.vehicles.length?1:0;t.unallocated-=S.fr.reserveSpent;}return t;};
+ function diamondNeeded(){return selected().reduce((n,o)=>n+(o.diamond?2*(S.owned[o.id]||0):0),0);}
+ function diamondPaid(){return S.fr.reserveSpent+S.conversions.removed.filter(id=>S.conversions.allocation[id]==='diamond').length;}
+ const oldFreeCount=freeVehicleCount;
+ // The surcharge is force-wide, once, even when the first vehicle is otherwise free.
+ freeVehicleCount=()=>isFR()?S.vehicles.filter(v=>vehicleCost(v)===0).length:oldFreeCount();
+ const oldPermitted=permitted;
+ permitted=o=>isFR()?true:oldPermitted(o);
+
+ const oldReset=remettreCompositionAZero;
+ remettreCompositionAZero=()=>{oldReset();S.fr=defaults();};
+ const oldStarted=compositionCommencee;
+ compositionCommencee=()=>oldStarted()||(isFR()&&(S.fr.colonial||S.fr.motorized||S.fr.secondMoto||S.fr.recoDowngrade||S.fr.reserveSpent));
+ const oldReconcile=reconcile;
+ reconcile=()=>{
+  oldReconcile();if(!isFR())return;
+  const placed=Object.keys(S.alloc).filter(k=>S.alloc[k]);
+  // Reserve withdrawals cannot be assigned again to a silhouette.
+  while(placed.length+S.fr.reserveSpent>S.lots*3){const k=placed.pop();if(!k)break;delete S.alloc[k];}
+ };
+ const oldSlot=toggleVisualSlot;
+ toggleVisualSlot=key=>{
+  if(!isFR())return oldSlot(key);
+  const slot=slots().find(s=>s.key===key);if(!slot)return;
+  if(S.alloc[key])delete S.alloc[key];
+  else if(totals().unallocated>0)S.alloc[key]=1;
+  else {recruitView='renforts';alert('Aucune figurine de renfort disponible. Achetez un lot ou libérez une affectation.');}
+  render();
+ };
+ const oldConversions=reconcileConversions;
+ const removable=c=>c&&!['officier','chef','servant'].includes(c.role)&&['FSL','LMG'].includes(c.weapon);
+ reconcileConversions=()=>{
+  if(!isFR())return oldConversions();
+  const cv=S.conversions,all=new Map(conversionCandidates().map(c=>[c.id,c]));
+  const unique=a=>[...new Set(a||[])].filter(id=>all.has(id));
+  cv.panzerfaust=[];cv.downgraded=[];cv.upgradeChoices={};
+  cv.removed=unique(cv.removed).filter(id=>removable(all.get(id))&&!cv.upgraded.includes(id));
+  cv.allocation=Object.fromEntries(cv.removed.map(id=>[id,cv.allocation[id]==='diamond'?'diamond':'pm']));
+  cv.upgraded=unique(cv.upgraded).filter(id=>all.get(id).weapon==='FSL'&&all.get(id).role!=='servant'&&!cv.removed.includes(id));
+  const cap=Math.min(2,cv.removed.filter(id=>cv.allocation[id]==='pm').length)*2;
+  while(cv.upgraded.length>cap)cv.upgraded.pop();
+ };
+ const oldConversionRender=conversionRender;
+ conversionRender=()=>{
+  if(!isFR())return oldConversionRender();
+  reconcileConversions();const cv=S.conversions;
+  const pm=cv.removed.filter(id=>cv.allocation[id]==='pm').length;
+  $$('conversionStatus').innerHTML=`<p><b>${pm}/2</b> retraits pour les PM · <b>${cv.upgraded.length}/${pm*2}</b> conversions utilisées.</p><p><b>${diamondPaid()}/${diamondNeeded()}</b> figurines retirées pour les appuis ◆, dont ${S.fr.reserveSpent} en réserve.</p>`;
+  const teams=new Map();for(const c of conversionCandidates()){const name=c.group+' · '+c.team;if(!teams.has(name))teams.set(name,[]);teams.get(name).push(c);}
+  $$('conversionVisual').innerHTML=[...teams].map(([name,figs])=>`<div class="visual-team"><div class="visual-team-title">${escapeHTML(name)}</div><div class="figure-strip">${figs.map(c=>{
+   const rem=cv.removed.includes(c.id),up=cv.upgraded.includes(c.id),room=pm*2-cv.upgraded.length;
+   const actions=rem?`<small>Retrait : ${cv.allocation[c.id]==='diamond'?'appui ◆':'conversions PM'}</small><button data-fr-undo="${c.id}">Rétablir</button>`:
+    `${removable(c)&&!up?`<button class="outline" data-fr-remove="${c.id}" data-purpose="pm" ${pm>=2?'disabled':''}>Retirer pour PM</button><button class="outline" data-fr-remove="${c.id}" data-purpose="diamond" ${diamondPaid()>=diamondNeeded()?'disabled':''}>Retirer pour ◆</button>`:''}${up?`<button data-fr-undo="${c.id}">Revenir FSL</button>`:c.weapon==='FSL'&&c.role!=='servant'?`<button data-fr-upgrade="${c.id}" ${room<=0?'disabled':''}>→ PM</button>`:''}`;
+   return `<div class="conversion-unit ${rem?'conversion-removed':up?'conversion-upgraded':''}"><div class="conversion-figure">${token(rem?'RETIRÉ':currentWeapon(c),(rem?'conversion-removed-token':up?'weapon-converted-pm':'')+(c.role==='officier'?' officer-token':c.role==='chef'?' nco-token':''),c.group)}<small>${c.role==='officier'?'Officier':c.role==='chef'?'Chef':c.role==='servant'?'Servant':'Troupe'}</small></div><div class="conversion-buttons">${actions}</div></div>`;
+  }).join('')}</div></div>`).join('');
+ };
+ $$('conversionVisual').addEventListener('click',e=>{
+  if(!isFR())return;const b=e.target.closest('button');if(!b)return;
+  e.stopImmediatePropagation();const cv=S.conversions;
+  if(b.dataset.frRemove&&!b.disabled){cv.removed.push(b.dataset.frRemove);cv.allocation[b.dataset.frRemove]=b.dataset.purpose;}
+  if(b.dataset.frUpgrade&&!b.disabled)cv.upgraded.push(b.dataset.frUpgrade);
+  if(b.dataset.frUndo){const id=b.dataset.frUndo;cv.removed=cv.removed.filter(x=>x!==id);cv.upgraded=cv.upgraded.filter(x=>x!==id);delete cv.allocation[id];}
+  render();
+ },true);
+
+ const oldAudit=recruitmentAudit;
+ recruitmentAudit=(t,bud)=>{
+  if(!isFR())return oldAudit(t,bud);
+  const issues=[],add=(level,code,message,ref='Extension p.3, 5–6')=>issues.push({level,code,message,ref});
+  if(t.spent>bud)add('error','FR_BUDGET','Budget dépassé de '+(t.spent-bud)+' ★.');
+  if(S.lots>4)add('error','FR_LOTS','Maximum quatre lots de renforts.');
+  for(const o of offersFR())if((S.owned[o.id]||0)>o.max)add('error','FR_QUOTA_'+o.id,o.name+' dépasse son plafond.');
+  if((S.owned.app1_light||0)+(S.owned.app1_medium||0)>1)add('error','FR_MORTAR','Un seul mortier : léger OU moyen.');
+  if(diamondPaid()!==diamondNeeded())add('error','FR_DIAMONDS',diamondPaid()+' figurines retirées pour '+diamondNeeded()+' requises par les appuis ◆. Ajustez les retraits dans Équipement ou Conversions.');
+  if(S.fr.reserveSpent>S.lots*3-Object.keys(S.alloc).filter(k=>S.alloc[k]).length)add('error','FR_RESERVE','Retraits de réserve supérieurs aux figurines disponibles.');
+  if(S.conversions.removed.filter(id=>S.conversions.allocation[id]==='pm').length>2)add('error','FR_PM','Deux retraits maximum pour les conversions en PM.');
+  if(freeVehicleCount()>3)add('error','FR_FREE','Plafond de trois véhicules gratuits dépassé.','FAQ v2.5 F053');
+  if(t.unallocated>0)add('warning','FR_UNASSIGNED',t.unallocated+' figurine(s) de renfort restent à affecter.');
+  if(S.experience==='elite')add('error','FR_ELITE','La liste ne propose pas de passage permanent en Élite. Jusqu’au bout agit seulement pendant l’assaut.');
+  if(S.mode!=='libre')add('error','FR_SCENARIO','Ce scénario n’est pas configuré pour la liste de l’extension.');
+  return issues;
+ };
+ const oldSummary=appuiQuotaSummary,oldIntegrated=integratedVehicleSummary;
+ appuiQuotaSummary=()=>isFR()?'<div class="quota-panel"><strong>Plafonds français · p.6</strong><div class="quota-grid">'+offersFR().filter(o=>o.type!=='group'&&o.id!=='app1_medium').map(o=>'<span class="quota-chip">'+escapeHTML(o.sharedGroup?'Mortier léger / moyen':o.name)+' <b>'+(o.sharedGroup?offerGroupCount(o):(S.owned[o.id]||0))+'/'+o.max+'</b></span>').join('')+'</div></div>':oldSummary();
+ integratedVehicleSummary=()=>isFR()?'<p class="muted">◆ : retirer deux figurines par équipe recrutée. Les motos appartiennent à l’équipe Reco et se configurent dans Équipement.</p>':oldIntegrated();
+ const oldVehicleCard=vehCard;
+ vehCard=v=>{
+  let html=oldVehicleCard(v);if(!isFR())return html;
+  const extra=S.fr.colonial&&!S.vehicles.length?1:0;
+  if(extra){html=html.replace(/Budget après achat : <strong[^>]*>[^<]+<\/strong>/,'Budget après achat : <strong>'+(effectiveBudget()-totals().spent-v.cout_base_etoiles-1)+' ★</strong>');
+   html=html.replace('</article>','<p class="muted">Premier support colonial : +1 ★.</p></article>');
+   if(!canSpend(v.cout_base_etoiles+1))html=html.replace('data-addveh="'+v.id+'"','data-addveh="'+v.id+'" disabled');
+  }
+  return html;
+ };
+ $$('vehicleCatalogue').addEventListener('click',e=>{
+  if(!isFR())return;const b=e.target.closest('[data-addveh]');if(!b)return;
+  const v=vdata(b.dataset.addveh);if(!v)return;
+  if(!canSpend(v.cout_base_etoiles+(S.fr.colonial&&!S.vehicles.length?1:0)))e.stopImmediatePropagation();
+ },true);
+
+ // Add France beside the existing nation selectors without changing their menus.
+ $$('nationSwitchboard').insertAdjacentHTML('beforeend','<div class="nation-tile" data-nation-card="FR"><div class="nation-head"><div class="nation-icon fr-flag" aria-hidden="true"></div><div><div class="nation-name">France</div><div class="nation-sub">De la Pologne à la Sicile</div></div></div><button id="chooseFrance" type="button" class="nation-choice" title="Infanterie · 1939–1940 (p.6)"><span class="nation-choice-label">Infanterie · 1939–1940 (p.6)</span></button></div>');
+ $$('formationSelect').insertAdjacentHTML('beforeend','<option value="'+ID+'">France · Infanterie 1939–1940</option>');
+ $$('chooseFrance').onclick=()=>changeFormation(ID);
+ const oldSync=syncNationSelectors;
+ syncNationSelectors=()=>{oldSync();document.querySelector('[data-nation-card="FR"]').classList.toggle('active',isFR());};
+ document.head.insertAdjacentHTML('beforeend','<style>.fr-flag{background:#fff!important}.fr-flag::before{content:"";width:calc(100% - 4px);height:calc(100% - 4px);background:linear-gradient(90deg,#173a80 0 33%,#fff 33% 66%,#c52c38 66%)}.nation-switchboard{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))!important}.fr-options{border:1px solid #a8b8c9;background:#f0f4f8;border-radius:8px;padding:12px;margin:10px 0}.fr-options h3{margin-top:4px}.fr-options button{margin:3px}.fr-profile-symbol{font-size:70px;color:#4b6254}.fr-options [hidden]{display:none!important}</style>');
+ $$('view-experience').insertAdjacentHTML('beforeend','<div id="frEquipment" class="fr-options" hidden></div>');
+ const oldExtra=renderMecExtras;
+ renderMecExtras=()=>{
+  oldExtra();$$('frEquipment').hidden=!isFR();
+  const tab=document.querySelector('[data-view="experience"]');tab.textContent=isFR()?'5 · Expérience & équipement':'5 · Expérience';
+  const directSource=$$('view-formation').querySelector(':scope > p.muted');
+  if(!isFR()){directSource.textContent='Source : organigramme p.'+F.page_imprimee+'.';const eyebrow=$$('garageTitle').previousElementSibling;if(eyebrow)eyebrow.textContent='Catalogue des supports divisionnaires · 1944–1945';return;}
+  $$('mode').querySelector('[value="scenario1"]').disabled=true;
+  document.querySelector('[data-nation-card="FR"]').classList.add('active');
+  $$('garageTitle').textContent='Supports français · extension p.10–11';
+  const eyebrow=$$('garageTitle').previousElementSibling;if(eyebrow)eyebrow.textContent='De la Pologne à la Sicile · France 1939–1940';
+  $$('canonChoiceNote').textContent='25 mm : 0–2 équipes, ◆ chacune. 47 mm : 0–1 équipe, 1 ★. Plafonds distincts.';
+  $$('view-formation').querySelector('.recruit-lead').textContent='Infanterie française 1939–1940 : 20 figurines de base. Groupe 3 de 7 figurines à 3 ★, gratuit en Recrue. Sur la défensive : test D8 une fois par tour pour ignorer le modificateur de tir d’opportunité. Jusqu’au bout : test D8 avant l’assaut pour être considéré Élite pendant sa résolution.';
+  directSource.textContent='Extension p.5–6. Cette liste peut également représenter Vichy 1940–1942 et les FFL. LMG : FM 24/29 ou Chauchat ; Mo.P : lance-grenades VB 1940.';
+  $$('view-experience').querySelector('.recruit-lead').textContent='Recrue : le Groupe 3 est gratuit. L’option Troupes coloniales donne une réussite automatique à Jusqu’au bout ; le premier support divisionnaire coûte une étoile de plus.';
+  $$('view-experience').querySelector('[data-exp="elite"]').hidden=true;
+  $$('view-conversions').querySelector('.conversion-info .recruit-lead').textContent='Deux retraits maximum pour les PM, chacun permettant jusqu’à deux FSL → PM. Les appuis ◆ nécessitent deux retraits chacun, distincts des conversions. Choisissez les figurines ici ou utilisez les renforts en réserve dans Équipement.';
+  $$('view-renforts').querySelector('.recruit-lead').textContent='0–4 lots à 1 ★ : trois FSL par lot. Affectez-les aux emplacements pâles ou utilisez-les pour payer les appuis ◆. Un renfort ajouté à une moto la transforme en side-car.';
+  $$('renfortStatus').textContent=S.lots+'/4 lots · '+totals().assigned+' affectées · '+S.fr.reserveSpent+' retirées pour ◆ · '+totals().unallocated+' en réserve';
+  const rosterLead=document.querySelector('main > section.panel:not(.catalogue) > p.muted');if(rosterLead)rosterLead.textContent='Base : commandement 4 figurines, Groupes 1 et 2 de 8 figurines chacun. Groupe 3 : 7 figurines, maximum 12 avec renforts.';
+  $$('frEquipment').innerHTML=equipmentHTML();
+ };
+ function motoLabel(){
+  if(!S.owned.app6||!S.fr.motorized)return '';
+  const slotsMoto=slots().filter(s=>s.key.startsWith('app6_0_0_'));
+  const sidecars=slotsMoto.filter(s=>S.alloc[s.key]&&!S.conversions.removed.includes(s.key+'_reinforced')).length;
+  const count=S.fr.secondMoto?2:1;
+  return count+' véhicule(s) Reco : '+(count-sidecars)+' moto(s), '+sidecars+' side-car(s) · une seule équipe et un seul chef';
+ }
+ function equipmentHTML(){
+  const remaining=diamondNeeded()-diamondPaid(),hasReco=!!S.owned.app6;
+  return `<h3>Équipement français</h3><label><input type="checkbox" data-fr-option="colonial" ${S.fr.colonial?'checked':''}> Troupes coloniales</label><p class="muted">Jusqu’au bout automatique. Surcoût unique de 1 ★ si au moins un support divisionnaire est recruté.</p><h3>Paiement des appuis ◆</h3><p>${diamondPaid()}/${diamondNeeded()} figurines retirées · ${S.fr.reserveSpent} prises dans les renforts en réserve.</p><button data-fr-reserve="1" ${remaining<=0||totals().unallocated<=0?'disabled':''}>Retirer 1 figurine de réserve pour ◆</button><button class="outline" data-fr-reserve="-1" ${S.fr.reserveSpent<=0?'disabled':''}>Rétablir 1 figurine de réserve</button><p class="muted">Vous pouvez aussi désigner des figurines de la section dans Conversions. Un retrait ne paie qu’un seul usage.</p><h3>Reconnaissance</h3>${hasReco?`<label><input type="checkbox" data-fr-option="recoDowngrade" ${S.fr.recoDowngrade?'checked':''}> Remplacer la LMG par un FSL (−1 ★)</label><label><input type="checkbox" data-fr-option="motorized" ${S.fr.motorized?'checked':''}> Transporter cette équipe sur moto(s)</label><label><input type="checkbox" data-fr-option="secondMoto" ${S.fr.secondMoto?'checked':''} ${S.fr.motorized?'':'disabled'}> Deuxième moto : +2 FSL dans la même équipe (+1 ★)</label><p>${escapeHTML(motoLabel())}</p><p class="muted">Une figurine de renfort dans l’emplacement de chaque moto donne un side-car. Toute l’équipe est embarquée ou débarquée ; les motos ne sont pas des véhicules divisionnaires ciblables.</p>`:'<p class="muted">Recrutez l’équipe Reco motorisable dans Appuis pour régler ses armes et ses motos.</p>'}<h3>Profils particuliers</h3><p class="muted">F-AC : portée 2L, capacité E, combat rapproché 1D6 (p.3, arbitrage déjà validé). Lorraine 38L sans armement : retrait du canon et de la MMG coaxiale validé par l’utilisateur.</p>`;
+ }
+ $$('frEquipment').addEventListener('change',e=>{
+  const key=e.target.dataset.frOption;if(!isFR()||!['colonial','motorized','secondMoto','recoDowngrade'].includes(key))return;
+  const previous={...S.fr},before=totals().spent;S.fr[key]=e.target.checked;
+  if(key==='motorized'&&!S.fr.motorized)S.fr.secondMoto=false;
+  if(totals().spent>effectiveBudget()&&totals().spent>before){S.fr=previous;alert('Budget insuffisant pour cette option.');}
+  render();
+ });
+ $$('frEquipment').addEventListener('click',e=>{
+  const b=e.target.closest('[data-fr-reserve]');if(!b||b.disabled||!isFR())return;
+  const delta=Number(b.dataset.frReserve);if(delta>0&&diamondPaid()<diamondNeeded()&&totals().unallocated>0)S.fr.reserveSpent++;
+  if(delta<0&&S.fr.reserveSpent>0)S.fr.reserveSpent--;render();
+ });
+ $$('view-experience').addEventListener('click',e=>{
+  if(isFR()&&e.target.closest('[data-exp="elite"]'))e.stopImmediatePropagation();
+ },true);
+ const oldMakeVisual=makeVisual;
+ makeVisual=(only=false)=>{
+  let html=oldMakeVisual(only);if(!isFR())return html;
+  html=html.replace('Équipe 1 · 4 figurines','Équipe 1 · 3 figurines + 3 renforts').replace('Équipe 2 · 4 figurines + renfort','Équipe 2 · 4 figurines + 2 renforts');
+  if(!only&&S.owned.app6&&S.fr.motorized)html+='<div class="integrated-vehicle-note">'+escapeHTML(motoLabel())+'</div>';
+  return html;
+ };
+ const oldInventory=buildPaintInventory;
+ buildPaintInventory=t=>{let h=oldInventory(t);return isFR()?h.replaceAll('FM (MG42)','LMG (FM 24/29 ou Chauchat)').replaceAll('Mo.P','Lance-grenades VB 1940'):h;};
+ const oldOrganicPrint=organicTransportPrint;
+ organicTransportPrint=()=>isFR()&&motoLabel()?'<section class="p-organics"><h3>Reconnaissance montée</h3><div>'+escapeHTML(motoLabel())+'</div></section>':oldOrganicPrint();
+ const oldPrint=printContent;
+ printContent=mode=>{let h=oldPrint(mode);if(!isFR())return h;return h.replace('<footer class="p-footer">','<section class="p-organics"><h3>Règles et options françaises</h3><div>De la Pologne à la Sicile · France 1939–1940'+(S.fr.colonial?' · Troupes coloniales : Jusqu’au bout automatique ; premier support +1 ★.':' · Jusqu’au bout : D8 avant assaut.')+' Sur la défensive : D8 une fois par tour. Appuis ◆ : '+diamondPaid()+'/'+diamondNeeded()+' retraits. Conversions PM : '+S.conversions.upgraded.length+'.</div></section><footer class="p-footer">');};
+
+ // Export/import of the new namespace is independent of unchanged V25 saves.
+ function exportFR(){return {format:'VFV_PILOTE_V04',ruleset_id:'VFV_POLOGNE_SICILE',source_pack:'POLOGNE_SICILE',formation_id:ID,nom_groupement:S.forceName,mode:S.mode,budget:S.budget,owned:structuredClone(S.owned),lots:S.lots,alloc:structuredClone(S.alloc),vehicles:structuredClone(S.vehicles),conversions:structuredClone(S.conversions),experience:S.experience,fr:structuredClone(S.fr),validation:'A_TESTER_DEV19O'};}
+ function importFR(d){
+  if(d.format!=='VFV_PILOTE_V04'||d.ruleset_id!=='VFV_POLOGNE_SICILE'||d.formation_id!==ID)throw Error('Format, corpus ou formation incompatible.');
+  if(d.mode!=='libre'||!['standard','recrue'].includes(d.experience))throw Error('Mode ou expérience incompatible avec l’infanterie française.');
+  const integer=(n,min,max)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
+  if(!integer(d.budget,0,99)||!integer(d.lots,0,4))throw Error('Budget ou lots invalides.');
+  if(!d.fr||['colonial','motorized','secondMoto','recoDowngrade'].some(k=>typeof d.fr[k]!=='boolean')||!integer(d.fr.reserveSpent,0,d.lots*3)||d.fr.secondMoto&&!d.fr.motorized)throw Error('Options françaises invalides.');
+  if(!d.owned||typeof d.owned!=='object'||Array.isArray(d.owned))throw Error('Achats illisibles.');
+  const known=new Set(offersFR().map(o=>o.id));
+  for(const [id,n] of Object.entries(d.owned))if(!known.has(id)||!integer(n,0,20))throw Error('Achat inconnu ou quantité invalide : '+id);
+  if(!Array.isArray(d.vehicles)||d.vehicles.length>100)throw Error('Liste de véhicules invalide.');
+  for(const item of d.vehicles){const v=frVehicles.find(v=>v.id===item.id);if(!v||!Array.isArray(item.options)||new Set(item.options).size!==item.options.length||item.options.some(i=>!Number.isInteger(i)||!allWeapons(v)[i]?.optionnelle))throw Error('Véhicule ou option inconnue.');const groups=item.options.map(i=>allWeapons(v)[i].groupe_alternative).filter(Boolean);if(new Set(groups).size!==groups.length)throw Error('Options exclusives cumulées.');}
+  const cv=d.conversions;if(!cv||['removed','upgraded','downgraded','panzerfaust'].some(k=>!Array.isArray(cv[k])||cv[k].some(x=>typeof x!=='string')||new Set(cv[k]).size!==cv[k].length)||cv.panzerfaust.length||cv.downgraded.length||!cv.allocation||typeof cv.allocation!=='object')throw Error('Conversions françaises invalides.');
+  if(!d.alloc||typeof d.alloc!=='object'||Array.isArray(d.alloc)||Object.values(d.alloc).some(x=>x!==1&&x!==true))throw Error('Affectations invalides.');
+  // Validate against a temporary state, restoring it even when any check fails.
+  const prior=structuredClone(S);
+  try {
+   Object.assign(S,{owned:structuredClone(d.owned),lots:d.lots,alloc:structuredClone(d.alloc),vehicles:structuredClone(d.vehicles),conversions:structuredClone(cv),experience:d.experience,fr:structuredClone(d.fr),budget:d.budget,mode:d.mode});
+   const candidates=new Map(conversionCandidates().map(c=>[c.id,c]));
+   const validSlots=new Set(slots().map(s=>s.key));
+   if(Object.keys(S.alloc).some(k=>!validSlots.has(k))||Object.keys(S.alloc).length+S.fr.reserveSpent>S.lots*3)throw Error('Affectation hors emplacement ou réserve insuffisante.');
+   if(cv.removed.some(id=>!removable(candidates.get(id))||cv.upgraded.includes(id)||!['pm','diamond'].includes(cv.allocation[id]))||cv.upgraded.some(id=>!candidates.has(id)||candidates.get(id).weapon!=='FSL'||candidates.get(id).role==='servant'))throw Error('Retrait ou conversion non autorisé.');
+   const pm=cv.removed.filter(id=>cv.allocation[id]==='pm').length;
+   if(pm>2||cv.upgraded.length>pm*2)throw Error('Conversions PM non financées.');
+  } finally {Object.assign(S,prior);}
+  Object.assign(S,{owned:structuredClone(d.owned),lots:d.lots,lotTypes:[],alloc:structuredClone(d.alloc),vehicles:structuredClone(d.vehicles),conversions:structuredClone(cv),experience:d.experience,fr:structuredClone(d.fr),budget:d.budget,mode:d.mode,forceName:typeof d.nom_groupement==='string'?d.nom_groupement.slice(0,90):''});
+  $$('mode').value=S.mode;render();
+ }
+ const oldExport=$$('export').onclick,oldImport=$$('import').onchange;
+ $$('export').onclick=()=>{
+  if(!isFR())return oldExport();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportFR(),null,2)],{type:'application/json'}));a.download='vfv_france_infanterie_1939_1940_dev19o.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ };
+ $$('import').onchange=async e=>{
+  if(!isFR())return oldImport(e);
+  try{const file=e.target.files?.[0];if(!file)return;importFR(JSON.parse(await file.text()));const errors=recruitmentAudit(totals(),effectiveBudget()).filter(x=>x.level==='error');alert('Sauvegarde française importée.'+(errors.length?' '+errors.length+' incompatibilité(s) à corriger.':''));}catch(err){alert('Import refusé : '+err.message);}finally{e.target.value='';}
+ };
+ // Keep deterministic entry points for regression and round-trip tests.
+ window.VFVFrance={id:ID,export:exportFR,import:importFR,formation,vehicles:frVehicles,diamondNeeded,diamondPaid};
+ const oldRender=render;
+ render=()=>{
+  document.body.classList.toggle('fr-force',isFR());oldRender();if(!isFR())return;
+  for(const card of $$('offers').querySelectorAll('.recruit-card')){
+   const b=card.querySelector('[data-plus]'),o=offersFR().find(o=>o.id===b?.dataset.plus);if(!o)continue;
+   if(o.diamond){card.querySelector('.cost').textContent='◆ · 2 figurines';card.insertAdjacentHTML('beforeend','<button class="outline" data-fr-goto-equipment>Régler les retraits ◆</button>');}
+   if(o.id==='app6')card.insertAdjacentHTML('beforeend','<button class="outline" data-fr-goto-equipment>Régler la LMG et les motos</button>');
+   const specs=card.querySelector('.appui-specs');if(o.sharedGroup&&specs)specs.textContent='Quota commun : '+offerGroupCount(o)+'/'+o.max+' · extension p.6';
+  }
+  if(S.fr.colonial&&S.vehicles.length)$$('remaining').textContent+=' · surcoût colonial +1 ★ inclus';
+ };
+ $$('offers').addEventListener('click',e=>{if(isFR()&&e.target.closest('[data-fr-goto-equipment]')){document.querySelector('[data-view="experience"]').click();$$('frEquipment').scrollIntoView({block:'nearest'});}});
+ document.head.insertAdjacentHTML('beforeend','<style>@media print{body.fr-force .p-recap{break-before:page}body.fr-force .p-recap>h2{break-after:avoid}}</style>');
+ changeFormation(ID);
+})();
+</script>
+<script>/* dev.19o — De la Pologne à la Sicile. Source pages 3, 5, 6, 10–11.
+   Extension scoped to PS_FR_INF_1939_1940; existing formations delegate unchanged. */
+(() => {
+ 'use strict';
+ const src = {formation:JSON.parse($$('dragons-source').textContent),vehicles:JSON.parse($$('fr-source').textContent).vehicles};
+ const ID = 'PS_FR_DRAGONS_1939_1940';
+ const isFR = () => S.formation === ID;
+ const defaults = () => ({colonial:false,motorized:false,secondMoto:false,recoDowngrade:false,reserveSpent:0});
+ S.dp = defaults();S.dpTransports={command:['PS_FR_CAMION'],group1:['PS_FR_CAMION','PS_FR_CAMION'],group2:['PS_FR_CAMION','PS_FR_CAMION'],group3:['PS_FR_CAMION','PS_FR_CAMION']};const previousTypedLots=usesTypedLots;usesTypedLots=()=>isFR()||previousTypedLots();
+ const normalizeTeam = t => ({...t, nom:t.nom.replace(/Équipe(\d)/,'Équipe $1').replace('Équipecommandement','Équipe de commandement'), chef_armement:t.chef_armement.replace('SNIPER','Sniper')});
+ const formation = {
+  ...src.formation, periode:'1939–1940',theatre:'Europe / Vichy / FFL',section:'Dragons portés',equilibrage_etoiles:0,
+  base:src.formation.base.map(g=>({...g,nom:g.nom.replace(/Groupe(\d)/,'Groupe $1'),cout_etoiles:0,equipes:g.equipes.map(normalizeTeam)})),
+  groupes_appui:src.formation.groupes_appui.map(g=>({...g,nom:'Groupe 3',equipes:g.equipes.map(normalizeTeam)})),
+  appuis:[], renforts:{minimum:0,maximum:4,cout_etoiles:1,alternatives:[{nombre:3,armement:'FSL'}]},
+  experience:{elite_cout:3}
+ };
+ function parseWeapon(text) {
+  const montage = /-([TCP])-?$/.exec(text)?.[1] || null;
+  return {code_generique:text.replace(/-([TCP])-?$/,'').replace(/coaxiale/,'').replace(/arrière/,'').trim(),montage,coaxiale:text.includes('coaxiale'),face:text.includes('arrière')?'arrière':null,optionnelle:false};
+ }
+ const frVehicles = src.vehicles.filter(v=>v.id!=='PS_FR_MOTO').map(v=>({
+  id:v.id,nation:'France',nom_source:v.nom,page_imprimee:v.page_imprimee,cout_base_etoiles:v.cout_etoiles,blindage:v.blindage,
+  roulement:({ROUES:'Roues',CHENILLES:'Chenilles',SEMI_CHENILLES:'Semi-chenilles'})[v.roulement],
+  armes_principales:(v.armes_principales||[]).map(parseWeapon),armes_secondaires:(Array.isArray(v.armes_secondaires)?v.armes_secondaires:[]).map(parseWeapon),
+  regles_speciales:v.regles_speciales,transport_capacite:Number(v.regles_speciales.join(' ').match(/Transport(\d+)/)?.[1])||null
+ }));
+ // User arbitration 2026-10-24, PS_Q005: remove both printed turret weapons.
+ // Keep the verbatim source JSON unchanged; this is not an official erratum.
+ const lorraine = frVehicles.find(v=>v.id==='PS_FR_LORRAINE38L');
+ lorraine.armes_principales=[];
+ lorraine.armes_secondaires=[];
+ const laffy = frVehicles.find(v=>v.id==='PS_FR_LAFFY');
+ laffy.armes_principales=[{...parseWeapon('A/C Légerarrière-T'),optionnelle:true,cout_option_etoiles:1,groupe_alternative:'laffy_primary'},{...parseWeapon('MMG-P'),optionnelle:true,cout_option_etoiles:1,groupe_alternative:'laffy_primary'}];
+ laffy.armes_secondaires=[{...parseWeapon('MMGarrière-P'),optionnelle:true,cout_option_etoiles:1}];
+ // Original array constants are mutable; only add a new namespace.
+ FORMATION_IDS.push(ID); NATION_FORMATIONS.FR.push([ID,'Dragons portés · 1939–1940 (P.7)']); FORMATION_NATION[ID]='FR';
+ const oldData = formationDataById;
+ formationDataById = id => id===ID?formation:oldData(id);
+ const oldVehicles = vehicleSource;
+ vehicleSource = () => isFR()?frVehicles:oldVehicles();
+ const oldCategory = vehicleCategory;
+ vehicleCategory = v => v.id.startsWith('PS_FR_')?(v.regles_speciales.includes('Reco')?'Reconnaissance':v.transport_capacite?'Transports':'Blindés de combat'):oldCategory(v);
+ const oldIllustration = vehicleIllustration;
+ vehicleIllustration = v => v.id.startsWith('PS_FR_')?'<div class="fr-profile-symbol" aria-hidden="true">'+(v.transport_capacite?'▰':'▣')+'</div>':oldIllustration(v);
+ const oldAppImage = appuiIllustration;
+ appuiIllustration = o => isFR()?'<div class="card-visual note"><span>'+escapeHTML(o.model.modele||o.name)+'</span></div>':oldAppImage(o);
+ const oldToken=token;
+ token=(w,cls='',group='')=>{
+  let h=oldToken(w,cls,group);if(!isFR())return h;
+  return h.replaceAll('MG42',String(w).startsWith('MMG')?'Hotchkiss 1914':'24/29 / Chauchat');
+ };
+
+ function offersFR() {
+  const list=[{id:'group3',name:'Groupe 3',cost:3,max:1,model:formation.groupes_appui[0],type:'group'}];
+  const names={MMG:'MMG',MORTIER:'Mortier',F_AC:'F-AC',SNIPER:'Sniper',CANON_ULTRA_LEGER:'Canon A/C ultra-léger',CANON_LEGER:'Canon A/C léger',RECO_MOTORISABLE:'Reco motorisable',RECO_A_PIED:'Reco à pied'};
+  src.formation.appuis.forEach(a=>{const i={MMG:0,MORTIER:1,F_AC:2,SNIPER:3,RECO_MOTORISABLE:6}[a.id];
+   let team=normalizeTeam(a.equipes[0]);
+   const diamond=a.cout?.type==='RETRAIT_FIGURINES';
+   const inventoryType=({F_AC:'AC',MORTIER:'Mo.M',CANON_ULTRA_LEGER:'Canon A/C',CANON_LEGER:'Canon A/C'})[a.id]||names[a.id];
+   const common={id:'app'+i,name:names[a.id],cost:diamond?0:(a.cout?.valeur||0),max:a.maximum,type:'app',diamond,
+    model:{nom:names[a.id],type:inventoryType,modele:a.id==='F_AC'?'Fusil antichar (F-AC)':a.modele,equipe:team}};
+   if(a.id==='MORTIER') {
+    for(const [key,code,cost] of [['light','Mo.Léger',1],['medium','Mo.M',2]])list.push({...common,id:'app1_'+key,name:'Mortier '+(key==='light'?'léger':'moyen'),cost,sharedGroup:'fr_mortar',model:{...common.model,modele:'Mortier '+(key==='light'?'léger':'moyen'),equipe:{...team,chef_armement:code}}});
+   } else {
+    if(a.id==='RECO_MOTORISABLE') {
+     team={...team,autres_disponibles:[...team.autres_disponibles],places_renfort:[...team.places_renfort]};
+     if(S.dp.recoDowngrade)team.autres_disponibles[0]='FSL';
+     if(S.dp.secondMoto){team.autres_disponibles.push('FSL','FSL');team.places_renfort.push('FSL');team.effectif_base+=2;team.effectif_max+=3;}
+     common.cost=1+(S.dp.secondMoto?1:0)-(S.dp.recoDowngrade?1:0);
+     common.model={...common.model,equipe:team,regles_speciales:['Reco']};
+    }
+    if(a.id==='RECO_A_PIED')common.model.regles_speciales=['Reco'];
+    list.push(common);
+   }
+  });
+  return list;
+ }
+ const oldOffers=offers;
+ offers=()=>isFR()?offersFR():oldOffers();
+ const oldGroupCount=offerGroupCount, oldLimit=offerQuantityLimit;
+ offerGroupCount=o=>isFR()&&o.sharedGroup?offersFR().filter(a=>a.sharedGroup===o.sharedGroup).reduce((n,a)=>n+(S.owned[a.id]||0),0):oldGroupCount(o);
+ offerQuantityLimit=o=>isFR()&&o.sharedGroup?Math.max(0,o.max-offerGroupCount(o)+(S.owned[o.id]||0)):oldLimit(o);
+ const oldTotals=totals;
+ totals=()=>{const t=oldTotals();if(isFR()){t.spent+=organicCost();t.unallocated-=S.dp.reserveSpent;}return t;};
+ function diamondNeeded(){return selected().reduce((n,o)=>n+(o.diamond?2*(S.owned[o.id]||0):0),0);}
+ function diamondPaid(){return S.dp.reserveSpent+S.conversions.removed.filter(id=>S.conversions.allocation[id]==='diamond').length;}
+ const oldFreeCount=freeVehicleCount;
+ // The surcharge is force-wide, once, even when the first vehicle is otherwise free.
+ freeVehicleCount=()=>isFR()?S.vehicles.filter(v=>vehicleCost(v)===0).length:oldFreeCount();
+ const oldPermitted=permitted;
+ permitted=o=>isFR()?true:oldPermitted(o);
+
+ const oldReset=remettreCompositionAZero;
+ remettreCompositionAZero=()=>{oldReset();S.dp=defaults();S.dpTransports={command:['PS_FR_CAMION'],group1:['PS_FR_CAMION','PS_FR_CAMION'],group2:['PS_FR_CAMION','PS_FR_CAMION'],group3:['PS_FR_CAMION','PS_FR_CAMION']};};
+ const oldStarted=compositionCommencee;
+ compositionCommencee=()=>oldStarted()||(isFR()&&(S.dp.colonial||S.dp.motorized||S.dp.secondMoto||S.dp.recoDowngrade||S.dp.reserveSpent));
+ const oldReconcile=reconcile;
+ reconcile=()=>{
+  oldReconcile();if(!isFR())return;
+  const placed=Object.keys(S.alloc).filter(k=>S.alloc[k]);
+  // Reserve withdrawals cannot be assigned again to a silhouette.
+  while(placed.length+S.dp.reserveSpent>S.lots*3){const k=placed.pop();if(!k)break;delete S.alloc[k];}
+ };
+ const oldSlot=toggleVisualSlot;
+ toggleVisualSlot=key=>{
+  if(!isFR())return oldSlot(key);
+  const slot=slots().find(s=>s.key===key);if(!slot)return;
+  if(S.alloc[key])delete S.alloc[key];
+  else if(totals().unallocated>0)S.alloc[key]=1;
+  else {recruitView='renforts';alert('Aucune figurine de renfort disponible. Achetez un lot ou libérez une affectation.');}
+  render();
+ };
+ const oldConversions=reconcileConversions;
+ const removable=c=>c&&!['officier','chef','servant'].includes(c.role)&&['FSL','LMG'].includes(c.weapon);
+ reconcileConversions=()=>{
+  if(!isFR())return oldConversions();
+  const cv=S.conversions,all=new Map(conversionCandidates().map(c=>[c.id,c]));
+  const unique=a=>[...new Set(a||[])].filter(id=>all.has(id));
+  cv.panzerfaust=[];cv.downgraded=[];cv.upgradeChoices={};
+  cv.removed=unique(cv.removed).filter(id=>removable(all.get(id))&&!cv.upgraded.includes(id));
+  cv.allocation=Object.fromEntries(cv.removed.map(id=>[id,cv.allocation[id]==='diamond'?'diamond':'pm']));
+  cv.upgraded=unique(cv.upgraded).filter(id=>all.get(id).weapon==='FSL'&&all.get(id).role!=='servant'&&!cv.removed.includes(id));
+  const cap=Math.min(2,cv.removed.filter(id=>cv.allocation[id]==='pm').length)*2;
+  while(cv.upgraded.length>cap)cv.upgraded.pop();
+ };
+ const oldConversionRender=conversionRender;
+ conversionRender=()=>{
+  if(!isFR())return oldConversionRender();
+  reconcileConversions();const cv=S.conversions;
+  const pm=cv.removed.filter(id=>cv.allocation[id]==='pm').length;
+  $$('conversionStatus').innerHTML=`<p><b>${pm}/2</b> retraits pour les PM · <b>${cv.upgraded.length}/${pm*2}</b> conversions utilisées.</p><p><b>${diamondPaid()}/${diamondNeeded()}</b> figurines retirées pour les appuis ◆, dont ${S.dp.reserveSpent} en réserve.</p>`;
+  const teams=new Map();for(const c of conversionCandidates()){const name=c.group+' · '+c.team;if(!teams.has(name))teams.set(name,[]);teams.get(name).push(c);}
+  $$('conversionVisual').innerHTML=[...teams].map(([name,figs])=>`<div class="visual-team"><div class="visual-team-title">${escapeHTML(name)}</div><div class="figure-strip">${figs.map(c=>{
+   const rem=cv.removed.includes(c.id),up=cv.upgraded.includes(c.id),room=pm*2-cv.upgraded.length;
+   const actions=rem?`<small>Retrait : ${cv.allocation[c.id]==='diamond'?'appui ◆':'conversions PM'}</small><button data-dp-undo="${c.id}">Rétablir</button>`:
+    `${removable(c)&&!up?`<button class="outline" data-dp-remove="${c.id}" data-purpose="pm" ${pm>=2?'disabled':''}>Retirer pour PM</button><button class="outline" data-dp-remove="${c.id}" data-purpose="diamond" ${diamondPaid()>=diamondNeeded()?'disabled':''}>Retirer pour ◆</button>`:''}${up?`<button data-dp-undo="${c.id}">Revenir FSL</button>`:c.weapon==='FSL'&&c.role!=='servant'?`<button data-dp-upgrade="${c.id}" ${room<=0?'disabled':''}>→ PM</button>`:''}`;
+   return `<div class="conversion-unit ${rem?'conversion-removed':up?'conversion-upgraded':''}"><div class="conversion-figure">${token(rem?'RETIRÉ':currentWeapon(c),(rem?'conversion-removed-token':up?'weapon-converted-pm':'')+(c.role==='officier'?' officer-token':c.role==='chef'?' nco-token':''),c.group)}<small>${c.role==='officier'?'Officier':c.role==='chef'?'Chef':c.role==='servant'?'Servant':'Troupe'}</small></div><div class="conversion-buttons">${actions}</div></div>`;
+  }).join('')}</div></div>`).join('');
+ };
+ $$('conversionVisual').addEventListener('click',e=>{
+  if(!isFR())return;const b=e.target.closest('button');if(!b)return;
+  e.stopImmediatePropagation();const cv=S.conversions;
+  if(b.dataset.dpRemove&&!b.disabled){cv.removed.push(b.dataset.dpRemove);cv.allocation[b.dataset.dpRemove]=b.dataset.purpose;}
+  if(b.dataset.dpUpgrade&&!b.disabled)cv.upgraded.push(b.dataset.dpUpgrade);
+  if(b.dataset.dpUndo){const id=b.dataset.dpUndo;cv.removed=cv.removed.filter(x=>x!==id);cv.upgraded=cv.upgraded.filter(x=>x!==id);delete cv.allocation[id];}
+  render();
+ },true);
+
+ const oldAudit=recruitmentAudit;
+ recruitmentAudit=(t,bud)=>{
+  if(!isFR())return oldAudit(t,bud);
+  const issues=[],add=(level,code,message,ref='Extension p.3, 5–6')=>issues.push({level,code,message,ref});
+  if(t.spent>bud)add('error','FR_BUDGET','Budget dépassé de '+(t.spent-bud)+' ★.');
+  if(S.lots>4)add('error','FR_LOTS','Maximum quatre lots de renforts.');
+  for(const o of offersFR())if((S.owned[o.id]||0)>o.max)add('error','FR_QUOTA_'+o.id,o.name+' dépasse son plafond.');
+  if((S.owned.app1_light||0)+(S.owned.app1_medium||0)>1)add('error','FR_MORTAR','Un seul mortier : léger OU moyen.');
+  if(diamondPaid()!==diamondNeeded())add('error','FR_DIAMONDS',diamondPaid()+' figurines retirées pour '+diamondNeeded()+' requises par les appuis ◆. Ajustez les retraits dans Équipement ou Conversions.');
+  if(S.dp.reserveSpent>totals().fslCapacity-totals().fslAssigned)add('error','FR_RESERVE','Retraits de réserve supérieurs aux figurines disponibles.');
+  if(S.conversions.removed.filter(id=>S.conversions.allocation[id]==='pm').length>2)add('error','FR_PM','Deux retraits maximum pour les conversions en PM.');
+  if(freeVehicleCount()>3)add('error','FR_FREE','Plafond de trois véhicules gratuits dépassé.','FAQ v2.5 F053');
+  if(t.unallocated>0)add('warning','FR_UNASSIGNED',t.unallocated+' figurine(s) de renfort restent à affecter.');
+  if(S.experience==='recrue')add('error','DP_RECRUE','Les Dragons portés ne proposent pas Recrue.');
+  if(S.mode!=='libre')add('error','FR_SCENARIO','Ce scénario n’est pas configuré pour la liste de l’extension.');
+  return issues;
+ };
+ const oldSummary=appuiQuotaSummary,oldIntegrated=integratedVehicleSummary;
+ appuiQuotaSummary=()=>isFR()?'<div class="quota-panel"><strong>Plafonds français · p.6</strong><div class="quota-grid">'+offersFR().filter(o=>o.type!=='group'&&o.id!=='app1_medium').map(o=>'<span class="quota-chip">'+escapeHTML(o.sharedGroup?'Mortier léger / moyen':o.name)+' <b>'+(o.sharedGroup?offerGroupCount(o):(S.owned[o.id]||0))+'/'+o.max+'</b></span>').join('')+'</div></div>':oldSummary();
+ integratedVehicleSummary=()=>isFR()?'<p class="muted">◆ : retirer deux figurines par équipe recrutée. Les motos appartiennent à l’équipe Reco et se configurent dans Équipement.</p>':oldIntegrated();
+ const oldVehicleCard=vehCard;
+ vehCard=v=>{
+  let html=oldVehicleCard(v);if(!isFR())return html;
+  const extra=S.dp.colonial&&!S.vehicles.length?1:0;
+  if(extra){html=html.replace(/Budget après achat : <strong[^>]*>[^<]+<\/strong>/,'Budget après achat : <strong>'+(effectiveBudget()-totals().spent-v.cout_base_etoiles-1)+' ★</strong>');
+   html=html.replace('</article>','<p class="muted">Premier support colonial : +1 ★.</p></article>');
+   if(!canSpend(v.cout_base_etoiles+1))html=html.replace('data-addveh="'+v.id+'"','data-addveh="'+v.id+'" disabled');
+  }
+  return html;
+ };
+ $$('vehicleCatalogue').addEventListener('click',e=>{
+  if(!isFR())return;const b=e.target.closest('[data-addveh]');if(!b)return;
+  const v=vdata(b.dataset.addveh);if(!v)return;
+  if(!canSpend(v.cout_base_etoiles+(S.dp.colonial&&!S.vehicles.length?1:0)))e.stopImmediatePropagation();
+ },true);
+
+ // Add France beside the existing nation selectors without changing their menus.
+ $$('formationSelect').insertAdjacentHTML('beforeend','<option value="'+ID+'">France · Dragons portés 1939–1940</option>');
+ const oldSync=syncNationSelectors;
+ syncNationSelectors=()=>{oldSync();document.querySelector('[data-nation-card="FR"]').classList.toggle('active',isFR()||S.formation===VFVFrance.id);};
+ document.head.insertAdjacentHTML('beforeend','<style>.fr-flag{background:#fff!important}.fr-flag::before{content:"";width:calc(100% - 4px);height:calc(100% - 4px);background:linear-gradient(90deg,#173a80 0 33%,#fff 33% 66%,#c52c38 66%)}.nation-switchboard{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))!important}.fr-options{border:1px solid #a8b8c9;background:#f0f4f8;border-radius:8px;padding:12px;margin:10px 0}.fr-options h3{margin-top:4px}.fr-options button{margin:3px}.fr-profile-symbol{font-size:70px;color:#4b6254}.fr-options [hidden]{display:none!important}</style>');
+ $$('view-experience').insertAdjacentHTML('beforeend','<div id="dpEquipment" class="fr-options" hidden></div>');
+ const oldExtra=renderMecExtras;
+ renderMecExtras=()=>{
+  oldExtra();$$('dpEquipment').hidden=!isFR();
+  const tab=document.querySelector('[data-view="experience"]');tab.textContent=isFR()?'5 · Expérience & équipement':'5 · Expérience';
+  const directSource=$$('view-formation').querySelector(':scope > p.muted');
+  if(!isFR()){directSource.textContent='Source : organigramme p.'+F.page_imprimee+'.';const eyebrow=$$('garageTitle').previousElementSibling;if(eyebrow)eyebrow.textContent='Catalogue des supports divisionnaires · 1944–1945';return;}
+  $$('mode').querySelector('[value="scenario1"]').disabled=true;
+  document.querySelector('[data-nation-card="FR"]').classList.add('active');
+  $$('garageTitle').textContent='Supports français · extension p.10–11';
+  const eyebrow=$$('garageTitle').previousElementSibling;if(eyebrow)eyebrow.textContent='De la Pologne à la Sicile · France 1939–1940';
+  $$('canonChoiceNote').textContent='25 mm : 0–2 équipes, ◆ chacune. 47 mm : 0–1 équipe, 1 ★. Plafonds distincts.';
+  $$('view-formation').querySelector('.recruit-lead').textContent='Infanterie française 1939–1940 : 20 figurines de base. Groupe 3 de 7 figurines à 3 ★, gratuit en Recrue. Sur la défensive : test D8 une fois par tour pour ignorer le modificateur de tir d’opportunité. Jusqu’au bout : test D8 avant l’assaut pour être considéré Élite pendant sa résolution.';
+  directSource.textContent='Extension p.5–6. Cette liste peut également représenter Vichy 1940–1942 et les FFL. LMG : FM 24/29 ou Chauchat ; Mo.P : lance-grenades VB 1940.';
+  $$('view-experience').querySelector('.recruit-lead').textContent='Recrue : le Groupe 3 est gratuit. L’option Troupes coloniales donne une réussite automatique à Jusqu’au bout ; le premier support divisionnaire coûte une étoile de plus.';
+  $$('view-experience').querySelector('[data-exp="elite"]').hidden=false;$$('view-experience').querySelector('[data-exp="recrue"]').hidden=true;
+  $$('view-conversions').querySelector('.conversion-info .recruit-lead').textContent='Deux retraits maximum pour les PM, chacun permettant jusqu’à deux FSL → PM. Les appuis ◆ nécessitent deux retraits chacun, distincts des conversions. Choisissez les figurines ici ou utilisez les renforts en réserve dans Équipement.';
+  $$('view-renforts').querySelector('.recruit-lead').textContent='0–4 lots à 1 ★ : trois FSL par lot. Affectez-les aux emplacements pâles ou utilisez-les pour payer les appuis ◆. Un renfort ajouté à une moto la transforme en side-car.';
+  $$('renfortStatus').textContent=S.lots+'/4 lots · '+totals().assigned+' affectées · '+S.dp.reserveSpent+' retirées pour ◆ · '+totals().unallocated+' en réserve';
+  const rosterLead=document.querySelector('main > section.panel:not(.catalogue) > p.muted');if(rosterLead)rosterLead.textContent='Base : commandement 4 figurines, Groupes 1 et 2 de 8 figurines chacun. Groupe 3 : 7 figurines, maximum 12 avec renforts.';
+  $$('dpEquipment').innerHTML=equipmentHTML();
+ };
+ function motoLabel(){
+  if(!S.owned.app6||!S.dp.motorized)return '';
+  const slotsMoto=slots().filter(s=>s.key.startsWith('app6_0_0_'));
+  const sidecars=slotsMoto.filter(s=>S.alloc[s.key]&&!S.conversions.removed.includes(s.key+'_reinforced')).length;
+  const count=S.dp.secondMoto?2:1;
+  return count+' véhicule(s) Reco : '+(count-sidecars)+' moto(s), '+sidecars+' side-car(s) · une seule équipe et un seul chef';
+ }
+ function equipmentHTML(){
+  const remaining=diamondNeeded()-diamondPaid(),hasReco=!!S.owned.app6;
+  return `<h3>Équipement français</h3><label><input type="checkbox" data-dp-option="colonial" ${S.dp.colonial?'checked':''}> Troupes coloniales</label><p class="muted">Jusqu’au bout automatique. Surcoût unique de 1 ★ si au moins un support divisionnaire est recruté.</p><h3>Paiement des appuis ◆</h3><p>${diamondPaid()}/${diamondNeeded()} figurines retirées · ${S.dp.reserveSpent} prises dans les renforts en réserve.</p><button data-dp-reserve="1" ${remaining<=0||totals().unallocated<=0?'disabled':''}>Retirer 1 figurine de réserve pour ◆</button><button class="outline" data-dp-reserve="-1" ${S.dp.reserveSpent<=0?'disabled':''}>Rétablir 1 figurine de réserve</button><p class="muted">Vous pouvez aussi désigner des figurines de la section dans Conversions. Un retrait ne paie qu’un seul usage.</p><h3>Reconnaissance</h3>${hasReco?`<label><input type="checkbox" data-dp-option="recoDowngrade" ${S.dp.recoDowngrade?'checked':''}> Remplacer la LMG par un FSL (−1 ★)</label><label><input type="checkbox" data-dp-option="motorized" ${S.dp.motorized?'checked':''}> Transporter cette équipe sur moto(s)</label><label><input type="checkbox" data-dp-option="secondMoto" ${S.dp.secondMoto?'checked':''} ${S.dp.motorized?'':'disabled'}> Deuxième moto : +2 FSL dans la même équipe (+1 ★)</label><p>${escapeHTML(motoLabel())}</p><p class="muted">Une figurine de renfort dans l’emplacement de chaque moto donne un side-car. Toute l’équipe est embarquée ou débarquée ; les motos ne sont pas des véhicules divisionnaires ciblables.</p>`:'<p class="muted">Recrutez l’équipe Reco motorisable dans Appuis pour régler ses armes et ses motos.</p>'}<h3>Profils particuliers</h3><p class="muted">F-AC : portée 2L, capacité E, combat rapproché 1D6 (p.3, arbitrage déjà validé). Lorraine 38L sans armement : retrait du canon et de la MMG coaxiale validé par l’utilisateur.</p>`;
+ }
+ $$('dpEquipment').addEventListener('change',e=>{
+  const key=e.target.dataset.dpOption;if(!isFR()||!['colonial','motorized','secondMoto','recoDowngrade'].includes(key))return;
+  const previous={...S.dp},before=totals().spent;S.dp[key]=e.target.checked;
+  if(key==='motorized'&&!S.dp.motorized)S.dp.secondMoto=false;
+  if(totals().spent>effectiveBudget()&&totals().spent>before){S.dp=previous;alert('Budget insuffisant pour cette option.');}
+  render();
+ });
+ $$('dpEquipment').addEventListener('click',e=>{
+  const b=e.target.closest('[data-dp-reserve]');if(!b||b.disabled||!isFR())return;
+  const delta=Number(b.dataset.dpReserve);if(delta>0&&diamondPaid()<diamondNeeded()&&totals().fslCapacity-totals().fslAssigned-S.dp.reserveSpent>0)S.dp.reserveSpent++;
+  if(delta<0&&S.dp.reserveSpent>0)S.dp.reserveSpent--;render();
+ });
+ $$('view-experience').addEventListener('click',e=>{
+  if(isFR()&&e.target.closest('[data-exp="recrue"]'))e.stopImmediatePropagation();
+ },true);
+ const oldMakeVisual=makeVisual;
+ makeVisual=(only=false)=>{
+  let html=oldMakeVisual(only);if(!isFR())return html;
+  html=html.replace('Équipe 1 · 4 figurines','Équipe 1 · 3 figurines + 4 renforts').replace('Équipe 2 · 4 figurines + renfort','Équipe 2 · 4 figurines + 1 LMG et 2 FSL');
+  if(!only&&S.owned.app6&&S.dp.motorized)html+='<div class="integrated-vehicle-note">'+escapeHTML(motoLabel())+'</div>';
+  return html;
+ };
+ const oldInventory=buildPaintInventory;
+ buildPaintInventory=t=>{let h=oldInventory(t);return isFR()?h.replaceAll('FM (MG42)','LMG (FM 24/29 ou Chauchat)').replaceAll('Mo.P','Lance-grenades VB 1940'):h;};
+ const oldOrganicPrint=organicTransportPrint;
+ organicTransportPrint=()=>isFR()&&motoLabel()?'<section class="p-organics"><h3>Reconnaissance montée</h3><div>'+escapeHTML(motoLabel())+'</div></section>':oldOrganicPrint();
+ const oldPrint=printContent;
+ printContent=mode=>{let h=oldPrint(mode);if(!isFR())return h;return h.replace('<footer class="p-footer">','<section class="p-organics"><h3>Règles et options françaises</h3><div>De la Pologne à la Sicile · France 1939–1940'+(S.dp.colonial?' · Troupes coloniales : Jusqu’au bout automatique ; premier support +1 ★.':' · Jusqu’au bout : D8 avant assaut.')+' Sur la défensive : D8 une fois par tour. Appuis ◆ : '+diamondPaid()+'/'+diamondNeeded()+' retraits. Conversions PM : '+S.conversions.upgraded.length+'.</div></section><footer class="p-footer">');};
+
+ // Export/import of the new namespace is independent of unchanged V25 saves.
+ function exportFR(){return {format:'VFV_PILOTE_V04',ruleset_id:'VFV_POLOGNE_SICILE',source_pack:'POLOGNE_SICILE',formation_id:ID,lot_types:[...S.lotTypes],organic_transports:structuredClone(S.dpTransports),nom_groupement:S.forceName,mode:S.mode,budget:S.budget,owned:structuredClone(S.owned),lots:S.lots,alloc:structuredClone(S.alloc),vehicles:structuredClone(S.vehicles),conversions:structuredClone(S.conversions),experience:S.experience,fr:structuredClone(S.dp),validation:'A_TESTER_DEV19P'};}
+ function importFR(d){
+  if(d.format!=='VFV_PILOTE_V04'||d.ruleset_id!=='VFV_POLOGNE_SICILE'||d.formation_id!==ID)throw Error('Format, corpus ou formation incompatible.');
+  if(!Array.isArray(d.lot_types)||d.lot_types.length!==d.lots||d.lot_types.some(x=>!['FSL','LMG'].includes(x)))throw Error('Types de renforts Dragons invalides.');
+  if(!validTransports(d.organic_transports))throw Error('Transports organiques invalides.');
+  if(d.fr?.colonial)throw Error('Troupes coloniales non disponibles.');
+  if(d.mode!=='libre'||!['standard','elite'].includes(d.experience))throw Error('Mode ou expérience incompatible avec l’infanterie française.');
+  const integer=(n,min,max)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
+  if(!integer(d.budget,0,99)||!integer(d.lots,0,4))throw Error('Budget ou lots invalides.');
+  if(!d.fr||['colonial','motorized','secondMoto','recoDowngrade'].some(k=>typeof d.fr[k]!=='boolean')||!integer(d.fr.reserveSpent,0,d.lots*3)||d.fr.secondMoto&&!d.fr.motorized)throw Error('Options françaises invalides.');
+  if(!d.owned||typeof d.owned!=='object'||Array.isArray(d.owned))throw Error('Achats illisibles.');
+  const known=new Set(offersFR().map(o=>o.id));
+  for(const [id,n] of Object.entries(d.owned))if(!known.has(id)||!integer(n,0,20))throw Error('Achat inconnu ou quantité invalide : '+id);
+  if(!Array.isArray(d.vehicles)||d.vehicles.length>100)throw Error('Liste de véhicules invalide.');
+  for(const item of d.vehicles){const v=frVehicles.find(v=>v.id===item.id);if(!v||!Array.isArray(item.options)||new Set(item.options).size!==item.options.length||item.options.some(i=>!Number.isInteger(i)||!allWeapons(v)[i]?.optionnelle))throw Error('Véhicule ou option inconnue.');const groups=item.options.map(i=>allWeapons(v)[i].groupe_alternative).filter(Boolean);if(new Set(groups).size!==groups.length)throw Error('Options exclusives cumulées.');}
+  const cv=d.conversions;if(!cv||['removed','upgraded','downgraded','panzerfaust'].some(k=>!Array.isArray(cv[k])||cv[k].some(x=>typeof x!=='string')||new Set(cv[k]).size!==cv[k].length)||cv.panzerfaust.length||cv.downgraded.length||!cv.allocation||typeof cv.allocation!=='object')throw Error('Conversions françaises invalides.');
+  if(!d.alloc||typeof d.alloc!=='object'||Array.isArray(d.alloc)||Object.values(d.alloc).some(x=>x!==1&&x!==true))throw Error('Affectations invalides.');
+  // Validate against a temporary state, restoring it even when any check fails.
+  const prior=structuredClone(S);
+  try {
+   Object.assign(S,{owned:structuredClone(d.owned),lots:d.lots,lotTypes:[...d.lot_types],dpTransports:structuredClone(d.organic_transports),alloc:structuredClone(d.alloc),vehicles:structuredClone(d.vehicles),conversions:structuredClone(cv),experience:d.experience,dp:structuredClone(d.fr),budget:d.budget,mode:d.mode});
+   const candidates=new Map(conversionCandidates().map(c=>[c.id,c]));
+   const validSlots=new Set(slots().map(s=>s.key));if(stock().fsl<0||stock().lmg<0)throw Error('Affectations incompatibles avec les types de renforts.');
+   if(Object.keys(S.alloc).some(k=>!validSlots.has(k))||Object.keys(S.alloc).length+S.dp.reserveSpent>S.lots*3)throw Error('Affectation hors emplacement ou réserve insuffisante.');
+   if(cv.removed.some(id=>!removable(candidates.get(id))||cv.upgraded.includes(id)||!['pm','diamond'].includes(cv.allocation[id]))||cv.upgraded.some(id=>!candidates.has(id)||candidates.get(id).weapon!=='FSL'||candidates.get(id).role==='servant'))throw Error('Retrait ou conversion non autorisé.');
+   const pm=cv.removed.filter(id=>cv.allocation[id]==='pm').length;
+   if(pm>2||cv.upgraded.length>pm*2)throw Error('Conversions PM non financées.');
+  } finally {Object.assign(S,prior);}
+  Object.assign(S,{owned:structuredClone(d.owned),lots:d.lots,lotTypes:[...d.lot_types],dpTransports:structuredClone(d.organic_transports),alloc:structuredClone(d.alloc),vehicles:structuredClone(d.vehicles),conversions:structuredClone(cv),experience:d.experience,dp:structuredClone(d.fr),budget:d.budget,mode:d.mode,forceName:typeof d.nom_groupement==='string'?d.nom_groupement.slice(0,90):''});
+  $$('mode').value=S.mode;render();
+ }
+ const oldExport=$$('export').onclick,oldImport=$$('import').onchange;
+ $$('export').onclick=()=>{
+  if(!isFR())return oldExport();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportFR(),null,2)],{type:'application/json'}));a.download='vfv_dragons_portes_1939_1940_dev19p.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ };
+ $$('import').onchange=async e=>{
+  if(!isFR())return oldImport(e);
+  try{const file=e.target.files?.[0];if(!file)return;importFR(JSON.parse(await file.text()));const errors=recruitmentAudit(totals(),effectiveBudget()).filter(x=>x.level==='error');alert('Sauvegarde française importée.'+(errors.length?' '+errors.length+' incompatibilité(s) à corriger.':''));}catch(err){alert('Import refusé : '+err.message);}finally{e.target.value='';}
+ };
+ // Specific Dragons rules: typed reinforcements and organic transport choices.
+ function activeOrganicGroups(){return [['command','Commandement',1],['group1','Groupe 1',2],['group2','Groupe 2',2],...(S.owned.group3?[['group3','Groupe 3',2]]:[])];}
+ function validTransports(obj){return obj&&typeof obj==='object'&&[['command',1],['group1',2],['group2',2],['group3',2]].every(([key,n])=>Array.isArray(obj[key])&&obj[key].length===n&&obj[key].every(id=>['PS_FR_CAMION','PS_FR_CHENILLETTE','PS_FR_LORRAINE38L'].includes(id)));}
+ function organicCost(){return activeOrganicGroups().reduce((n,[key])=>n+S.dpTransports[key].filter(id=>id==='PS_FR_LORRAINE38L').length,0);}
+ function organicSummary(){return activeOrganicGroups().map(([key,name])=>name+' : '+S.dpTransports[key].map(id=>vdata(id).nom_source).join(' + ')).join(' ; ');}
+ const dpCompositionStarted=compositionCommencee;
+ compositionCommencee=()=>dpCompositionStarted()||(isFR()&&Object.values(S.dpTransports).some(ids=>ids.some(id=>id!=='PS_FR_CAMION')));
+ function stock(){const t=totals();return {fsl:t.fslCapacity-t.fslAssigned-S.dp.reserveSpent,lmg:t.lmgCapacity-t.lmgAssigned};}
+ const preDPReconcile=reconcile;
+ reconcile=()=>{
+  if(!isFR())return preDPReconcile();oldReconcile();
+  const fslSlots=new Set(slots().filter(s=>s.weapon!=='LMG').map(s=>s.key));
+  const assigned=Object.keys(S.alloc).filter(k=>S.alloc[k]&&fslSlots.has(k));
+  const cap=S.lotTypes.filter(x=>x==='FSL').length*3-S.dp.reserveSpent;
+  while(assigned.length>Math.max(0,cap))delete S.alloc[assigned.pop()];
+ };
+ const preDPSlot=toggleVisualSlot;
+ toggleVisualSlot=key=>{
+  if(!isFR())return preDPSlot(key);const slot=slots().find(s=>s.key===key);if(!slot)return;
+  if(S.alloc[key])delete S.alloc[key];else if(stock()[slot.weapon==='LMG'?'lmg':'fsl']>0)S.alloc[key]=1;
+  else {recruitView='renforts';alert('Achetez un lot '+(slot.weapon==='LMG'?'de 1 LMG':'de 3 FSL')+' pour cet emplacement.');}render();
+ };
+ const dpAudit=recruitmentAudit;
+ recruitmentAudit=(t,bud)=>{
+  const issues=dpAudit(t,bud);if(!isFR())return issues;
+  if(S.dp.colonial)issues.push({level:'error',code:'DP_COLONIAL',message:'L’option coloniale est réservée à l’infanterie p.6.',ref:'Extension p.5'});
+  for(const [key,name] of activeOrganicGroups()){
+   const capacity=S.dpTransports[key].reduce((n,id)=>n+(vdata(id).transport_capacite||0),0);
+   const present=conversionCandidates().filter(c=>c.group===name&&!S.conversions.removed.includes(c.id)).length;
+   if(present>capacity)issues.push({level:'error',code:'DP_CAPACITY_'+key,message:name+' : '+present+' figurines pour '+capacity+' places de transport. Changez les transports ou la composition.',ref:'Extension p.7,11 ; capacité p.54 du livre principal'});
+  }
+  // User clarification: organic transports never count toward the separate
+  // three-free-divisional-vehicles limit. Mandatory transports remain included.
+  return issues;
+ };
+ const dpOldExtra=renderMecExtras;
+ renderMecExtras=()=>{
+  dpOldExtra();if(!isFR())return;
+  $$('canonChoiceNote').hidden=true;
+  $$('appuiTabs').querySelector('[data-appcat="Canons"]').hidden=true;
+  if(appuiCategory==='Canons')appuiCategory='Tous';
+  $$('view-formation').querySelector('.recruit-lead').textContent='Dragons portés 1939–1940 : 19 figurines de base. Groupe 3 optionnel de 7 figurines à 3 ★. Mécanisée : les équipes peuvent débarquer en résolvant un assaut. Jusqu’au bout : D8 avant l’assaut pour être considéré Élite pendant sa résolution.';
+  $$('view-formation').querySelector(':scope > p.muted').textContent='Extension p.7. Commandement : 5 figurines ; Groupes 1 et 2 : 7 chacun. LMG : FM 24/29 ou Chauchat ; Mo.P : lance-grenades VB 1940.';
+  $$('view-experience').querySelector('.recruit-lead').textContent='Élite : +3 ★ pour les groupes de base et équipes d’Appui, hors supports divisionnaires. Pas d’option Recrue ni Troupes coloniales dans cette liste.';
+  const elite=$$('view-experience').querySelector('[data-exp="elite"]'),recrue=$$('view-experience').querySelector('[data-exp="recrue"]');elite.hidden=false;recrue.hidden=true;
+  $$('view-renforts').querySelector('.recruit-lead').textContent='0–4 achats à 1 ★ : trois FSL OU une LMG par achat. Une LMG ne peut remplir qu’un emplacement LMG ; les FSL remplissent les places FSL ou de servant, ou paient les appuis ◆ depuis la réserve.';
+  $$('renfortStatus').textContent=S.lots+'/4 achats · '+S.lotTypes.filter(x=>x==='FSL').length+' lots de 3 FSL · '+S.lotTypes.filter(x=>x==='LMG').length+' LMG · réserve : '+stock().fsl+' FSL et '+stock().lmg+' LMG · '+S.dp.reserveSpent+' FSL retirés pour ◆';
+  $$('mecPurchasedLots').innerHTML=S.lotTypes.map((x,i)=>'<button class="outline" data-mec-drop-lot="'+i+'">Lot '+(i+1)+' : '+(x==='LMG'?'1 LMG':'3 FSL')+' ✕</button>').join('');
+  $$('reinforcementType').innerHTML='<option value="FSL">3 FSL</option><option value="LMG">1 LMG · FM 24/29 ou Chauchat</option>';
+  const rosterLead=document.querySelector('main > section.panel:not(.catalogue) > p.muted');if(rosterLead)rosterLead.textContent='Base : commandement 5 figurines, Groupes 1 et 2 de 7 figurines chacun (19). Cinq transports organiques inclus ; deux de plus avec le Groupe 3.';
+  const colony=$$('dpEquipment').querySelector('[data-dp-option="colonial"]');if(colony){colony.closest('label').hidden=true;colony.closest('label').nextElementSibling.hidden=true;}
+  const reserveButton=$$('dpEquipment').querySelector('[data-dp-reserve="1"]');if(reserveButton)reserveButton.disabled=diamondPaid()>=diamondNeeded()||stock().fsl<=0;
+  $$('mecTransports').hidden=false;
+  $$('mecTransports').innerHTML='<strong>Transports organiques · p.7</strong><p class="muted">Camion ou chenillette inclus. Chaque remplacement par un Lorraine 38L coûte 1 ★. Ces transports font partie des groupes et ne se rachètent pas dans le garage.</p><div class="mec-transport-grid">'+activeOrganicGroups().map(([key,name])=>'<div class="mec-transport"><strong>'+name+'</strong>'+S.dpTransports[key].map((id,i)=>'<label>Transport '+(i+1)+'<select data-dp-transport="'+key+'" data-transport-index="'+i+'">'+[['PS_FR_CAMION','Camion · inclus'],['PS_FR_CHENILLETTE','Chenillette · inclus'],['PS_FR_LORRAINE38L','Lorraine 38L · +1 ★']].map(([value,label])=>'<option value="'+value+'" '+(id===value?'selected':'')+'>'+label+'</option>').join('')+'</select></label>').join('')+'</div>').join('')+'</div>';
+  if(!S.vehicles.length){const empty=$$('vehiclesOrganigram').querySelector('p');if(empty)empty.textContent='Aucun support divisionnaire sélectionné.';}
+ };
+ $$('mecTransports').addEventListener('change',e=>{
+  const key=e.target.dataset.dpTransport,i=Number(e.target.dataset.transportIndex),next=e.target.value;
+  if(!isFR()||!key||!S.dpTransports[key]||!Number.isInteger(i)||i<0||i>=S.dpTransports[key].length||!['PS_FR_CAMION','PS_FR_CHENILLETTE','PS_FR_LORRAINE38L'].includes(next))return;
+  const before=S.dpTransports[key][i],delta=(next==='PS_FR_LORRAINE38L'?1:0)-(before==='PS_FR_LORRAINE38L'?1:0);
+  if(delta>0&&!canSpend(delta)){alert('Budget insuffisant pour ce remplacement.');render();return;}S.dpTransports[key][i]=next;render();
+ });
+ const dpOldMake=makeVisual;
+ makeVisual=only=>{const h=dpOldMake(only);return isFR()&&!only?h+'<div class="integrated-vehicle-note"><b>Transports organiques</b> · '+escapeHTML(organicSummary())+'</div>':h;};
+ const dpOrganic=organicTransportPrint;
+ organicTransportPrint=()=>{const h=dpOrganic();return isFR()?h+'<section class="p-organics"><h3>Transports organiques des Dragons portés</h3><div>'+escapeHTML(organicSummary())+'</div><div>'+activeOrganicGroups().reduce((n,[key])=>n+S.dpTransports[key].length,0)+' transports inclus ; remplacements Lorraine : '+organicCost()+' ★.</div></section>':h;};
+ const dpPrint=printContent;
+ printContent=mode=>{let h=dpPrint(mode);if(!isFR())return h;return h.replace(' Sur la défensive : D8 une fois par tour.',' Mécanisée : débarquement en assaut.').replace('France 1939–1940','France · Dragons portés 1939–1940');};
+ const dpInventory=buildPaintInventory;
+ buildPaintInventory=t=>{const h=dpInventory(t);return isFR()?h+'<section class="paint-summary-group"><h4>Transports organiques</h4><p>'+escapeHTML(organicSummary())+'</p></section>':h;};
+
+ // Keep deterministic entry points for regression and round-trip tests.
+ window.VFVDragons={id:ID,export:exportFR,import:importFR,formation,vehicles:frVehicles,diamondNeeded,diamondPaid};
+ const oldRender=render;
+ render=()=>{
+  oldRender();document.body.classList.toggle('fr-force',isFR()||S.formation===VFVFrance.id);if(!isFR())return;
+  for(const card of $$('offers').querySelectorAll('.recruit-card')){
+   const b=card.querySelector('[data-plus]'),o=offersFR().find(o=>o.id===b?.dataset.plus);if(!o)continue;
+   if(o.diamond){card.querySelector('.cost').textContent='◆ · 2 figurines';card.insertAdjacentHTML('beforeend','<button class="outline" data-dp-goto-equipment>Régler les retraits ◆</button>');}
+   if(o.id==='app6')card.insertAdjacentHTML('beforeend','<button class="outline" data-dp-goto-equipment>Régler la LMG et les motos</button>');
+   const specs=card.querySelector('.appui-specs');if(o.sharedGroup&&specs)specs.textContent='Quota commun : '+offerGroupCount(o)+'/'+o.max+' · extension p.6';
+  }
+  if(S.dp.colonial&&S.vehicles.length)$$('remaining').textContent+=' · surcoût colonial +1 ★ inclus';
+ };
+ $$('offers').addEventListener('click',e=>{if(isFR()&&e.target.closest('[data-dp-goto-equipment]')){document.querySelector('[data-view="experience"]').click();$$('dpEquipment').scrollIntoView({block:'nearest'});}});
+ document.head.insertAdjacentHTML('beforeend','<style>@media print{body.fr-force .p-recap{break-before:page}body.fr-force .p-recap>h2{break-after:avoid}}</style>');
+ changeFormation(ID);
+})();
+</script>
+<script>/* dev.19o — De la Pologne à la Sicile. Source pages 3, 5, 6, 10–11.
+   Extension scoped to PS_FR_INF_1939_1940; existing formations delegate unchanged. */
+(() => {
+ 'use strict';
+ const src={formation:JSON.parse($$('motor-source').textContent),vehicles:JSON.parse($$('fr-source').textContent).vehicles};
+ const ID = 'PS_FR_MOTORISEE_1939_1940';
+ const isFR = () => S.formation === ID;
+ const defaults = () => ({colonial:false,motorized:false,secondMoto:false,recoDowngrade:false,carDowngrade:false,reserveSpent:0});
+ S.mi = defaults();
+ const normalizeTeam = t => ({...t, nom:t.nom.replace(/Équipe(\d)/,'Équipe $1'), chef_armement:t.chef_armement.replace('SNIPER','Sniper')});
+ const formation = {
+  ...src.formation, periode:'1939–1940',theatre:'Europe / Vichy / FFL',section:'Infanterie motorisée',equilibrage_etoiles:0,
+  base:src.formation.base.map(g=>({...g,nom:g.nom.replace(/Groupe(\d)/,'Groupe $1'),cout_etoiles:0,equipes:g.equipes.map(normalizeTeam)})),
+  groupes_appui:src.formation.groupes_appui.map(g=>({...g,nom:'Groupe 3',equipes:g.equipes.map(normalizeTeam)})),
+  appuis:[], renforts:{minimum:0,maximum:4,cout_etoiles:1,alternatives:[{nombre:3,armement:'FSL'}]},
+  experience:{elite_cout:0,recrue_groupe_gratuit:'Groupe 3'}
+ };
+ function parseWeapon(text) {
+  const montage = /-([TCP])-?$/.exec(text)?.[1] || null;
+  return {code_generique:text.replace(/-([TCP])-?$/,'').replace(/coaxiale/,'').replace(/arrière/,'').trim(),montage,coaxiale:text.includes('coaxiale'),face:text.includes('arrière')?'arrière':null,optionnelle:false};
+ }
+ const frVehicles = src.vehicles.filter(v=>v.id!=='PS_FR_MOTO').map(v=>({
+  id:v.id,nation:'France',nom_source:v.nom,page_imprimee:v.page_imprimee,cout_base_etoiles:v.cout_etoiles,blindage:v.blindage,
+  roulement:({ROUES:'Roues',CHENILLES:'Chenilles',SEMI_CHENILLES:'Semi-chenilles'})[v.roulement],
+  armes_principales:(v.armes_principales||[]).map(parseWeapon),armes_secondaires:(Array.isArray(v.armes_secondaires)?v.armes_secondaires:[]).map(parseWeapon),
+  regles_speciales:v.regles_speciales,transport_capacite:Number(v.regles_speciales.join(' ').match(/Transport(\d+)/)?.[1])||null
+ }));
+ // User arbitration 2026-10-24, PS_Q005: remove both printed turret weapons.
+ // Keep the verbatim source JSON unchanged; this is not an official erratum.
+ const lorraine = frVehicles.find(v=>v.id==='PS_FR_LORRAINE38L');
+ lorraine.armes_principales=[];
+ lorraine.armes_secondaires=[];
+ const laffy = frVehicles.find(v=>v.id==='PS_FR_LAFFY');
+ laffy.armes_principales=[{...parseWeapon('A/C Légerarrière-T'),optionnelle:true,cout_option_etoiles:1,groupe_alternative:'laffy_primary'},{...parseWeapon('MMG-P'),optionnelle:true,cout_option_etoiles:1,groupe_alternative:'laffy_primary'}];
+ laffy.armes_secondaires=[{...parseWeapon('MMGarrière-P'),optionnelle:true,cout_option_etoiles:1}];
+ // Original array constants are mutable; only add a new namespace.
+ FORMATION_IDS.push(ID);NATION_FORMATIONS.FR.push([ID,'Infanterie motorisée · 1939–1940 (P.8)']);FORMATION_NATION[ID]='FR';
+ const oldData = formationDataById;
+ formationDataById = id => id===ID?formation:oldData(id);
+ const oldVehicles = vehicleSource;
+ vehicleSource = () => isFR()?frVehicles:oldVehicles();
+ const oldCategory = vehicleCategory;
+ vehicleCategory = v => v.id.startsWith('PS_FR_')?(v.regles_speciales.includes('Reco')?'Reconnaissance':v.transport_capacite?'Transports':'Blindés de combat'):oldCategory(v);
+ const oldIllustration = vehicleIllustration;
+ vehicleIllustration = v => v.id.startsWith('PS_FR_')?'<div class="fr-profile-symbol" aria-hidden="true">'+(v.transport_capacite?'▰':'▣')+'</div>':oldIllustration(v);
+ const oldAppImage = appuiIllustration;
+ appuiIllustration = o => isFR()?'<div class="card-visual note"><span>'+escapeHTML(o.model.modele||o.name)+'</span></div>':oldAppImage(o);
+ const oldToken=token;
+ token=(w,cls='',group='')=>{
+  let h=oldToken(w,cls,group);if(!isFR())return h;
+  return h.replaceAll('MG42',String(w).startsWith('MMG')?'Hotchkiss 1914':'24/29 / Chauchat');
+ };
+
+ function offersFR() {
+  const list=[{id:'group3',name:'Groupe 3',cost:S.experience==='recrue'?0:3,max:1,model:formation.groupes_appui[0],type:'group'}];
+  const names={MMG:'MMG',MORTIER:'Mortier',F_AC:'F-AC',SNIPER:'Sniper',CANON_ULTRA_LEGER:'Canon A/C ultra-léger',CANON_LEGER:'Canon A/C léger',RECO_MOTORISABLE:'Reco motorisable',RECO_VOITURE:'Reco en voiture'};
+  src.formation.appuis.forEach((a,i)=>{
+   let team=normalizeTeam(a.equipes[0]);
+   const diamond=a.cout?.type==='RETRAIT_FIGURINES';
+   const inventoryType=({F_AC:'AC',MORTIER:'Mo.M',CANON_ULTRA_LEGER:'Canon A/C',CANON_LEGER:'Canon A/C'})[a.id]||names[a.id];
+   const common={id:'app'+i,name:names[a.id],cost:diamond?0:(a.cout?.valeur||0),max:a.maximum,type:'app',diamond,
+    model:{nom:names[a.id],type:inventoryType,modele:a.id==='F_AC'?'Fusil antichar (F-AC)':a.modele,equipe:team}};
+   if(a.id==='MORTIER') {
+    for(const [key,code,cost] of [['light','Mo.Léger',1],['medium','Mo.M',2]])list.push({...common,id:'app1_'+key,name:'Mortier '+(key==='light'?'léger':'moyen'),cost,sharedGroup:'fr_mortar',model:{...common.model,modele:'Mortier '+(key==='light'?'léger':'moyen'),equipe:{...team,chef_armement:code}}});
+   } else {
+    if(a.id==='RECO_MOTORISABLE') {
+     team={...team,autres_disponibles:[...team.autres_disponibles],places_renfort:[...team.places_renfort]};
+     if(S.mi.recoDowngrade)team.autres_disponibles[0]='FSL';
+     if(S.mi.secondMoto){team.autres_disponibles.push('FSL','FSL');team.places_renfort.push('FSL');team.effectif_base+=2;team.effectif_max+=3;}
+     common.cost=1+(S.mi.secondMoto?1:0)-(S.mi.recoDowngrade?1:0);
+     common.model={...common.model,equipe:team,regles_speciales:['Reco']};
+    }
+    if(a.id==='RECO_VOITURE'){team={...team,autres_disponibles:[...team.autres_disponibles]};if(S.mi.carDowngrade)team.autres_disponibles[0]='FSL';common.cost=1-(S.mi.carDowngrade?1:0);common.model={...common.model,equipe:team,regles_speciales:['Reco'],transport:'Voiture',profil_transport:'PS_FR_VOITURE'};}
+    list.push(common);
+   }
+  });
+  return list;
+ }
+ const oldOffers=offers;
+ offers=()=>isFR()?offersFR():oldOffers();
+ const oldGroupCount=offerGroupCount, oldLimit=offerQuantityLimit;
+ offerGroupCount=o=>isFR()&&o.sharedGroup?offersFR().filter(a=>a.sharedGroup===o.sharedGroup).reduce((n,a)=>n+(S.owned[a.id]||0),0):oldGroupCount(o);
+ offerQuantityLimit=o=>isFR()&&o.sharedGroup?Math.max(0,o.max-offerGroupCount(o)+(S.owned[o.id]||0)):oldLimit(o);
+ const oldTotals=totals;
+ totals=()=>{const t=oldTotals();if(isFR()) {t.spent+=S.mi.colonial&&S.vehicles.length?1:0;t.unallocated-=S.mi.reserveSpent;}return t;};
+ function diamondNeeded(){return selected().reduce((n,o)=>n+(o.diamond?2*(S.owned[o.id]||0):0),0);}
+ function diamondPaid(){return S.mi.reserveSpent+S.conversions.removed.filter(id=>S.conversions.allocation[id]==='diamond').length;}
+ const oldFreeCount=freeVehicleCount;
+ // The surcharge is force-wide, once, even when the first vehicle is otherwise free.
+ freeVehicleCount=()=>isFR()?S.vehicles.filter(v=>vehicleCost(v)===0).length:oldFreeCount();
+ const oldPermitted=permitted;
+ permitted=o=>isFR()?true:oldPermitted(o);
+
+ const oldReset=remettreCompositionAZero;
+ remettreCompositionAZero=()=>{oldReset();S.mi=defaults();};
+ const oldStarted=compositionCommencee;
+ compositionCommencee=()=>oldStarted()||(isFR()&&(S.mi.colonial||S.mi.motorized||S.mi.secondMoto||S.mi.recoDowngrade||S.mi.reserveSpent));
+ const oldReconcile=reconcile;
+ reconcile=()=>{
+  oldReconcile();if(!isFR())return;
+  const placed=Object.keys(S.alloc).filter(k=>S.alloc[k]);
+  // Reserve withdrawals cannot be assigned again to a silhouette.
+  while(placed.length+S.mi.reserveSpent>S.lots*3){const k=placed.pop();if(!k)break;delete S.alloc[k];}
+ };
+ const oldSlot=toggleVisualSlot;
+ toggleVisualSlot=key=>{
+  if(!isFR())return oldSlot(key);
+  const slot=slots().find(s=>s.key===key);if(!slot)return;
+  if(S.alloc[key])delete S.alloc[key];
+  else if(totals().unallocated>0)S.alloc[key]=1;
+  else {recruitView='renforts';alert('Aucune figurine de renfort disponible. Achetez un lot ou libérez une affectation.');}
+  render();
+ };
+ const oldConversions=reconcileConversions;
+ const removable=c=>c&&!['officier','chef','servant'].includes(c.role)&&['FSL','LMG'].includes(c.weapon);
+ reconcileConversions=()=>{
+  if(!isFR())return oldConversions();
+  const cv=S.conversions,all=new Map(conversionCandidates().map(c=>[c.id,c]));
+  const unique=a=>[...new Set(a||[])].filter(id=>all.has(id));
+  cv.panzerfaust=[];cv.downgraded=[];cv.upgradeChoices={};
+  cv.removed=unique(cv.removed).filter(id=>removable(all.get(id))&&!cv.upgraded.includes(id));
+  cv.allocation=Object.fromEntries(cv.removed.map(id=>[id,cv.allocation[id]==='diamond'?'diamond':'pm']));
+  cv.upgraded=unique(cv.upgraded).filter(id=>all.get(id).weapon==='FSL'&&all.get(id).role!=='servant'&&!cv.removed.includes(id));
+  const cap=Math.min(2,cv.removed.filter(id=>cv.allocation[id]==='pm').length)*2;
+  while(cv.upgraded.length>cap)cv.upgraded.pop();
+ };
+ const oldConversionRender=conversionRender;
+ conversionRender=()=>{
+  if(!isFR())return oldConversionRender();
+  reconcileConversions();const cv=S.conversions;
+  const pm=cv.removed.filter(id=>cv.allocation[id]==='pm').length;
+  $$('conversionStatus').innerHTML=`<p><b>${pm}/2</b> retraits pour les PM · <b>${cv.upgraded.length}/${pm*2}</b> conversions utilisées.</p><p><b>${diamondPaid()}/${diamondNeeded()}</b> figurines retirées pour les appuis ◆, dont ${S.mi.reserveSpent} en réserve.</p>`;
+  const teams=new Map();for(const c of conversionCandidates()){const name=c.group+' · '+c.team;if(!teams.has(name))teams.set(name,[]);teams.get(name).push(c);}
+  $$('conversionVisual').innerHTML=[...teams].map(([name,figs])=>`<div class="visual-team"><div class="visual-team-title">${escapeHTML(name)}</div><div class="figure-strip">${figs.map(c=>{
+   const rem=cv.removed.includes(c.id),up=cv.upgraded.includes(c.id),room=pm*2-cv.upgraded.length;
+   const actions=rem?`<small>Retrait : ${cv.allocation[c.id]==='diamond'?'appui ◆':'conversions PM'}</small><button data-mi-undo="${c.id}">Rétablir</button>`:
+    `${removable(c)&&!up?`<button class="outline" data-mi-remove="${c.id}" data-purpose="pm" ${pm>=2?'disabled':''}>Retirer pour PM</button><button class="outline" data-mi-remove="${c.id}" data-purpose="diamond" ${diamondPaid()>=diamondNeeded()?'disabled':''}>Retirer pour ◆</button>`:''}${up?`<button data-mi-undo="${c.id}">Revenir FSL</button>`:c.weapon==='FSL'&&c.role!=='servant'?`<button data-mi-upgrade="${c.id}" ${room<=0?'disabled':''}>→ PM</button>`:''}`;
+   return `<div class="conversion-unit ${rem?'conversion-removed':up?'conversion-upgraded':''}"><div class="conversion-figure">${token(rem?'RETIRÉ':currentWeapon(c),(rem?'conversion-removed-token':up?'weapon-converted-pm':'')+(c.role==='officier'?' officer-token':c.role==='chef'?' nco-token':''),c.group)}<small>${c.role==='officier'?'Officier':c.role==='chef'?'Chef':c.role==='servant'?'Servant':'Troupe'}</small></div><div class="conversion-buttons">${actions}</div></div>`;
+  }).join('')}</div></div>`).join('');
+ };
+ $$('conversionVisual').addEventListener('click',e=>{
+  if(!isFR())return;const b=e.target.closest('button');if(!b)return;
+  e.stopImmediatePropagation();const cv=S.conversions;
+  if(b.dataset.miRemove&&!b.disabled){cv.removed.push(b.dataset.miRemove);cv.allocation[b.dataset.miRemove]=b.dataset.purpose;}
+  if(b.dataset.miUpgrade&&!b.disabled)cv.upgraded.push(b.dataset.miUpgrade);
+  if(b.dataset.miUndo){const id=b.dataset.miUndo;cv.removed=cv.removed.filter(x=>x!==id);cv.upgraded=cv.upgraded.filter(x=>x!==id);delete cv.allocation[id];}
+  render();
+ },true);
+
+ const oldAudit=recruitmentAudit;
+ recruitmentAudit=(t,bud)=>{
+  if(!isFR())return oldAudit(t,bud);
+  const issues=[],add=(level,code,message,ref='Extension p.3, 5–6')=>issues.push({level,code,message,ref});
+  if(t.spent>bud)add('error','FR_BUDGET','Budget dépassé de '+(t.spent-bud)+' ★.');
+  if(S.lots>4)add('error','FR_LOTS','Maximum quatre lots de renforts.');
+  for(const o of offersFR())if((S.owned[o.id]||0)>o.max)add('error','FR_QUOTA_'+o.id,o.name+' dépasse son plafond.');
+  if((S.owned.app1_light||0)+(S.owned.app1_medium||0)>1)add('error','FR_MORTAR','Un seul mortier : léger OU moyen.');
+  if(diamondPaid()!==diamondNeeded())add('error','FR_DIAMONDS',diamondPaid()+' figurines retirées pour '+diamondNeeded()+' requises par les appuis ◆. Ajustez les retraits dans Équipement ou Conversions.');
+  if(S.mi.reserveSpent>S.lots*3-Object.keys(S.alloc).filter(k=>S.alloc[k]).length)add('error','FR_RESERVE','Retraits de réserve supérieurs aux figurines disponibles.');
+  if(S.conversions.removed.filter(id=>S.conversions.allocation[id]==='pm').length>2)add('error','FR_PM','Deux retraits maximum pour les conversions en PM.');
+  if(freeVehicleCount()>3)add('error','FR_FREE','Plafond de trois véhicules gratuits dépassé.','FAQ v2.5 F053');
+  if(t.unallocated>0)add('warning','FR_UNASSIGNED',t.unallocated+' figurine(s) de renfort restent à affecter.');
+  if(S.experience==='elite')add('error','FR_ELITE','La liste ne propose pas de passage permanent en Élite. Jusqu’au bout agit seulement pendant l’assaut.');
+  if(S.mode!=='libre')add('error','FR_SCENARIO','Ce scénario n’est pas configuré pour la liste de l’extension.');
+  return issues;
+ };
+ const oldSummary=appuiQuotaSummary,oldIntegrated=integratedVehicleSummary;
+ appuiQuotaSummary=()=>isFR()?'<div class="quota-panel"><strong>Plafonds français · p.6</strong><div class="quota-grid">'+offersFR().filter(o=>o.type!=='group'&&o.id!=='app1_medium').map(o=>'<span class="quota-chip">'+escapeHTML(o.sharedGroup?'Mortier léger / moyen':o.name)+' <b>'+(o.sharedGroup?offerGroupCount(o):(S.owned[o.id]||0))+'/'+o.max+'</b></span>').join('')+'</div></div>':oldSummary();
+ integratedVehicleSummary=()=>isFR()?'<p class="muted">◆ : retirer deux figurines par équipe recrutée. Les motos appartiennent à l’équipe Reco et se configurent dans Équipement.</p>':oldIntegrated();
+ const oldVehicleCard=vehCard;
+ vehCard=v=>{
+  let html=oldVehicleCard(v);if(!isFR())return html;
+  const extra=S.mi.colonial&&!S.vehicles.length?1:0;
+  if(extra){html=html.replace(/Budget après achat : <strong[^>]*>[^<]+<\/strong>/,'Budget après achat : <strong>'+(effectiveBudget()-totals().spent-v.cout_base_etoiles-1)+' ★</strong>');
+   html=html.replace('</article>','<p class="muted">Premier support colonial : +1 ★.</p></article>');
+   if(!canSpend(v.cout_base_etoiles+1))html=html.replace('data-addveh="'+v.id+'"','data-addveh="'+v.id+'" disabled');
+  }
+  return html;
+ };
+ $$('vehicleCatalogue').addEventListener('click',e=>{
+  if(!isFR())return;const b=e.target.closest('[data-addveh]');if(!b)return;
+  const v=vdata(b.dataset.addveh);if(!v)return;
+  if(!canSpend(v.cout_base_etoiles+(S.mi.colonial&&!S.vehicles.length?1:0)))e.stopImmediatePropagation();
+ },true);
+
+ // Add France beside the existing nation selectors without changing their menus.
+ $$('formationSelect').insertAdjacentHTML('beforeend','<option value="'+ID+'">France · Infanterie motorisée 1939–1940</option>');
+ const oldSync=syncNationSelectors;
+ syncNationSelectors=()=>{oldSync();document.querySelector('[data-nation-card="FR"]').classList.toggle('active',S.formation.startsWith('PS_FR_'));};
+ document.head.insertAdjacentHTML('beforeend','<style>.fr-flag{background:#fff!important}.fr-flag::before{content:"";width:calc(100% - 4px);height:calc(100% - 4px);background:linear-gradient(90deg,#173a80 0 33%,#fff 33% 66%,#c52c38 66%)}.nation-switchboard{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))!important}.fr-options{border:1px solid #a8b8c9;background:#f0f4f8;border-radius:8px;padding:12px;margin:10px 0}.fr-options h3{margin-top:4px}.fr-options button{margin:3px}.fr-profile-symbol{font-size:70px;color:#4b6254}.fr-options [hidden]{display:none!important}</style>');
+ $$('view-experience').insertAdjacentHTML('beforeend','<div id="miEquipment" class="fr-options" hidden></div>');
+ const oldExtra=renderMecExtras;
+ renderMecExtras=()=>{
+  oldExtra();$$('miEquipment').hidden=!isFR();
+  const tab=document.querySelector('[data-view="experience"]');tab.textContent=isFR()?'5 · Expérience & équipement':'5 · Expérience';
+  const directSource=$$('view-formation').querySelector(':scope > p.muted');
+  if(!isFR()){directSource.textContent='Source : organigramme p.'+F.page_imprimee+'.';const eyebrow=$$('garageTitle').previousElementSibling;if(eyebrow)eyebrow.textContent='Catalogue des supports divisionnaires · 1944–1945';return;}
+  $$('mode').querySelector('[value="scenario1"]').disabled=true;
+  document.querySelector('[data-nation-card="FR"]').classList.add('active');
+  $$('garageTitle').textContent='Supports français · extension p.10–11';
+  const eyebrow=$$('garageTitle').previousElementSibling;if(eyebrow)eyebrow.textContent='De la Pologne à la Sicile · France 1939–1940';
+  $$('canonChoiceNote').textContent='25 mm : 0–2 équipes, ◆ chacune. 47 mm : 0–1 équipe, 1 ★. Plafonds distincts.';
+  $$('view-formation').querySelector('.recruit-lead').textContent='Infanterie française 1939–1940 : 20 figurines de base. Groupe 3 de 7 figurines à 3 ★, gratuit en Recrue. Sur la défensive : test D8 une fois par tour pour ignorer le modificateur de tir d’opportunité. Jusqu’au bout : test D8 avant l’assaut pour être considéré Élite pendant sa résolution.';
+  directSource.textContent='Extension p.5–6. Cette liste peut également représenter Vichy 1940–1942 et les FFL. LMG : FM 24/29 ou Chauchat ; Mo.P : lance-grenades VB 1940.';
+  $$('view-experience').querySelector('.recruit-lead').textContent='Recrue : le Groupe 3 est gratuit. L’option Troupes coloniales donne une réussite automatique à Jusqu’au bout ; le premier support divisionnaire coûte une étoile de plus.';
+  $$('view-experience').querySelector('[data-exp="elite"]').hidden=true;
+  $$('view-conversions').querySelector('.conversion-info .recruit-lead').textContent='Deux retraits maximum pour les PM, chacun permettant jusqu’à deux FSL → PM. Les appuis ◆ nécessitent deux retraits chacun, distincts des conversions. Choisissez les figurines ici ou utilisez les renforts en réserve dans Équipement.';
+  $$('view-renforts').querySelector('.recruit-lead').textContent='0–4 lots à 1 ★ : trois FSL par lot. Affectez-les aux emplacements pâles ou utilisez-les pour payer les appuis ◆. Un renfort ajouté à une moto la transforme en side-car.';
+  $$('renfortStatus').textContent=S.lots+'/4 lots · '+totals().assigned+' affectées · '+S.mi.reserveSpent+' retirées pour ◆ · '+totals().unallocated+' en réserve';
+  const rosterLead=document.querySelector('main > section.panel:not(.catalogue) > p.muted');if(rosterLead)rosterLead.textContent='Base : commandement 4 figurines, Groupes 1 et 2 de 8 figurines chacun. Groupe 3 : 7 figurines, maximum 12 avec renforts.';
+  $$('miEquipment').innerHTML=equipmentHTML();
+ };
+ function motoLabel(){
+  if(!S.owned.app6||!S.mi.motorized)return '';
+  const slotsMoto=slots().filter(s=>s.key.startsWith('app6_0_0_'));
+  const sidecars=slotsMoto.filter(s=>S.alloc[s.key]&&!S.conversions.removed.includes(s.key+'_reinforced')).length;
+  const count=S.mi.secondMoto?2:1;
+  return count+' véhicule(s) Reco : '+(count-sidecars)+' moto(s), '+sidecars+' side-car(s) · une seule équipe et un seul chef';
+ }
+ function equipmentHTML(){
+  const remaining=diamondNeeded()-diamondPaid(),hasReco=!!S.owned.app6;
+  return `<h3>Équipement français</h3><label><input type="checkbox" data-mi-option="colonial" ${S.mi.colonial?'checked':''}> Troupes coloniales</label><p class="muted">Jusqu’au bout automatique. Surcoût unique de 1 ★ si au moins un support divisionnaire est recruté.</p><h3>Paiement des appuis ◆</h3><p>${diamondPaid()}/${diamondNeeded()} figurines retirées · ${S.mi.reserveSpent} prises dans les renforts en réserve.</p><button data-mi-reserve="1" ${remaining<=0||totals().unallocated<=0?'disabled':''}>Retirer 1 figurine de réserve pour ◆</button><button class="outline" data-mi-reserve="-1" ${S.mi.reserveSpent<=0?'disabled':''}>Rétablir 1 figurine de réserve</button><p class="muted">Vous pouvez aussi désigner des figurines de la section dans Conversions. Un retrait ne paie qu’un seul usage.</p><h3>Reconnaissance</h3>${hasReco?`<label><input type="checkbox" data-mi-option="recoDowngrade" ${S.mi.recoDowngrade?'checked':''}> Remplacer la LMG par un FSL (−1 ★)</label><label><input type="checkbox" data-mi-option="motorized" ${S.mi.motorized?'checked':''}> Transporter cette équipe sur moto(s)</label><label><input type="checkbox" data-mi-option="secondMoto" ${S.mi.secondMoto?'checked':''} ${S.mi.motorized?'':'disabled'}> Deuxième moto : +2 FSL dans la même équipe (+1 ★)</label><p>${escapeHTML(motoLabel())}</p><p class="muted">Une figurine de renfort dans l’emplacement de chaque moto donne un side-car. Toute l’équipe est embarquée ou débarquée ; les motos ne sont pas des véhicules divisionnaires ciblables.</p>`:'<p class="muted">Recrutez l’équipe Reco motorisable dans Appuis pour régler ses armes et ses motos.</p>'}<h3>Profils particuliers</h3><p class="muted">F-AC : portée 2L, capacité E, combat rapproché 1D6 (p.3, arbitrage déjà validé). Lorraine 38L sans armement : retrait du canon et de la MMG coaxiale validé par l’utilisateur.</p>`;
+ }
+ $$('miEquipment').addEventListener('change',e=>{
+  const key=e.target.dataset.miOption;if(!isFR()||!['motorized','secondMoto','recoDowngrade','carDowngrade'].includes(key))return;
+  const previous={...S.mi},before=totals().spent;S.mi[key]=e.target.checked;
+  if(key==='motorized'&&!S.mi.motorized)S.mi.secondMoto=false;
+  if(totals().spent>effectiveBudget()&&totals().spent>before){S.mi=previous;alert('Budget insuffisant pour cette option.');}
+  render();
+ });
+ $$('miEquipment').addEventListener('click',e=>{
+  const b=e.target.closest('[data-mi-reserve]');if(!b||b.disabled||!isFR())return;
+  const delta=Number(b.dataset.miReserve);if(delta>0&&diamondPaid()<diamondNeeded()&&totals().unallocated>0)S.mi.reserveSpent++;
+  if(delta<0&&S.mi.reserveSpent>0)S.mi.reserveSpent--;render();
+ });
+ $$('view-experience').addEventListener('click',e=>{
+  if(isFR()&&e.target.closest('[data-exp="elite"]'))e.stopImmediatePropagation();
+ },true);
+ const oldMakeVisual=makeVisual;
+ makeVisual=(only=false)=>{
+  let html=oldMakeVisual(only);if(!isFR())return html;
+  html=html.replace('Équipe 1 · 4 figurines','Équipe 1 · 3 figurines + 2 renforts').replace('Équipe 2 · 4 figurines + renfort','Équipe 2 · 4 figurines + 1 renfort');
+  if(!only&&S.owned.app6&&S.mi.motorized)html+='<div class="integrated-vehicle-note">'+escapeHTML(motoLabel())+'</div>';
+  return html;
+ };
+ const oldInventory=buildPaintInventory;
+ buildPaintInventory=t=>{let h=oldInventory(t);return isFR()?h.replaceAll('FM (MG42)','LMG (FM 24/29 ou Chauchat)').replaceAll('Mo.P','Lance-grenades VB 1940'):h;};
+ const oldOrganicPrint=organicTransportPrint;
+ organicTransportPrint=()=>isFR()&&motoLabel()?'<section class="p-organics"><h3>Reconnaissance montée</h3><div>'+escapeHTML(motoLabel())+'</div></section>':oldOrganicPrint();
+ const oldPrint=printContent;
+ printContent=mode=>{let h=oldPrint(mode);if(!isFR())return h;return h.replace('<footer class="p-footer">','<section class="p-organics"><h3>Règles et options françaises</h3><div>De la Pologne à la Sicile · France 1939–1940'+(S.mi.colonial?' · Troupes coloniales : Jusqu’au bout automatique ; premier support +1 ★.':' · Jusqu’au bout : D8 avant assaut.')+' Sur la défensive : D8 une fois par tour. Appuis ◆ : '+diamondPaid()+'/'+diamondNeeded()+' retraits. Conversions PM : '+S.conversions.upgraded.length+'.</div></section><footer class="p-footer">');};
+
+ // Export/import of the new namespace is independent of unchanged V25 saves.
+ function exportFR(){return {format:'VFV_PILOTE_V04',ruleset_id:'VFV_POLOGNE_SICILE',source_pack:'POLOGNE_SICILE',formation_id:ID,nom_groupement:S.forceName,mode:S.mode,budget:S.budget,owned:structuredClone(S.owned),lots:S.lots,alloc:structuredClone(S.alloc),vehicles:structuredClone(S.vehicles),conversions:structuredClone(S.conversions),experience:S.experience,fr:structuredClone(S.mi),validation:'A_TESTER_DEV19Q'};}
+ function importFR(d){
+  if(d.format!=='VFV_PILOTE_V04'||d.ruleset_id!=='VFV_POLOGNE_SICILE'||d.formation_id!==ID)throw Error('Format, corpus ou formation incompatible.');
+  if(typeof d.fr?.carDowngrade!=='boolean'||d.fr.colonial)throw Error('Options incompatibles avec l’infanterie motorisée.');
+  if(d.mode!=='libre'||!['standard','recrue'].includes(d.experience))throw Error('Mode ou expérience incompatible avec l’infanterie française.');
+  const integer=(n,min,max)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
+  if(!integer(d.budget,0,99)||!integer(d.lots,0,4))throw Error('Budget ou lots invalides.');
+  if(!d.fr||['colonial','motorized','secondMoto','recoDowngrade'].some(k=>typeof d.fr[k]!=='boolean')||!integer(d.fr.reserveSpent,0,d.lots*3)||d.fr.secondMoto&&!d.fr.motorized)throw Error('Options françaises invalides.');
+  if(!d.owned||typeof d.owned!=='object'||Array.isArray(d.owned))throw Error('Achats illisibles.');
+  const known=new Set(offersFR().map(o=>o.id));
+  for(const [id,n] of Object.entries(d.owned))if(!known.has(id)||!integer(n,0,20))throw Error('Achat inconnu ou quantité invalide : '+id);
+  if(!Array.isArray(d.vehicles)||d.vehicles.length>100)throw Error('Liste de véhicules invalide.');
+  for(const item of d.vehicles){const v=frVehicles.find(v=>v.id===item.id);if(!v||!Array.isArray(item.options)||new Set(item.options).size!==item.options.length||item.options.some(i=>!Number.isInteger(i)||!allWeapons(v)[i]?.optionnelle))throw Error('Véhicule ou option inconnue.');const groups=item.options.map(i=>allWeapons(v)[i].groupe_alternative).filter(Boolean);if(new Set(groups).size!==groups.length)throw Error('Options exclusives cumulées.');}
+  const cv=d.conversions;if(!cv||['removed','upgraded','downgraded','panzerfaust'].some(k=>!Array.isArray(cv[k])||cv[k].some(x=>typeof x!=='string')||new Set(cv[k]).size!==cv[k].length)||cv.panzerfaust.length||cv.downgraded.length||!cv.allocation||typeof cv.allocation!=='object')throw Error('Conversions françaises invalides.');
+  if(!d.alloc||typeof d.alloc!=='object'||Array.isArray(d.alloc)||Object.values(d.alloc).some(x=>x!==1&&x!==true))throw Error('Affectations invalides.');
+  // Validate against a temporary state, restoring it even when any check fails.
+  const prior=structuredClone(S);
+  try {
+   Object.assign(S,{owned:structuredClone(d.owned),lots:d.lots,alloc:structuredClone(d.alloc),vehicles:structuredClone(d.vehicles),conversions:structuredClone(cv),experience:d.experience,mi:structuredClone(d.fr),budget:d.budget,mode:d.mode});
+   const candidates=new Map(conversionCandidates().map(c=>[c.id,c]));
+   const validSlots=new Set(slots().map(s=>s.key));
+   if(Object.keys(S.alloc).some(k=>!validSlots.has(k))||Object.keys(S.alloc).length+S.mi.reserveSpent>S.lots*3)throw Error('Affectation hors emplacement ou réserve insuffisante.');
+   if(cv.removed.some(id=>!removable(candidates.get(id))||cv.upgraded.includes(id)||!['pm','diamond'].includes(cv.allocation[id]))||cv.upgraded.some(id=>!candidates.has(id)||candidates.get(id).weapon!=='FSL'||candidates.get(id).role==='servant'))throw Error('Retrait ou conversion non autorisé.');
+   const pm=cv.removed.filter(id=>cv.allocation[id]==='pm').length;
+   if(pm>2||cv.upgraded.length>pm*2)throw Error('Conversions PM non financées.');
+  } finally {Object.assign(S,prior);}
+  Object.assign(S,{owned:structuredClone(d.owned),lots:d.lots,lotTypes:[],alloc:structuredClone(d.alloc),vehicles:structuredClone(d.vehicles),conversions:structuredClone(cv),experience:d.experience,mi:structuredClone(d.fr),budget:d.budget,mode:d.mode,forceName:typeof d.nom_groupement==='string'?d.nom_groupement.slice(0,90):''});
+  $$('mode').value=S.mode;render();
+ }
+ const oldExport=$$('export').onclick,oldImport=$$('import').onchange;
+ $$('export').onclick=()=>{
+  if(!isFR())return oldExport();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportFR(),null,2)],{type:'application/json'}));a.download='vfv_france_motorisee_1939_1940_dev19q.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ };
+ $$('import').onchange=async e=>{
+  if(!isFR())return oldImport(e);
+  try{const file=e.target.files?.[0];if(!file)return;importFR(JSON.parse(await file.text()));const errors=recruitmentAudit(totals(),effectiveBudget()).filter(x=>x.level==='error');alert('Sauvegarde française importée.'+(errors.length?' '+errors.length+' incompatibilité(s) à corriger.':''));}catch(err){alert('Import refusé : '+err.message);}finally{e.target.value='';}
+ };
+ // Page 8: one fixed organic truck for command and each combat group.
+ function truckGroups(){return ['Commandement','Groupe 1','Groupe 2',...(S.owned.group3?['Groupe 3']:[])];}
+ function organicText(){return truckGroups().map(name=>name+' : Camion').join(' ; ');}
+ const miAudit=recruitmentAudit;
+ recruitmentAudit=(t,budget)=>{
+  const issues=miAudit(t,budget);if(!isFR())return issues;
+  if(S.mi.colonial)issues.push({level:'error',code:'MI_COLONIAL',message:'L’option coloniale est réservée à la liste Infanterie p.6.',ref:'Extension p.5,8'});
+  return issues;
+ };
+ const miExtra=renderMecExtras;
+ renderMecExtras=()=>{
+  miExtra();if(!isFR())return;
+  $$('view-formation').querySelector('.recruit-lead').textContent='Infanterie motorisée 1939–1940 : 20 figurines de base et trois camions inclus. Groupe 3 : 7 figurines et un camion, 3 ★, gratuit en Recrue. Mécanisée : les équipes peuvent débarquer en résolvant un assaut. Jusqu’au bout : test D8 avant l’assaut pour être considéré Élite pendant sa résolution.';
+  $$('view-formation').querySelector(':scope > p.muted').textContent='Extension p.8. Commandement : 4 figurines ; Groupes 1 et 2 : 8 chacun. LMG : FM 24/29 ou Chauchat ; Mo.P : lance-grenades VB 1940.';
+  $$('canonChoiceNote').textContent='25 mm : 0–2 équipes, ◆ chacune. 47 mm : 0–2 équipes, 1 ★ chacune. Plafonds distincts.';
+  $$('view-experience').querySelector('.recruit-lead').textContent='Recrue : le Groupe 3 et son camion sont gratuits. Pas d’option Élite permanente ni de troupes coloniales dans cette liste.';
+  const colony=$$('miEquipment').querySelector('[data-mi-option="colonial"]');if(colony){colony.closest('label').hidden=true;colony.closest('label').nextElementSibling.hidden=true;}
+  if(S.owned.app7)$$('miEquipment').insertAdjacentHTML('beforeend','<h3>Reco en voiture</h3><label><input type="checkbox" data-mi-option="carDowngrade" '+(S.mi.carDowngrade?'checked':'')+'> Remplacer sa LMG par un FSL (−1 ★)</label><p class="muted">Une voiture est incluse dans cette équipe, distincte de la Reco à moto et des supports divisionnaires.</p>');
+  const rosterLead=document.querySelector('main > section.panel:not(.catalogue) > p.muted');if(rosterLead)rosterLead.textContent='Base : commandement 4 figurines, Groupes 1 et 2 de 8 chacun (20). Un camion inclus dans chaque groupe. Groupe 3 : 7 figurines et un camion.';
+  $$('mecTransports').hidden=false;$$('mecTransports').innerHTML='<strong>Transports organiques · p.8</strong><p>'+escapeHTML(organicText())+'</p><p class="muted">Camions inclus dans les groupes. La voiture Reco se recrute avec son équipe dans Appuis. Les transports intégrés ne consomment pas le quota des supports gratuits.</p>';
+  if(!S.vehicles.length){const empty=$$('vehiclesOrganigram').querySelector('p');if(empty)empty.textContent='Aucun support divisionnaire sélectionné.';}
+ };
+ const miPrintOrganic=organicTransportPrint;
+ organicTransportPrint=()=>{const h=miPrintOrganic();return isFR()?h+'<section class="p-organics"><h3>Transports organiques de l’infanterie motorisée</h3><div>'+escapeHTML(organicText())+'</div><div>'+truckGroups().length+' camions inclus'+(S.owned.app7?' ; une voiture incluse dans la Reco':'')+'.</div></section>':h;};
+ const miPrint=printContent;
+ printContent=mode=>{let h=miPrint(mode);if(!isFR())return h;return h.replace(' Sur la défensive : D8 une fois par tour.',' Mécanisée : débarquement en assaut.').replace('France 1939–1940','France · Infanterie motorisée 1939–1940');};
+ const miInventory=buildPaintInventory;
+ buildPaintInventory=t=>{const h=miInventory(t);return isFR()?h+'<section class="paint-summary-group"><h4>Transports organiques</h4><p>'+escapeHTML(organicText())+(S.owned.app7?' ; Reco : Voiture':'')+'</p></section>':h;};
+ const miVisual=makeVisual;
+ makeVisual=only=>{const h=miVisual(only);return isFR()&&!only?h+'<div class="integrated-vehicle-note">'+escapeHTML(organicText())+(S.owned.app7?' ; Reco : Voiture incluse':'')+'</div>':h;};
+
+ // Keep deterministic entry points for regression and round-trip tests.
+ window.VFVMotorisee={id:ID,export:exportFR,import:importFR,formation,vehicles:frVehicles,diamondNeeded,diamondPaid};
+ const oldRender=render;
+ render=()=>{
+  oldRender();document.body.classList.toggle('fr-force',S.formation.startsWith('PS_FR_'));if(!isFR())return;
+  for(const card of $$('offers').querySelectorAll('.recruit-card')){
+   const b=card.querySelector('[data-plus]'),o=offersFR().find(o=>o.id===b?.dataset.plus);if(!o)continue;
+   if(o.diamond){card.querySelector('.cost').textContent='◆ · 2 figurines';card.insertAdjacentHTML('beforeend','<button class="outline" data-mi-goto-equipment>Régler les retraits ◆</button>');}
+   if(o.id==='app6')card.insertAdjacentHTML('beforeend','<button class="outline" data-mi-goto-equipment>Régler la LMG et les motos</button>');
+   const specs=card.querySelector('.appui-specs');if(o.sharedGroup&&specs)specs.textContent='Quota commun : '+offerGroupCount(o)+'/'+o.max+' · extension p.6';
+  }
+  if(S.mi.colonial&&S.vehicles.length)$$('remaining').textContent+=' · surcoût colonial +1 ★ inclus';
+ };
+ $$('offers').addEventListener('click',e=>{if(isFR()&&e.target.closest('[data-mi-goto-equipment]')){document.querySelector('[data-view="experience"]').click();$$('miEquipment').scrollIntoView({block:'nearest'});}});
+ document.head.insertAdjacentHTML('beforeend','<style>@media print{body.fr-force .p-recap{break-before:page}body.fr-force .p-recap>h2{break-after:avoid}}</style>');
+ changeFormation(ID);
+})();
+</script>
+<script>// Shared French selector: readable two-line labels and existing nation styling.
+(() => {
+ const items=[['PS_FR_INF_1939_1940','Infanterie','1939–1940 (p.6)'],['PS_FR_DRAGONS_1939_1940','Dragons portés','1939–1940 (p.7)'],['PS_FR_MOTORISEE_1939_1940','Infanterie motorisée','1939–1940 (p.8)']];
+ const old=$$('chooseFrance');
+ old.outerHTML='<div class="nation-combo" data-rich-france><button id="chooseFrance" class="nation-choice" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="nation-choice-label"></span><span class="nation-choice-arrow">▾</span></button><div class="nation-choice-menu" id="frenchMenu" role="listbox" hidden>'+items.map(([id,name,period])=>'<button class="nation-choice-option" role="option" data-fr-formation="'+id+'"><strong>'+name+'</strong><br><span>'+period+'</span></button>').join('')+'</div></div>';
+ document.head.insertAdjacentHTML('beforeend','<style>[data-rich-france] .nation-choice-label{white-space:normal;line-height:1.35}[data-rich-france] .nation-choice{min-height:48px}[data-rich-france] .nation-choice-label strong{display:block}[data-rich-france] .nation-choice-label span{display:block}.nation-combo[data-rich-france]{position:relative}</style>');
+ const sync=()=>{const selected=items.find(x=>x[0]===S.formation);$$('chooseFrance').querySelector('.nation-choice-label').innerHTML=selected?'<strong>'+selected[1].replace('Infanterie motorisée','Inf. motorisée')+'</strong><span>'+selected[2]+'</span>':'Choisir…';$$('chooseFrance').title=selected?selected[1]+' · '+selected[2]:'Choisir une formation française';for(const b of $$('frenchMenu').querySelectorAll('button'))b.setAttribute('aria-selected',String(b.dataset.frFormation===S.formation));};
+ $$('chooseFrance').onclick=()=>{const show=$$('frenchMenu').hidden;closeNationMenus();$$('frenchMenu').hidden=!show;$$('chooseFrance').setAttribute('aria-expanded',String(show));};
+ $$('frenchMenu').onclick=e=>{const b=e.target.closest('[data-fr-formation]');if(!b)return;$$('frenchMenu').hidden=true;$$('chooseFrance').setAttribute('aria-expanded','false');changeFormation(b.dataset.frFormation);sync();};
+ document.addEventListener('click',e=>{if(!e.target.closest('[data-rich-france]')){$$('frenchMenu').hidden=true;$$('chooseFrance').setAttribute('aria-expanded','false');}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){$$('frenchMenu').hidden=true;$$('chooseFrance').setAttribute('aria-expanded','false');}});
+ const previous=syncNationSelectors;syncNationSelectors=()=>{previous();sync();};sync();
+})();
+</script>
+</body></html>
