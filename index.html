@@ -33,7 +33,7 @@
     .tag{display:inline-flex;align-self:flex-start;background:#eef1eb;color:#3e5e4b;border-radius:6px;font-size:.78rem;font-weight:700;padding:5px 9px;margin-bottom:12px}
     .pending{display:inline-block;width:100%;text-align:center;background:#e6e9e4;color:#52665b;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem;cursor:default}
     .launch{display:inline-block;width:100%;text-align:center;background:var(--accent);color:#fff;text-decoration:none;border-radius:9px;padding:11px 12px;font-weight:700;font-size:.93rem}
-    .launch:hover{filter:brightness(1.12)}.launch:focus-visible{outline:3px solid #ffe0a6;outline-offset:3px}
+    .vfv-tools{display:grid;gap:9px}.launch:hover{filter:brightness(1.12)}.launch:focus-visible{outline:3px solid #ffe0a6;outline-offset:3px}
     .publisher-credit{display:flex;flex-direction:column;gap:5px;margin:0 0 16px;color:var(--muted);font-size:.8rem;line-height:1.45}
     .publisher-credit a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;font-weight:650}
     .publisher-credit a:hover{text-decoration-thickness:2px}
@@ -67,7 +67,7 @@
     </div>
   </header>
   <main>
-    <div class="notice" role="status"><strong data-i18n="noticeTitle">Site en préparation.</strong> <span data-i18n="noticeBody">SAGA est disponible en version bêta ; les autres constructeurs seront ajoutés progressivement.</span></div>
+    <div class="notice" role="status"><strong data-i18n="noticeTitle">Site en préparation.</strong> <span data-i18n="noticeBody">SAGA et les builders V for Victory sont disponibles ; les autres outils seront ajoutés progressivement.</span></div>
     <div class="grid">
       <article>
         <div class="illustration" aria-hidden="true">⚔️</div>
@@ -91,7 +91,7 @@
         <span class="tag" data-i18n="inDevelopment">En développement</span>
         <p data-i18n="vfvDescription">Construction des formations de la Seconde Guerre mondiale, avec leurs options et supports.</p>
         <div class="publisher-credit"><span data-i18n="vfvCredit">Outil indépendant de composition de forces pour V for Victory, un jeu édité par Studio Tomahawk.</span><a href="https://www.studio-tomahawk.com/v-for-victory/" target="_blank" rel="noopener noreferrer" data-i18n="vfvOfficial">Découvrir V for Victory chez Studio Tomahawk ↗</a></div>
-        <a class="launch" href="v-for-victory/" data-i18n="openVfv" data-i18n-aria="vfvOpenLabel" aria-label="Ouvrir le constructeur V for Victory">Ouvrir V for Victory</a>
+        <div class="vfv-tools"><a class="launch" href="v-for-victory/" data-i18n="openVfv" data-i18n-aria="vfvOpenLabel" aria-label="Ouvrir le constructeur V for Victory">Ouvrir V for Victory</a><a class="launch" href="v-for-victory/xl/" data-i18n="openVfvXl" data-i18n-aria="vfvXlLabel" aria-label="Ouvrir le builder du scénario XL">Builder scénario XL</a><span class="pending" data-i18n="vfvCampaignSoon" data-i18n-aria="vfvCampaignLabel" aria-label="Builder campagne : en préparation">Builder campagne · En préparation</span></div>
       </article>
     </div>
     <section class="info">
@@ -105,13 +105,18 @@
     // Les traductions de cette page sont indépendantes de celles des Army Builders.
     const translations = {
       fr: {
+        openVfvXl:"Builder scénario XL",
+        vfvXlLabel:"Ouvrir le builder du scénario XL pour une équipe de deux joueurs",
+        vfvCampaignSoon:"Builder campagne · En préparation",
+        vfvCampaignLabel:"Builder de campagne : en préparation",
+
         pageTitle:'Army Builders — Jeux de figurines historiques',
         pageDescription:'Army Builders gratuits pour jeux de figurines historiques : SAGA, Lion Rampant et V for Victory.',
         switcher:'Choix de la langue',
         eyebrow:'Outils pour jeux de figurines',
         intro:'Des outils gratuits pour composer vos armées et bandes dans les jeux de figurines historiques.',
         noticeTitle:'Site en préparation.',
-        noticeBody:'SAGA est disponible en version bêta ; les autres constructeurs seront ajoutés progressivement.',
+        noticeBody:'SAGA et les builders V for Victory sont disponibles ; les autres outils seront ajoutés progressivement.',
         multilingual:'Multilingue',
         sagaDescription:'Composition de bandes pour SAGA. Sauvegarde et importation des listes au format JSON.',
         sagaCredit:'Outil indépendant de composition de bandes pour SAGA, un jeu édité par Studio Tomahawk.',
@@ -135,13 +140,18 @@
         footer:'Projet indépendant, non affilié aux éditeurs des jeux mentionnés.'
       },
       en: {
+        openVfvXl:"XL scenario builder",
+        vfvXlLabel:"Open the XL scenario builder for a two-player team",
+        vfvCampaignSoon:"Campaign builder · In preparation",
+        vfvCampaignLabel:"Campaign builder: in preparation",
+
         pageTitle:'Army Builders — Historical tabletop wargames',
         pageDescription:'Free army builders for historical tabletop wargames: SAGA, Lion Rampant and V for Victory.',
         switcher:'Choose language',
         eyebrow:'Tabletop wargaming tools',
         intro:'Free tools to build your armies and warbands for historical tabletop wargames.',
         noticeTitle:'Website under construction.',
-        noticeBody:'SAGA is available in beta; the other army builders will be added progressively.',
+        noticeBody:'SAGA and the V for Victory builders are available; other tools will be added progressively.',
         multilingual:'Multilingual',
         sagaDescription:'Build your SAGA warbands. Save and import army lists as JSON files.',
         sagaCredit:'Independent warband-building tool for SAGA, a game published by Studio Tomahawk.',
@@ -165,13 +175,18 @@
         footer:'Independent project, not affiliated with the publishers of the games mentioned.'
       },
       es: {
+        openVfvXl:"Constructor del escenario XL",
+        vfvXlLabel:"Abrir el constructor del escenario XL para un equipo de dos jugadores",
+        vfvCampaignSoon:"Constructor de campaña · En preparación",
+        vfvCampaignLabel:"Constructor de campaña: en preparación",
+
         pageTitle:'Army Builders — Juegos de miniaturas históricos',
         pageDescription:'Creadores de ejércitos gratuitos para juegos de miniaturas históricos: SAGA, Lion Rampant y V for Victory.',
         switcher:'Elegir idioma',
         eyebrow:'Herramientas para juegos de miniaturas',
         intro:'Herramientas gratuitas para crear tus ejércitos y bandas en juegos de miniaturas históricos.',
         noticeTitle:'Sitio web en preparación.',
-        noticeBody:'SAGA está disponible en versión beta; los demás creadores se añadirán progresivamente.',
+        noticeBody:'SAGA y los constructores de V for Victory están disponibles; las demás herramientas se añadirán progresivamente.',
         multilingual:'Multilingüe',
         sagaDescription:'Crea tus bandas de SAGA. Guarda e importa tus listas en formato JSON.',
         sagaCredit:'Herramienta independiente para crear bandas de SAGA, un juego publicado por Studio Tomahawk.',
@@ -195,13 +210,18 @@
         footer:'Proyecto independiente, no afiliado a las editoriales de los juegos mencionados.'
       },
       de: {
+        openVfvXl:"XL-Szenario-Planer",
+        vfvXlLabel:"XL-Szenario-Planer für ein Team aus zwei Spielern öffnen",
+        vfvCampaignSoon:"Kampagnenplaner · In Vorbereitung",
+        vfvCampaignLabel:"Kampagnenplaner: in Vorbereitung",
+
         pageTitle:'Army Builders — Historische Tabletop-Spiele',
         pageDescription:'Kostenlose Armeeplaner für historische Tabletop-Spiele: SAGA, Lion Rampant und V for Victory.',
         switcher:'Sprache wählen',
         eyebrow:'Werkzeuge für Tabletop-Spiele',
         intro:'Kostenlose Werkzeuge zum Zusammenstellen deiner Armeen und Kriegerbanden für historische Tabletop-Spiele.',
         noticeTitle:'Website im Aufbau.',
-        noticeBody:'SAGA ist als Beta-Version verfügbar; weitere Armeeplaner folgen schrittweise.',
+        noticeBody:'SAGA und die V-for-Victory-Planer sind verfügbar; weitere Werkzeuge folgen schrittweise.',
         multilingual:'Mehrsprachig',
         sagaDescription:'Stelle deine SAGA-Kriegerbanden zusammen. Speichere und importiere Armeelisten im JSON-Format.',
         sagaCredit:'Unabhängiges Werkzeug zum Zusammenstellen von Kriegerbanden für SAGA, ein von Studio Tomahawk veröffentlichtes Spiel.',
@@ -263,3 +283,4 @@
   </script>
 </body>
 </html>
+
