@@ -1,0 +1,10 @@
+{
+  "classic": {
+    "version": "dev20g",
+    "sha256": "b87479946785a617e730963b977102acc671b9fa768e5df2943cd547acd03f55"
+  },
+  "beta": {
+    "version": "beta02",
+    "sha256": "994fb32a8e7a35f5087f88cf5c09fb47c49b891bf49e652f50e447c4831968c3"
+  }
+}
