@@ -3,3 +3,5 @@
 #lossInputs output{display:block;min-width:55px;font-weight:650}#lossInputs input[aria-invalid=true]{border:2px solid #ad3b2d;background:#fff2ee}#battle th small{font-weight:400}@media(max-width:750px){#battle table{min-width:540px}#battle td:first-child{min-width:125px}#battle td input{min-width:62px;padding:8px}}
 
 .growth-offer{display:flex;flex-direction:column;gap:5px;max-width:280px}.growth-offer small{font-size:12px;color:#647164}.purchase-list{align-items:flex-start}
+
+.campaign-purchase-cost{display:block;margin-top:5px;font-size:12px;color:#52634f;line-height:1.5}.campaign-purchase-cost b{white-space:nowrap}.campaign-reinforcement-costs{margin:16px 0;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:#f5f7f2}.campaign-reinforcement-costs h2{margin:0 0 10px;font-size:18px}.campaign-reinforcement-costs p{margin:7px 0}.campaign-reinforcement-costs .note{margin-bottom:0}@media(max-width:750px){.campaign-purchase-cost{font-size:11px}.campaign-purchase-cost b{white-space:normal}.campaign-reinforcement-costs{padding:10px}}

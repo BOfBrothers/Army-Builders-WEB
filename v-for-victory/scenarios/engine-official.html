@@ -1259,7 +1259,7 @@ $$('resetConversions').onclick=()=>{S.conversions={removed:[],upgraded:[],panzer
 $$('appuiTabs').addEventListener('click',e=>{const c=e.target.dataset.appcat;if(['Tous','Groupes','Équipes','Armes','Canons','Spécialistes'].includes(c)){appuiCategory=c;render()}});
 // DEV16 — Inventaire simplifié sans double comptage visuel : troupes, officiers, NCO, armes collectives. Les spécialistes et leurs servants restent par équipe.
 function buildPaintInventory(t){
- const figs=conversionCandidates().filter(c=>{
+ const figs=(window.VFVRecruitmentCosts?.paintCandidates()||conversionCandidates()).filter(c=>{
   if(S.conversions.removed.includes(c.id))return false;
   if(isAss()&&c.origin==='reserve'&&!assAssignedSlot(c.id))return false;
   return true;
@@ -1282,12 +1282,12 @@ function buildPaintInventory(t){
    const carrierWeapon=carrier?currentWeapon(carrier):null;
    const label=carrierWeapon==='Sniper'?'Sniper':carrierWeapon==='LF'?'Lance-flammes':carrierWeapon==='AC'?(teamModel.modele||'Antichar'):carrierWeapon==='Mo.M'||carrierWeapon==='Mo. Moyen'?'Mortier moyen':carrierWeapon==='MMG'||carrierWeapon==='HMG'?(teamModel.modele||carrierWeapon):carrierWeapon==='A/C'?(teamModel.modele||'Canon A/C'):carrierWeapon==='Ob.M'?'Obusier':(teamModel.modele||teamModel.type);
    const extras=units.filter(c=>c!==carrier&&c.weapon!=='SERVANT_SANS_ARME_INDIQUEE'&&c.role!=='servant');
-   collectives.push({label,carrier:carrier?1:0,servants,extra:extras.map(c=>currentWeapon(c))});
+   collectives.push({teamKey:x.key,label,carrier:carrier?1:0,servants,extra:extras.map(c=>currentWeapon(c))});
    continue;
   }
   for(const c of units){
    const w=currentWeapon(c);
-   if(w==='SERVANT_SANS_ARME_INDIQUEE'){collectives.push({label:x.group+' · '+x.team.nom,carrier:0,servants:1,extra:[]});continue}
+   if(w==='SERVANT_SANS_ARME_INDIQUEE'){collectives.push({teamKey:x.key,label:x.group+' · '+x.team.nom,carrier:0,servants:1,extra:[]});continue}
    if(isSOV()&&w==='COM.')count(commissaires,'Commissaire politique');
    else if(c.role==='officier')count(officers,w);
    else if(c.role==='chef')count(ncos,w);
@@ -1297,7 +1297,7 @@ function buildPaintInventory(t){
  const label=w=>w==='LMG'?(isSOV()?'FM (DP)':isUK()?'FM (Bren)':isUSA()?'FM (BAR)':'FM (MG42)'):w==='FM'&&isUSA()?'FM (BAR)':w==='Mo. P'?'Mortier léger (Mo.P)':w==='FA'?'Fusil d’assaut (FA)':w==='PST'?'Pistolet (PST)':w==='PM'?'PM':w==='FSL'?'FSL':w;
  const rows=map=>[...map.entries()].sort((a,b)=>a[0].localeCompare(b[0])).map(([w,n])=>`<div class="paint-summary-line"><span>${escapeHTML(label(w))}</span><b>${n} fig.</b></div>`).join('');
   const group=(title,map)=>`<section class="paint-summary-group"><h4>${title}</h4>${map.size?rows(map):'<p class="muted">—</p>'}</section>`;
- const extra=collectives.map(c=>`<div class="paint-crew-line"><b>${c.carrier||''}</b> ${escapeHTML(c.label)}${c.servants?' <span class="paint-plus">+ '+c.servants+' servant'+(c.servants>1?'s':'')+'</span>':''}${c.extra.length?' + '+escapeHTML(c.extra.map(label).join(' + ')):''}</div>`).join('');
+ const extra=collectives.map(c=>`<div class="paint-crew-line" data-recruitment-team="${escapeHTML(c.teamKey||'')}"><b>${c.carrier||''}</b> ${escapeHTML(c.label)}${c.servants?' <span class="paint-plus">+ '+c.servants+' servant'+(c.servants>1?'s':'')+'</span>':''}${c.extra.length?' + '+escapeHTML(c.extra.map(label).join(' + ')):''}</div>`).join('');
  const counted=[...officers.values(),...ncos.values(),...regular.values(),...commissaires.values()].reduce((a,b)=>a+b,0)+collectives.reduce((n,c)=>n+c.carrier+c.servants+c.extra.length,0);
  const total=figs.length;
  return `<p class="muted paint-inventory-head"><b>${total} fig.</b> à recruter et peindre (après conversions et renforts)</p>${group('Troupes · armement individuel',regular)}${commissaires.size?group('Commissaires politiques',commissaires):''}${group('Officiers',officers)}${group('Sous-officiers (NCO)',ncos)}<section class="paint-summary-group"><h4>Armes collectives</h4>${extra||'<p class="muted">Aucune équipe d’arme collective recrutée.</p>'}<p class="muted">Chaque servant est compté avec son arme principale.</p></section>${!isUK()&&!isUSA()&&S.conversions.panzerfaust.length?'<p class="muted">Panzerfaust : '+S.conversions.panzerfaust.length+' équipements supplémentaires (déjà portés par les figurines ci-dessus).</p>':''}${counted!==total?`<p class="error">Bilan à contrôler : ${counted} figurines ventilées pour ${total} présentes.</p>`:''}`;
@@ -1358,7 +1358,7 @@ function printInventoryDetails(t){
  const cars=vehicles||'<p class="p-dim">Aucun support divisionnaire acheté.</p>';
  return `<section class="p-recap"><h2>Récapitulatif détaillé des figurines et véhicules</h2><div class="p-recap-counters"><strong>Figurines : ${buildPrintFigureCount(t)}</strong><strong>Supports divisionnaires : ${S.vehicles.length}</strong></div><div class="p-recap-grid"><div class="p-recap-figures">${figurineHTML}</div><div class="p-recap-vehicles"><h3>Véhicules par catégorie</h3>${cars}</div></div></section>`;
 }
-function buildPrintFigureCount(t){return conversionCandidates().filter(c=>!S.conversions.removed.includes(c.id)&&(!isAss()||c.origin!=='reserve'||!!assAssignedSlot(c.id))).length;}
+function buildPrintFigureCount(t){return (window.VFVRecruitmentCosts?.paintCandidates()||conversionCandidates()).filter(c=>!S.conversions.removed.includes(c.id)&&(!isAss()||c.origin!=='reserve'||!!assAssignedSlot(c.id))).length;}
 function printContent(mode){
  const groups=printableTeams(),t=totals(),bud=effectiveBudget(),name=(S.forceName||'').trim()||('Force '+F.section);
  const modeName=mode==='organigramme'?'Organigramme':'Liste de composition';let main='';
@@ -1396,7 +1396,7 @@ $$('renfortStatus').textContent=isSOVAss()?`${S.lots}/4 achats à 2 ★ · ${S.l
 renderMecExtras();$$('roster').innerHTML=selectedTeams().map(x=>{
  let detail=[x.team.chef_armement,...x.team.autres_disponibles], sl=t.sl.filter(s=>s.key.startsWith(x.key+'_'));
  let used=sl.filter(s=>S.alloc[s.key]).length, base=x.team.effectif_base,cv=conversionCountsForTeam(x),actual=base+used-cv.removed;
- const cands=conversionCandidates().filter(c=>c.id.startsWith(x.key+'_')||(isAss()&&c.origin==='reserve'&&sl.some(v=>S.alloc[v.key]===c.id)));
+ const cands=(window.VFVRecruitmentCosts?.paintCandidates()||conversionCandidates()).filter(c=>c.id.startsWith(x.key+'_')||(isAss()&&c.origin==='reserve'&&sl.some(v=>S.alloc[v.key]===c.id)));
  let tally={};
  for(const c of cands.filter(c=>c.origin==='base'&&!S.conversions.removed.includes(c.id))){const w=currentWeapon(c);tally[w]=(tally[w]||0)+1;}
  const addedTally={};
@@ -4518,4 +4518,5 @@ function effectiveBudget(){return rule()?((usesTypedLots()||isUSAMec())?Math.max
  parent.postMessage({type:'vfv-scenario-ready',beta:betaEngine},location.origin);
 })();
 
-</script></body></html>
+</script><script src="recruitment-costs.js?v=20261107"></script>
+</body></html>
