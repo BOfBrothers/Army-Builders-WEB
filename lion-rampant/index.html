@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quartier-maître — Rampant V1.0.5</title><style id="quartier-maitre-styles">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quartier-maître — Rampant V1.0.5 · JSON</title><style id="quartier-maitre-styles">
 /* styles.css */
 .leader-skills{margin:15px 0;padding:12px;background:#f7f3e9;border:1px solid var(--line);border-radius:5px}.leader-skills>div:first-child{display:flex;justify-content:space-between;font-size:11px;margin-bottom:8px}.leader-skills>div:first-child span{color:var(--red);font-weight:700}.leader-skills #leaderSkills{display:grid;grid-template-columns:1fr 1fr;gap:4px}.leader-skills label{font-size:9px;padding:5px;background:white;border:1px solid #ddd6c8;border-radius:3px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2px}.leader-skills label.blocked{opacity:.4}.leader-skills input{margin:0 3px 0 0;vertical-align:-2px}.leader-skills em{font-style:normal;font-weight:700;color:var(--red)}
 .options label.blocked{opacity:.45;cursor:not-allowed;text-decoration:line-through}
@@ -517,13 +517,15 @@
         <div class="legality"><span id="legalDot"></span><div><strong id="legalTitle">Bande incomplète</strong><p id="legalText">Ajoutez vos premières unités.</p></div></div>
         <div id="leaderSkillsPanel" class="leader-skills" hidden><div><strong id="leaderSkillsTitle">Compétences du Seigneur</strong><span id="skillCount">0/2</span></div><div id="leaderSkills"></div><div id="selectedSkillDetails" class="selected-skill-details"></div></div>
         <section class="save-library" aria-labelledby="saveLibraryTitle">
-          <div class="save-library-head"><strong id="saveLibraryTitle">Mes bandes sauvegardées</strong><span id="savedCount">0</span></div>
-          <select id="savedWarbands" aria-label="Choisir une bande sauvegardée"><option value="">Aucune bande sauvegardée</option></select>
-          <button id="save" class="primary">Sauvegarder sous ce nom</button>
-          <div class="save-library-actions"><button id="load">Charger la sélection</button><button id="deleteSave" class="danger">Supprimer</button></div>
+          <strong id="saveLibraryTitle">Sauvegardes sur votre ordinateur</strong>
+          <button id="save">Exporter la bande en JSON</button>
+          <button id="load">Importer un fichier JSON</button>
+          <input id="jsonFile" type="file" accept=".json,application/json" hidden>
+          <p>Exportez votre bande avant de fermer la page. Pour la retrouver, importez son fichier JSON.</p>
+          <button id="recoverLegacy">Récupérer les anciennes sauvegardes du navigateur</button>
         </section>
         <button id="export">Exporter / imprimer en PDF</button><button id="clear" class="ghost">Nouvelle bande</button>
-        <p class="local-note">Les données restent uniquement dans ce navigateur.</p>
+        <p class="local-note">Sauvegarde par fichiers JSON. Aucun enregistrement automatique : exportez vos changements avant de fermer la page.</p>
       </aside>
     </section>
   </main>
@@ -1753,45 +1755,90 @@ function bandSnapshot(){
   };
 }
 
-function writeBandLibrary(entries){
-  try{
-    localStorage.setItem(libraryKey(),JSON.stringify(entries));
-    return true;
-  }catch(error){
-    return false;
-  }
+// File format v1. Browser storage is read only for explicit legacy recovery.
+function renderSavedWarbands(){} // Existing ruleset switching calls retained.
+function bandFile(rulesetId=state.rulesetId,band=bandSnapshot()){
+  return {format:'quartier-maitre-rampant',schemaVersion:1,builderVersion:'1.0.5-json.1',exportedAt:new Date().toISOString(),rulesetId,band};
 }
-
-function readBandLibrary(){
-  try{
-    const parsed=JSON.parse(localStorage.getItem(libraryKey())||'null');
-    if(Array.isArray(parsed))return parsed.filter(entry=>entry&&entry.id&&entry.payload);
-    const legacyVersions=['v10','v09','v08','v07','v06','v05'];
-    for(const version of legacyVersions){
-      const legacy=JSON.parse(localStorage.getItem(saveKey(version))||'null');
-      if(!legacy)continue;
-      const entry={id:makeKey(),name:(legacy.name||'Ancienne sauvegarde').trim(),updatedAt:Date.now(),payload:{...legacy,leaderTitle:legacy.leaderTitle||defaultLeaderTitle(state.rulesetId)}};
-      writeBandLibrary([entry]);
-      return [entry];
+function downloadJSON(doc,name){
+  const blob=new Blob([JSON.stringify(doc,null,2)],{type:'application/json;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=name;a.hidden=true;document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),10000);
+}
+function safeFilename(name){return (name.normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,'-').replace(/[. ]+$/g,'').slice(0,80)||'bande');}
+function exportBand(){
+  if(!$('#warbandName').value.trim())return toast('Donnez d’abord un nom à cette bande.');
+  downloadJSON(bandFile(),safeFilename($('#warbandName').value)+'-'+state.rulesetId+'.json');
+  toast('Fichier JSON préparé : conservez-le sur votre ordinateur.');
+}
+function validateBandFile(doc){
+  const fail=message=>{throw Error(message);};
+  const object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
+  if(!object(doc)||doc.format!=='quartier-maitre-rampant'||doc.schemaVersion!==1)fail('Format ou version JSON non reconnu.');
+  if(!Object.hasOwn(RULESETS,doc.rulesetId))fail('Opus inconnu.');
+  const data=RULESETS[doc.rulesetId].data,b=doc.band;
+  if(!object(b)||!Array.isArray(b.units)||b.units.length>200)fail('Composition invalide.');
+  // Only fields with a known type are copied; prototype keys and foreign data never enter state.
+  function typed(value,defaults,path){
+    if(value===undefined)return structuredClone(defaults);
+    if(Array.isArray(defaults)){
+      if(!Array.isArray(value)||value.length>200||value.some(v=>typeof v!=='string'||v.length>200))fail(path+' : liste invalide.');
+      return [...value];
     }
-  }catch(error){
-    return [];
+    if(object(defaults)){
+      if(!object(value))fail(path+' : objet invalide.');
+      return Object.fromEntries(Object.entries(defaults).map(([k,v])=>[k,typed(value[k],v,path+'.'+k)]));
+    }
+    if(typeof value!==typeof defaults||(typeof value==='number'&&(!Number.isFinite(value)||value<0||value>100000))||(typeof value==='string'&&value.length>10000))fail(path+' : valeur invalide.');
+    return value;
   }
-  return [];
+  const result=typed(b,{name:'Bande sans nom',context:'',leaderTitle:defaultLeaderTitle(doc.rulesetId),budget:24,leaderSkills:[],variants:defaultVariants(),crusader:defaultCrusaderState(),viking:defaultVikingState(),xenos:defaultXenosState(),britannia:defaultBritanniaState()},'bande');
+  if(result.budget<1)fail('Budget invalide.');
+  if(!Object.hasOwn(CRUSADER_FACTIONS,result.crusader.factionId)||!Object.hasOwn(VIKING_FACTIONS,result.viking.factionId))fail('Faction inconnue.');
+  if(!['off','paid','free'].includes(result.variants.shieldwall))fail('Variante inconnue.');
+  if(!Object.hasOwn(XENOS_CONFIG.commanderTraits,result.xenos.commanderTable)||!Object.hasOwn(BRITANNIA_LEADER_TABLES,result.britannia.leaderTable))fail('Table de commandant inconnue.');
+  if(result.leaderSkills.some(id=>!LEADER_SKILLS.some(s=>s.id===id)))fail('Compétence inconnue.');
+  result.units=b.units.map((row,index)=>{
+    if(!object(row)||!data.units.some(u=>u.id===row.unitId))fail('Profil inconnu à la ligne '+(index+1)+'.');
+    const r=typed(row,{unitId:'',customName:'',options:[],leader:false,models:data.units.find(u=>u.id===row.unitId).strength,magicColors:[],psychicPowers:[],slayerTarget:'',crusaderTarget:'',hatredTarget:'',mechanoidAction:'',nationalTrait:'none',summoned:false},'unité '+(index+1));
+    if(r.options.some(id=>!data.options.some(o=>o.id===id)))fail('Option inconnue.');
+    if(r.magicColors.some(id=>!DRAGON_MAGIC_SCHOOLS.some(s=>s.id===id))||r.psychicPowers.some(id=>!XENOS_CONFIG.psychicPowers.some(p=>p.id===id)))fail('Pouvoir inconnu.');
+    return {...r,key:makeKey()};
+  });
+  return {rulesetId:doc.rulesetId,band:result};
 }
-
-function renderSavedWarbands(selectedId=''){
-  const select=$('#savedWarbands'),entries=readBandLibrary().sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
-  select.innerHTML='';
-  if(!entries.length)select.add(new Option('Aucune bande sauvegardée',''));
-  else{
-    select.add(new Option('Choisir une bande…',''));
-    for(const entry of entries)select.add(new Option(entry.name,entry.id));
-  }
-  select.value=entries.some(entry=>entry.id===selectedId)?selectedId:'';
-  $('#savedCount').textContent=String(entries.length);
-  $('#load').disabled=!entries.length;
-  $('#deleteSave').disabled=!entries.length;
+function recoverLegacy(){
+  let count=0;
+  try{
+    // Each explicit click downloads one file, avoiding automatic multiple downloads.
+    const files=[];let unreadable=0;
+    const read=key=>{try{return JSON.parse(localStorage.getItem(key)||'null');}catch(error){unreadable++;return null;}};
+    for(const id of Object.keys(RULESETS)){
+      const entries=read('rampant-warband-library-'+id+'-v11');
+      if(Array.isArray(entries)){
+        for(const entry of entries){
+          if(entry?.payload)files.push(bandFile(id,entry.payload));
+        }
+      }else{
+        for(const version of ['v10','v09','v08','v07','v06','v05']){
+          const old=read('lion-rampant-roster-'+id+'-'+version);
+          if(old){files.push(bandFile(id,old));break;}
+        }
+      }
+    }
+    count=files.length;
+    if(!count)return toast('Aucune ancienne sauvegarde accessible depuis cette page. Ouvrez-la à la même adresse et dans le même navigateur que précédemment.');
+    // Individual files are accessible through an explicit picker in the page.
+    let panel=$('#legacyFiles');if(panel)panel.remove();
+    panel=document.createElement('div');panel.id='legacyFiles';
+    for(const doc of files){
+      const button=document.createElement('button');button.textContent='Exporter : '+(doc.band.name||'Bande')+' ('+doc.rulesetId+')';
+      button.onclick=()=>downloadJSON(doc,safeFilename(doc.band.name||'Bande')+'-'+doc.rulesetId+'.json');panel.append(button);
+    }
+    $('#recoverLegacy').after(panel);
+    toast(count+' ancienne(s) sauvegarde(s) trouvée(s). Exportez chacune avec son bouton.'+(unreadable?' Certaines anciennes données sont illisibles.':''));
+  }catch(error){toast('Anciennes sauvegardes illisibles ou accès navigateur indisponible.');}
 }
 
 function applySavedBand(saved){
@@ -1831,7 +1878,7 @@ function resetBand(){
   const budget=activeRules().data.ruleset?.defaultBudget||24;
   state.units=[]; state.leaderSkills=[]; state.leaderTitle=defaultLeaderTitle(state.rulesetId); state.budget=budget; state.variants=defaultVariants(); state.crusader=defaultCrusaderState(); state.viking=defaultVikingState(); state.xenos=defaultXenosState(); state.britannia=defaultBritanniaState(); state.filter='Tous';
   $('#budgetInput').value=budget; $('#leaderTitle').value=leaderTitle(); $('#historicalContext').value=''; $('#printContext').textContent=''; $('#warbandName').value=state.rulesetId==='lion'?'Nouvelle bande médiévale':state.rulesetId==='crusader'?'Nouvelle mesnie d’Outremer':state.rulesetId==='viking'?'Compagnons de Harald':state.rulesetId==='dragon'?'Nouvelle bande fantastique':state.rulesetId==='xenos'?'Nouveau Détachement':state.rulesetId==='britannia'?'Nouvelle bande de Britannia':'Nouvelle bande Sengoku';
-  $('#savedWarbands').value=''; syncSidePanels(); renderFilters(); renderCatalogue(); render();
+  syncSidePanels(); renderFilters(); renderCatalogue(); render();
 }
 
 function syncSidePanels(){
@@ -1922,36 +1969,21 @@ function bind(){
     if(e.target.value!=='off'&&incompatible){if(!confirm('Le Mur de boucliers est incompatible avec les Piques, le Schiltron mobile et les Armes mixtes. Retirer ces options ?')){e.target.value=state.variants.shieldwall;return;}state.units.forEach(row=>row.options=row.options.filter(id=>!['pikes','schiltron-half','schiltron-full','mixed-weapons'].includes(id)));}
     state.variants.shieldwall=e.target.value;render();
   };
-  $('#save').onclick=()=>{
-    const name=$('#warbandName').value.trim();
-    if(!name)return toast('Donnez d’abord un nom à cette bande.');
-    const entries=readBandLibrary(),existing=entries.find(entry=>entry.name.localeCompare(name,'fr',{sensitivity:'base'})===0);
-    if(existing&&!confirm(`Une bande nommée « ${existing.name} » existe déjà. La remplacer ?`))return;
-    const entry=existing||{id:makeKey()};
-    entry.name=name;entry.updatedAt=Date.now();entry.payload={...bandSnapshot(),name};
-    const next=existing?entries.map(item=>item.id===entry.id?entry:item):[entry,...entries];
-    if(!writeBandLibrary(next))return toast('La sauvegarde locale est indisponible dans ce navigateur.');
-    renderSavedWarbands(entry.id);
-    toast(`« ${name} » a été sauvegardée.`);
+  $('#save').onclick=exportBand;
+  $('#load').onclick=()=>$('#jsonFile').click();
+  $('#jsonFile').onchange=async e=>{
+    const file=e.target.files[0]; e.target.value=''; if(!file)return;
+    try{
+      if(file.size>2*1024*1024)throw Error('Fichier trop volumineux (2 Mo maximum).');
+      const doc=validateBandFile(JSON.parse(await file.text()));
+      if(!confirm('Importer « '+doc.band.name+' » et remplacer la bande affichée ? Exportez-la auparavant si nécessaire.'))return;
+      const previous={rulesetId:state.rulesetId,band:JSON.parse(JSON.stringify(bandSnapshot()))};
+      try{switchRuleset(doc.rulesetId);applySavedBand(doc.band);}
+      catch(error){switchRuleset(previous.rulesetId);applySavedBand(previous.band);throw error;}
+      toast('Bande importée depuis votre fichier JSON.');
+    }catch(error){toast('Import refusé : '+error.message);}
   };
-  $('#load').onclick=()=>{
-    const id=$('#savedWarbands').value;
-    if(!id)return toast('Choisissez d’abord une bande sauvegardée.');
-    const entry=readBandLibrary().find(item=>item.id===id);
-    if(!entry)return toast('Cette sauvegarde n’est plus disponible.');
-    applySavedBand(entry.payload);
-    $('#savedWarbands').value=id;
-    toast(`« ${entry.name} » a été chargée.`);
-  };
-  $('#deleteSave').onclick=()=>{
-    const id=$('#savedWarbands').value;
-    if(!id)return toast('Choisissez d’abord une bande sauvegardée.');
-    const entries=readBandLibrary(),entry=entries.find(item=>item.id===id);
-    if(!entry||!confirm(`Supprimer définitivement la sauvegarde « ${entry.name} » ?`))return;
-    if(!writeBandLibrary(entries.filter(item=>item.id!==id)))return toast('La sauvegarde locale est indisponible dans ce navigateur.');
-    renderSavedWarbands();
-    toast(`« ${entry.name} » a été supprimée.`);
-  };
+  $('#recoverLegacy').onclick=recoverLegacy;
   $('#clear').onclick=()=>{if(confirm('Créer une nouvelle bande et vider la composition actuelle ?'))resetBand();};
   $('#export').onclick=()=>window.print();
 }
