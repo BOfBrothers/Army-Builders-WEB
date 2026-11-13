@@ -143,12 +143,12 @@
     const place = document.createElement('strong');
     place.textContent = caption[0];
     figure.title = 'Reconstitution historique réalisée par IA';
-    band.append(place, document.createElement('br'), caption[1]);
+    band.append(place, ' · ', caption[1]);
     figure.append(img, band);
     return figure.outerHTML;
   }
   const style = document.createElement('style');
-  style.textContent = '.vfv-illustration{margin:0;width:100%;min-width:0;text-align:left}.vfv-illustration img{display:block;height:auto!important}.vfv-illustration figcaption{background:#171717;color:#fff;padding:5px 7px;font:12px/1.35 system-ui}#offers .card-visual:has(.vfv-illustration){height:auto;max-height:none}.vfv-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}.vfv-gallery .vfv-illustration img{max-height:none!important}';
+  style.textContent = '.vfv-illustration{position:relative;margin:0;width:100%;min-width:0;aspect-ratio:4/3;overflow:hidden;border-radius:inherit;text-align:left}.vfv-illustration img{display:block;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important}.vfv-illustration figcaption{position:absolute;inset:auto 0 0;box-sizing:border-box;background:linear-gradient(transparent,rgba(0,0,0,.66));color:#fff;padding:8px 5px 4px;font:10px/1.2 system-ui;text-shadow:0 1px 2px #111;white-space:normal;overflow-wrap:anywhere}.vfv-illustration figcaption strong{font-weight:500}#offers .card-visual:has(.vfv-illustration){height:auto;max-height:none}.vfv-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}.garage-card .vehicle-photo .vfv-illustration{height:100%;aspect-ratio:auto}';
   document.head.append(style);
   window.VFVIllustrations = {image};
   const gallery = document.querySelector('.vfv-gallery');
