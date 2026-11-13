@@ -4323,7 +4323,10 @@ function effectiveBudget(){return rule()?((usesTypedLots()||isUSAMec())?Math.max
  };
  S.scenarioSettings={role:'A',choice:0};
  const current=()=>{const c=scenarios[S.mode];if(!c)return null;const settings=S.scenarioSettings||{role:'A',choice:0},role=settings.role==='B'?'B':'A',choice=settings.choice||0,budget=c.pairs?c.pairs[choice]?.[role==='B'?1:0]:c.choices?c.choices[choice]:c.budget;return {...c,budget:budget??c.budget,role,choice,noTransport:!!c.defenderNoTransport&&role==='A',noReinforcements:!!c.defenderNoReinforcements&&role==='A',vehicleMin:Math.ceil((budget??c.budget)*(c.vehicleFraction||((role==='B'&&c.attackerVehicleFraction)||0))),ref:c.ref||((c.number<=10?'p.':'Suppl. p.')+c.page)};},vehicleSpent=()=>S.vehicles.reduce((n,v)=>n+vehicleCost(v),0);
- const hasHE=model=>{if(!model||typeof model!=='object')return false;return Object.entries(model).some(([key,value])=>['chef_armement','autres_disponibles'].includes(key)?[value].flat().some(w=>typeof w==='string'&&/^(Mo[.\s]|MoP$|Ho[.\s]|Obusier|Mortier)/i.test(w)):typeof value==='object'&&hasHE(value));};
+ // Le profil portable Mo. P (dont le VB 1940) est distinct des mortiers HE.
+ const hasHE=model=>{if(!model||typeof model!=='object')return false;return Object.entries(model).some(([key,value])=>['chef_armement','autres_disponibles'].includes(key)?[value].flat().some(w=>typeof w==='string'&&!/^Mo\.?\s*P$/i.test(w.trim())&&/^(Mo[.\s]|MoP$|Ho[.\s]|Ob[.\s]|Obusier|Mortier)/i.test(w)):typeof value==='object'&&hasHE(value));};
+ const previousPermitted=permitted;
+ permitted=o=>previousPermitted(o)&&(!rule()||!hasHE(o.model));
  const firstScenario=new Set(FORMATION_IDS.filter(id=>!hasHE(formationDataById(id).base)));
  function supportsFormation(id,mode=S.mode,settings=S.scenarioSettings){if(mode==='scenario1')return firstScenario.has(id);if(mode==='libre')return true;if(!scenarios[mode])return false;
   if(mode==='scenario5'||mode==='scenario6'&&settings?.role==='B'){
