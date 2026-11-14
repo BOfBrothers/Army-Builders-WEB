@@ -39,7 +39,7 @@
     GER_V_PZ_III:'images/GER_V_PZ_III.webp',
     PS_BRI_V_MATILDA_II:'images/PS_BRI_V_MATILDA_II.webp',
     PS_SOV_V_T26:'images/PS_SOV_V_T26.webp',
-    PS_FIN_V_T26:'images/PS_FIN_V_T26-visuels04.webp',
+    PS_FIN_V_T26:'images/PS_FIN_V_T26-20261114.2.webp',
     PS_CAPTURE_PRISE013_PS_BRI_V_MATILDA_II:'images/PS_CAPTURE_PRISE013_PS_BRI_V_MATILDA_II.webp',
     VICKERS_APPUI:'images/BRI_APPUI_VICKERS.webp',
     SOV_SNIPER_APPUI:'images/SOV_APPUI_SNIPER.webp'
@@ -121,7 +121,7 @@
     "Front de l’Est, 1941",
     "T-26"
   ],
-  "images/PS_FIN_V_T26-visuels04.webp": [
+  "images/PS_FIN_V_T26-20261114.2.webp": [
     "Front finlandais, hiver 1942–1943",
     "L’équipage débâche un T-26 de prise"
   ],
