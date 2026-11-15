@@ -1001,14 +1001,14 @@ function appuiIllustration(o){if(isSOV())return `<div class="card-visual note" a
 function vehCard(v){const cost=v.cout_base_etoiles,bud=effectiveBudget(),t=totals(),left=bud-t.spent;
  const opts=allWeapons(v).filter(w=>w.optionnelle);
  const primary=allWeapons(v).filter(w=>!w.optionnelle).map(weaponText).join(' · ')||'Aucune arme de base indiquée';
- const cap=v.transport_capacite!==null?'Capacité de transport : '+v.transport_capacite:'Capacité de transport non indiquée';
+ const cap=v.transport_plage?'Capacité de transport : '+v.transport_plage.join(' à ')+' selon le modèle':v.transport_capacite!=null?'Capacité de transport : '+v.transport_capacite:'';
  const sourceCaveat=(v.id==='SOV_V_CAMION'?' · Pictogramme roues (version chenilles non déterminée)':'');
  const remaining=left-cost,freeCap=freeVehicleCapReached(v),blocked=rule()||remaining<0||freeCap;
  const bought=S.vehicles.filter(item=>item.id===v.id).length;
  const blockedReason=rule()?'Interdit dans ce scénario':freeCap?'Plafond de 3 véhicules gratuits atteint':remaining<0?'Budget insuffisant':'Ajouter à la force';
  const purchaseButton=`<button data-addveh="${escapeHTML(v.id)}" ${blocked?'disabled':''} title="${blockedReason}">${blocked?blockedReason:bought?'Ajouter un autre':'Ajouter à la force'}</button>`;
  const removeButton=bought?`<button type="button" class="outline" data-removeveh-id="${escapeHTML(v.id)}">Retirer un exemplaire (${bought})</button>`:'';
- return `<article class="garage-card"><div class="vehicle-top"><div class="vehicle-name">${escapeHTML(v.nom_source)}</div><span class="cost">${cost} ★</span></div><div class="vehicle-visual ${['GER_V_PZ_IV','GER_V_TIGER_I'].includes(v.id)?'has-photo':''}">${vehicleIllustration(v)}</div><div class="meta"><strong>${escapeHTML(vehicleCategory(v))}</strong> · Blindage ${escapeHTML(v.blindage)} · ${escapeHTML(v.roulement)} · p.${v.page_imprimee}<br>${escapeHTML(cap)}${escapeHTML(sourceCaveat)}<br>Armes : ${escapeHTML(primary)}${opts.length?' · '+opts.length+' option(s)':''}</div><div class="purchase-preview">Budget après achat : <strong style="color:${remaining<0?'#a12c23':'#405c4b'}">${remaining} ★</strong>${remaining<0?' · achat impossible (budget insuffisant)':freeCap?' · plafond gratuit atteint':''}</div><div class="vehicle-actions">${purchaseButton}${removeButton}</div></article>`}
+ return `<article class="garage-card"><div class="vehicle-top"><div class="vehicle-name">${escapeHTML(v.nom_source)}</div><span class="cost">${cost} ★</span></div><div class="vehicle-visual ${['GER_V_PZ_IV','GER_V_TIGER_I'].includes(v.id)?'has-photo':''}">${vehicleIllustration(v)}</div><div class="meta"><strong>${escapeHTML(vehicleCategory(v))}</strong> · Blindage ${escapeHTML(v.blindage)} · ${escapeHTML(v.roulement)} · p.${v.page_imprimee}${cap || sourceCaveat ? "<br>"+escapeHTML(cap)+escapeHTML(sourceCaveat) : ""}<br>Armes : ${escapeHTML(primary)}${opts.length?' · '+opts.length+' option(s)':''}</div><div class="purchase-preview">Budget après achat : <strong style="color:${remaining<0?'#a12c23':'#405c4b'}">${remaining} ★</strong>${remaining<0?' · achat impossible (budget insuffisant)':freeCap?' · plafond gratuit atteint':''}</div><div class="vehicle-actions">${purchaseButton}${removeButton}</div></article>`}
 function renderVehicles(){const term=$$('vehicleSearch').value.trim().toLocaleLowerCase('fr');
  $$('vehicleTabs').innerHTML=vehicleCategories.map(c=>`<button type="button" class="${garageCategory===c?'active':''}" data-category="${escapeHTML(c)}">${escapeHTML(c)}</button>`).join('');
  const visible=vehicleSource().filter(v=>(garageCategory==='Tous'||vehicleCategory(v)===garageCategory)&&v.nom_source.toLocaleLowerCase('fr').includes(term));
@@ -3726,7 +3726,6 @@ function effectiveBudget(){return rule()?((usesTypedLots()||isUSAMec())?Math.max
  const vehicles=vehicleSource;vehicleSource=()=>active()?src.vehicles:vehicles();
  const category=vehicleCategory;vehicleCategory=v=>v.id.startsWith('PS_SOV_V_')?(v.transport_plage?'Transports':v.regles_speciales.includes('Reco')?'Reconnaissance':v.id.endsWith('SU76')?'Artillerie mobile':'Blindés de combat'):category(v);
  const illustration=vehicleIllustration;vehicleIllustration=v=>v.id.startsWith('PS_SOV_V_')?'<div class="fr-profile-symbol" aria-hidden="true">'+(v.transport_capacite||v.transport_plage?'▰':'▣')+'</div>':illustration(v);
- const card=vehCard;vehCard=v=>{const h=card(v);return v.transport_plage?h.replace('Capacité de transport non indiquée','Capacité de transport : 10 à 25, selon le modèle'):h;};
  const appIllustration=appuiIllustration;appuiIllustration=o=>active()?'<div class="card-visual note">'+escapeHTML(o.model.modele||o.name)+'</div>':appIllustration(o);
  const tok=token;token=(...args)=>{let h=tok(...args);if(!active())return h;h=h.replaceAll('MG42',String(args[0]).startsWith('MMG')?'Maxim':'DP-28');if(args[0]==='HMG')h=h.replace('<b>HMG</b>','<b>HMG</b><small>DShK 12,7</small>');return h;};
  const labels={MMG_OU_HMG:'Mitrailleuse',MORTIER:'Mortier',F_AC:'F-AC',LANCE_FLAMMES:'Lance-flammes',SNIPER:'Sniper',CANON:'Canon A/C',RECO_MOTO:'Reco moto',RECO_PIED:'Reco à pied'};
@@ -4512,5 +4511,5 @@ function effectiveBudget(){return rule()?((usesTypedLots()||isUSAMec())?Math.max
  S.mode='libre';S.vehicles=[];render();parent.postMessage({type:'vfv-xl-ready'},location.origin);
 })();
 </script><script src="recruitment-costs.js?v=20261107"></script>
-<script src="illustrations.js?v=20261115.1"></script>
+<script src="illustrations.js?v=20261115.2"></script>
 </body></html>

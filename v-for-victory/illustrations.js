@@ -211,6 +211,78 @@
     "Une équipe de bazooka américaine fait une pause"
   ]
 });
+  Object.assign(files, {"CAPTURE_PRISE022_GER_V_PANTHER":"images/CAPTURE_PRISE022_GER_V_PANTHER-20261115.2.webp","GRE_APPUI_MORTIER_81":"images/GRE_APPUI_MORTIER_81-20261115.2.webp"});
+  Object.assign(captions, {"images/CAPTURE_PRISE022_GER_V_PANTHER-20261115.2.webp":["Secteur Traby–Lida, juillet 1944","Panther de prise soviétique"],"images/GRE_APPUI_MORTIER_81-20261115.2.webp":["Environs de Konitsa, octobre 1940","Une équipe grecque charge son mortier de 81 mm"]});
+  const captureSources = {
+  "PRISE001": {
+    "url": "https://www.awm.gov.au/collection/005042",
+    "title": "AWM 005042 — chars italiens réemployés à Tobrouk"
+  },
+  "PRISE002": {
+    "url": "https://tanks-encyclopedia.com/ww2/france/char_b1_bis.php",
+    "title": "Char B1 bis — service allemand et retour en France"
+  },
+  "PRISE003": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ABundesarchiv_Bild_101I-212-0209-32%2C_Russland-Nord%2C_Panzer_und_Soldat.jpg",
+    "title": "Bundesarchiv — Somua S35 allemand au front nord"
+  },
+  "PRISE011": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AThe_British_Army_in_North-west_Europe_1944-45_B12184.jpg",
+    "title": "IWM — Cuckoo à Geijsteren"
+  },
+  "PRISE012": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ABundesarchiv_Bild_101III-Hoffmann-023-11%2C_Russland%2C_bei_Charkow%2C_Himmler_bei_SS-Division_%22Das_Reich%22.jpg",
+    "title": "Bundesarchiv — T34/76 de prise près de Kharkiv"
+  },
+  "PRISE013": {
+    "url": "https://www.awm.gov.au/collection/010860",
+    "title": "AWM — équipage allemand d’un Matilda repris par les Néo-Zélandais"
+  },
+  "PRISE014": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AAirborne_troops_cross_back_over_the_Rhine_in_a_captured_German_Kubelwagen_car%2C_March_1945._BU2549.jpg",
+    "title": "IWM — Kübelwagen capturée utilisée par des aéroportés britanniques"
+  },
+  "PRISE016": {
+    "url": "https://www.ospreypublishing.com/ca/discover/osprey-publishing/machine-of-the-month/beutepanzers-of-world-war-ii/",
+    "title": "Osprey — Beutepanzers of World War II"
+  },
+  "PRISE017": {
+    "url": "https://www.ospreypublishing.com/ca/discover/osprey-publishing/machine-of-the-month/beutepanzers-of-world-war-ii/",
+    "title": "Osprey — Beutepanzers of World War II"
+  },
+  "PRISE018": {
+    "url": "https://www.ospreypublishing.com/ca/discover/osprey-publishing/machine-of-the-month/beutepanzers-of-world-war-ii/",
+    "title": "Osprey — Beutepanzers of World War II"
+  },
+  "PRISE019": {
+    "url": "https://www.ospreypublishing.com/ca/discover/osprey-publishing/machine-of-the-month/beutepanzers-of-world-war-ii/",
+    "title": "Osprey — Beutepanzers of World War II"
+  },
+  "PRISE022": {
+    "url": "https://www.tankarchives.com/2013/10/valentines-and-panthers.html?m=0",
+    "title": "Tank Archives — Valentines and Panthers"
+  },
+  "PRISE024": {
+    "url": "https://www.assocarri.it/old/Storia/Storia_Parri.pdf",
+    "title": "Maurizio Parri — Tracce di cingolo, histoire des carristes"
+  },
+  "PRISE025": {
+    "url": "https://www.assocarri.it/old/Storia/Storia_Parri.pdf",
+    "title": "Maurizio Parri — Tracce di cingolo, histoire des carristes"
+  },
+  "PRISE029": {
+    "url": "https://edukacja.ipn.gov.pl/download/210/1184957/BitwaoPabianicestronainternetowa.pdf",
+    "title": "IPN — Bitwa o Pabianice"
+  },
+  "PRISE033": {
+    "url": "https://www.ospreypublishing.com/ca/discover/osprey-publishing/machine-of-the-month/beutepanzers-of-world-war-ii/",
+    "title": "Osprey — Beutepanzers, tableau juin 1943"
+  },
+  "PRISE037": {
+    "url": "https://collection.nam.ac.uk/detail.php?acc=1975-03-63-19-104",
+    "title": "National Army Museum — Firefly repris près de Trun"
+  }
+};
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
@@ -230,6 +302,17 @@
     place.textContent = caption[0];
     figure.title = 'Reconstitution historique réalisée par IA';
     band.append(place, ' · ', caption[1]);
+    const reference = captureSources[file.match(/CAPTURE_(PRISE\d+)_/)?.[1]];
+    if (reference) {
+      const link = document.createElement('a');
+      link.href = reference.url;
+      link.title = reference.title;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.style.color = 'inherit';
+      link.textContent = 'Source historique';
+      band.append(' · ', link);
+    }
     figure.append(img, band);
     return figure.outerHTML;
   }
