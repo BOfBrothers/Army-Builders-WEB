@@ -180,6 +180,37 @@
     "Jagdpanzer 38(t) Hetzer"
   ]
 });
+  Object.assign(files, {
+  "PS_BEL_V_CARDEN_LOYD": "images/PS_BEL_V_CARDEN_LOYD-20261115.webp",
+  "USA_V_M7": "images/USA_V_M7-20261115.webp",
+  "PS_USA_V_PRIEST": "images/USA_V_M7-20261115.webp",
+  "USA_V_JUMBO": "images/USA_V_JUMBO-20261115.webp",
+  "USA_V_WOLVERINE": "images/USA_V_WOLVERINE-20261115.webp",
+  "PS_USA_V_M10": "images/USA_V_WOLVERINE-20261115.webp",
+  "USA_APPUI_BAZOOKA": "images/USA_APPUI_BAZOOKA-20261115.webp"
+});
+  Object.assign(captions, {
+  "images/PS_BEL_V_CARDEN_LOYD-20261115.webp": [
+    "Belgique, 1940",
+    "Carden-Loyd Mark VI de 47 mm à l’atelier"
+  ],
+  "images/USA_V_M7-20261115.webp": [
+    "France, automne 1944",
+    "M7 Priest américain"
+  ],
+  "images/USA_V_JUMBO-20261115.webp": [
+    "Près de Bastogne, décembre 1944",
+    "L’équipage du Sherman Jumbo « First in Bastogne »"
+  ],
+  "images/USA_V_WOLVERINE-20261115.webp": [
+    "Europe occidentale, hiver 1944–1945",
+    "Chasseurs de chars M10"
+  ],
+  "images/USA_APPUI_BAZOOKA-20261115.webp": [
+    "France, 1944",
+    "Une équipe de bazooka américaine fait une pause"
+  ]
+});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
@@ -223,6 +254,7 @@
     const nation = FORMATION_NATION[S.formation];
     const supportName = String(o.model?.modele || '') + ' ' + o.name;
     const fallbackId = !o.capture && (/Vickers/i.test(supportName) ? 'VICKERS_APPUI'
+      : (nation === 'USA' || S.formation.startsWith('PS_USA_')) && /bazooka/i.test(supportName) ? 'USA_APPUI_BAZOOKA'
       : (nation === 'URSS' || S.formation.startsWith('PS_SOV_')) && /sniper/i.test(supportName) ? 'SOV_SNIPER_APPUI' : '');
     const html = image(S.formation+'_'+o.id,o.name) || image(fallbackId,o.name);
     if (html) return '<div class="card-visual">'+html+'</div>';
