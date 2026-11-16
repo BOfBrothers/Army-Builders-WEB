@@ -125,10 +125,6 @@
     "Front finlandais, hiver 1942–1943",
     "L’équipage débâche un T-26 de prise"
   ],
-  "images/PS_CAPTURE_PRISE013_PS_BRI_V_MATILDA_II.webp": [
-    "Afrique du Nord, 1941",
-    "Matilda II de prise allemand"
-  ],
   "images/BRI_APPUI_VICKERS.webp": [
     "Europe occidentale, 1944",
     "Trois servants britanniques font une pause près de leur Vickers"
@@ -316,6 +312,35 @@
   "images/GER_APPUI_PAK38-20261116.webp": [
     "Europe, 1944",
     "Les servants du Pak 38 font une pause"
+  ]
+});
+  Object.assign(files, {
+  "PS_CAPTURE_PRISE002_PS_FR_B1": "images/PS_CAPTURE_PRISE002_PS_FR_B1-20261116.3.webp",
+  "PS_CAPTURE_PRISE003_PS_FR_S35": "images/PS_CAPTURE_PRISE003_PS_FR_S35-20261116.3.webp",
+  "PS_CAPTURE_PRISE013_PS_BRI_V_MATILDA_II": "images/PS_CAPTURE_PRISE013_PS_BRI_V_MATILDA_II-20261116.3.webp",
+  "GER_V_TIGER_I": "images/GER_V_TIGER_I-20261116.3.webp",
+  "GER_V_234_2": "images/GER_V_234_2-20261116.3.webp"
+});
+  Object.assign(captions, {
+  "images/PS_CAPTURE_PRISE002_PS_FR_B1-20261116.3.webp": [
+    "Jersey, 1942",
+    "B1 bis de prise allemand"
+  ],
+  "images/PS_CAPTURE_PRISE003_PS_FR_S35-20261116.3.webp": [
+    "Nord de l’Union soviétique, septembre 1941",
+    "Somua S35 de prise allemand"
+  ],
+  "images/PS_CAPTURE_PRISE013_PS_BRI_V_MATILDA_II-20261116.3.webp": [
+    "Désert occidental, 1941",
+    "L’équipage allemand du Matilda II se rend"
+  ],
+  "images/GER_V_TIGER_I-20261116.3.webp": [
+    "Normandie, été 1944",
+    "Tigre I"
+  ],
+  "images/GER_V_234_2-20261116.3.webp": [
+    "Europe occidentale, 1944",
+    "Puma devant un Greyhound en flammes"
   ]
 });
   function image(id,label) {
