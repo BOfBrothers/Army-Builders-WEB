@@ -283,6 +283,41 @@
     "title": "National Army Museum — Firefly repris près de Trun"
   }
 };
+  Object.assign(files, {
+  "GER_V_7": "images/GER_V_7-20261116.webp",
+  "PS_GER_V_7": "images/GER_V_7-20261116.webp",
+  "GER_V_10_5": "images/GER_V_10_5-20261116.webp",
+  "GER_V_JAGDPZ_IV": "images/GER_V_JAGDPZ_IV-20261116.webp",
+  "GER_APPUI_PANZERSCHRECK": "images/GER_APPUI_PANZERSCHRECK-20261116.webp",
+  "GER_APPUI_SNIPER": "images/GER_APPUI_SNIPER-20261116.webp",
+  "GER_APPUI_PAK38": "images/GER_APPUI_PAK38-20261116.webp"
+});
+  Object.assign(captions, {
+  "images/GER_V_7-20261116.webp": [
+    "Europe, 1943",
+    "Tracteurs semi-chenillés Sd.Kfz. 7"
+  ],
+  "images/GER_V_10_5-20261116.webp": [
+    "Europe, printemps 1944",
+    "Sd.Kfz. 10/5 et son équipage"
+  ],
+  "images/GER_V_JAGDPZ_IV-20261116.webp": [
+    "Europe occidentale, 1944",
+    "L’équipage rejoint son Jagdpanzer IV"
+  ],
+  "images/GER_APPUI_PANZERSCHRECK-20261116.webp": [
+    "Europe occidentale, automne 1944",
+    "Panzerschreck à l’épaule"
+  ],
+  "images/GER_APPUI_SNIPER-20261116.webp": [
+    "Europe occidentale, 1944",
+    "Tireur d’élite allemand dans un atelier ferroviaire"
+  ],
+  "images/GER_APPUI_PAK38-20261116.webp": [
+    "Europe, 1944",
+    "Les servants du Pak 38 font une pause"
+  ]
+});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
@@ -336,9 +371,15 @@
   appuiIllustration = o => {
     const nation = FORMATION_NATION[S.formation];
     const supportName = String(o.model?.modele || '') + ' ' + o.name;
-    const fallbackId = !o.capture && (/Vickers/i.test(supportName) ? 'VICKERS_APPUI'
+    const german = nation === 'GER' || S.formation.startsWith('PS_GER_');
+    const germanId = german && (
+      /panzerschreck/i.test(supportName) ? 'GER_APPUI_PANZERSCHRECK'
+      : /sniper/i.test(supportName) ? 'GER_APPUI_SNIPER'
+      : /pak\s*38/i.test(supportName) ? 'GER_APPUI_PAK38'
+      : o.model?.type === 'Reco' || /reco.*k[üu]bel/i.test(supportName) ? 'GER_V_KUBEL' : '');
+    const fallbackId = !o.capture && (germanId || (/Vickers/i.test(supportName) ? 'VICKERS_APPUI'
       : (nation === 'USA' || S.formation.startsWith('PS_USA_')) && /bazooka/i.test(supportName) ? 'USA_APPUI_BAZOOKA'
-      : (nation === 'URSS' || S.formation.startsWith('PS_SOV_')) && /sniper/i.test(supportName) ? 'SOV_SNIPER_APPUI' : '');
+      : (nation === 'URSS' || S.formation.startsWith('PS_SOV_')) && /sniper/i.test(supportName) ? 'SOV_SNIPER_APPUI' : ''));
     const html = image(S.formation+'_'+o.id,o.name) || image(fallbackId,o.name);
     if (html) return '<div class="card-visual">'+html+'</div>';
     if (FORMATION_NATION[S.formation]==='GER' && !o.capture && /pak\s*40/i.test(o.model?.modele || o.name))
