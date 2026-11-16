@@ -288,7 +288,7 @@
   "PS_GER_V_7": "images/GER_V_7-20261116.webp",
   "GER_V_10_5": "images/GER_V_10_5-20261116.webp",
   "GER_V_JAGDPZ_IV": "images/GER_V_JAGDPZ_IV-20261116.webp",
-  "GER_APPUI_PANZERSCHRECK": "images/GER_APPUI_PANZERSCHRECK-20261116.webp",
+  "GER_APPUI_PANZERSCHRECK": "images/GER_APPUI_PANZERSCHRECK-20261116.2.webp",
   "GER_APPUI_SNIPER": "images/GER_APPUI_SNIPER-20261116.webp",
   "GER_APPUI_PAK38": "images/GER_APPUI_PAK38-20261116.webp"
 });
@@ -305,9 +305,9 @@
     "Europe occidentale, 1944",
     "L’équipage rejoint son Jagdpanzer IV"
   ],
-  "images/GER_APPUI_PANZERSCHRECK-20261116.webp": [
+  "images/GER_APPUI_PANZERSCHRECK-20261116.2.webp": [
     "Europe occidentale, automne 1944",
-    "Panzerschreck à l’épaule"
+    "Équipe de Panzerschreck en position"
   ],
   "images/GER_APPUI_SNIPER-20261116.webp": [
     "Europe occidentale, 1944",
