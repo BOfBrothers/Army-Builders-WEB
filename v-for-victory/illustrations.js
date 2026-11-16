@@ -343,6 +343,36 @@
     "Puma devant un Greyhound en flammes"
   ]
 });
+  Object.assign(files, {
+  "GER_APPUI_MG42": "images/GER_APPUI_MG42-20261116.4.webp",
+  "GER_V_CAMION": "images/GER_V_CAMION-20261116.4.webp",
+  "GER_APPUI_LEFH": "images/GER_APPUI_LEFH-20261116.4.webp",
+  "GER_APPUI_PAK40": "images/GER_APPUI_PAK40-20261116.4.webp",
+  "GER_APPUI_LF": "images/GER_APPUI_LF-20261116.4.webp",
+  "PS_GER_V_CAMION": "images/GER_V_CAMION-20261116.4.webp"
+});
+  Object.assign(captions, {
+  "images/GER_APPUI_MG42-20261116.4.webp": [
+    "Europe occidentale, 1944",
+    "Équipe de MG 42"
+  ],
+  "images/GER_V_CAMION-20261116.4.webp": [
+    "Sicile, été 1943",
+    "Opel Blitz transportant des fantassins"
+  ],
+  "images/GER_APPUI_LEFH-20261116.4.webp": [
+    "Europe, été 1944",
+    "Les servants s’affairent autour du leFH 18(M)"
+  ],
+  "images/GER_APPUI_PAK40-20261116.4.webp": [
+    "Normandie, été 1944",
+    "Équipe de Pak 40 en position"
+  ],
+  "images/GER_APPUI_LF-20261116.4.webp": [
+    "Europe occidentale, 1944",
+    "Équipe de lance-flammes allemande"
+  ]
+});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
@@ -398,7 +428,11 @@
     const supportName = String(o.model?.modele || '') + ' ' + o.name;
     const german = nation === 'GER' || S.formation.startsWith('PS_GER_');
     const germanId = german && (
-      /panzerschreck/i.test(supportName) ? 'GER_APPUI_PANZERSCHRECK'
+      /pak\s*40/i.test(supportName) ? 'GER_APPUI_PAK40'
+      : /leFH\s*18/i.test(supportName) ? 'GER_APPUI_LEFH'
+      : /lance[- ]flammes|\bLF\b/i.test(supportName+' '+(o.model?.type||'')) ? 'GER_APPUI_LF'
+      : /MG\s*42|\bMMG\b/i.test(supportName+' '+(o.model?.type||'')) ? 'GER_APPUI_MG42'
+      : /panzerschreck/i.test(supportName) ? 'GER_APPUI_PANZERSCHRECK'
       : /sniper/i.test(supportName) ? 'GER_APPUI_SNIPER'
       : /pak\s*38/i.test(supportName) ? 'GER_APPUI_PAK38'
       : o.model?.type === 'Reco' || /reco.*k[üu]bel/i.test(supportName) ? 'GER_V_KUBEL' : '');
