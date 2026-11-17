@@ -20,7 +20,7 @@
   "GER_V_PANTHER": "images/GER_V_PANTHER.webp",
   "USA_V_SHERMAN": "images/USA_V_SHERMAN.webp",
   "PS_USA_V_SHERMAN": "images/USA_V_SHERMAN.webp",
-  "PS_FR_S35": "images/PS_FR_S35.webp",
+  "PS_FR_S35": "images/PS_FR_S35-20261117.5.webp",
   "SOV_V_KV1": "images/SOV_V_KV1.webp",
   "PS_SOV_V_KV1": "images/SOV_V_KV1.webp",
   "PS_CAPTURE_PRISE001_PS_ITA_V_M1139": "images/PS_CAPTURE_PRISE001_PS_ITA_V_M1139.webp",
@@ -77,7 +77,7 @@
     "Ardennes, hiver 1944–1945",
     "Sd.Kfz. 251/1"
   ],
-  "images/PS_FR_S35.webp": [
+  "images/PS_FR_S35-20261117.5.webp": [
     "Quelque part en France, printemps 1940",
     "Somua S35"
   ],
@@ -154,8 +154,8 @@
   "GER_V_LUCHS": "images/GER_V_LUCHS-visuels03.webp",
   "GER_V_KUBEL": "images/GER_V_KUBEL-visuels04.webp",
   "PS_GER_V_KUBEL": "images/GER_V_KUBEL-visuels04.webp",
-  "GER_V_MARDER": "images/GER_V_MARDER-visuels03.webp",
-  "PS_GER_V_MARDER": "images/GER_V_MARDER-visuels03.webp",
+  "GER_V_MARDER": "images/GER_V_MARDER-20261117.5.webp",
+  "PS_GER_V_MARDER": "images/GER_V_MARDER-20261117.5.webp",
   "GER_V_HETZER": "images/GER_V_HETZER-visuels04.webp"
 });
   Object.assign(captions, {
@@ -167,7 +167,7 @@
     "Afrique du Nord, 1942",
     "Kübelwagen"
   ],
-  "images/GER_V_MARDER-visuels03.webp": [
+  "images/GER_V_MARDER-20261117.5.webp": [
     "Front de l’Est, hiver 1943–1944",
     "Marder III"
   ],
