@@ -373,6 +373,8 @@
     "Équipe de lance-flammes allemande"
   ]
 });
+  Object.assign(files, {"GER_V_250":"images/GER_V_250-20261117.1.webp","GER_APPUI_MORTIER":"images/GER_APPUI_MORTIER-20261117.1.webp"});
+  Object.assign(captions, {"images/GER_V_250-20261117.1.webp":["Afrique du Nord","Sd.Kfz. 250 de commandement, scène inspirée de la photo de Rommel"],"images/GER_APPUI_MORTIER-20261117.1.webp":["Monte Cassino, 1944","Équipe de mortier des parachutistes allemands"]});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
@@ -432,6 +434,7 @@
       : /leFH\s*18/i.test(supportName) ? 'GER_APPUI_LEFH'
       : /lance[- ]flammes|\bLF\b/i.test(supportName+' '+(o.model?.type||'')) ? 'GER_APPUI_LF'
       : /MG\s*42|\bMMG\b/i.test(supportName+' '+(o.model?.type||'')) ? 'GER_APPUI_MG42'
+      : /mortier|\bMo\.\s*M\b/i.test(supportName+' '+(o.model?.type||'')) ? 'GER_APPUI_MORTIER'
       : /panzerschreck/i.test(supportName) ? 'GER_APPUI_PANZERSCHRECK'
       : /sniper/i.test(supportName) ? 'GER_APPUI_SNIPER'
       : /pak\s*38/i.test(supportName) ? 'GER_APPUI_PAK38'
