@@ -375,6 +375,8 @@
 });
   Object.assign(files, {"GER_V_250":"images/GER_V_250-20261117.1.webp","GER_APPUI_MORTIER":"images/GER_APPUI_MORTIER-20261117.1.webp"});
   Object.assign(captions, {"images/GER_V_250-20261117.1.webp":["Afrique du Nord","Sd.Kfz. 250 de commandement, scène inspirée de la photo de Rommel"],"images/GER_APPUI_MORTIER-20261117.1.webp":["Monte Cassino, 1944","Équipe de mortier des parachutistes allemands"]});
+  Object.assign(files, {"GER_V_HUMMEL":"images/GER_V_HUMMEL-20261117.2.webp","PS_CAPTURE_PRISE012_PS_SOV_V_T34":"images/PS_CAPTURE_PRISE012_PS_SOV_V_T34-20261117.2.webp"});
+  Object.assign(captions, {"images/GER_V_HUMMEL-20261117.2.webp":["Front de l’Est, 1943","Hummel n° 161"],"images/PS_CAPTURE_PRISE012_PS_SOV_V_T34-20261117.2.webp":["Près de Kharkiv, avril 1943","T-34/76 de prise en service allemand"]});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
