@@ -377,8 +377,10 @@
   Object.assign(captions, {"images/GER_V_250-20261117.1.webp":["Afrique du Nord","Sd.Kfz. 250 de commandement, scène inspirée de la photo de Rommel"],"images/GER_APPUI_MORTIER-20261117.1.webp":["Monte Cassino, 1944","Équipe de mortier des parachutistes allemands"]});
   Object.assign(files, {"GER_V_HUMMEL":"images/GER_V_HUMMEL-20261117.2.webp","PS_CAPTURE_PRISE012_PS_SOV_V_T34":"images/PS_CAPTURE_PRISE012_PS_SOV_V_T34-20261117.2.webp"});
   Object.assign(captions, {"images/GER_V_HUMMEL-20261117.2.webp":["Front de l’Est, 1943","Hummel n° 161"],"images/PS_CAPTURE_PRISE012_PS_SOV_V_T34-20261117.2.webp":["Près de Kharkiv, avril 1943","T-34/76 de prise en service allemand"]});
-  Object.assign(files, {"PS_FR_P16":"images/PS_FR_P16-20261117.3.webp","PS_FR_AMR33":"images/PS_FR_AMR33-20261117.3.webp","PS_FR_FCM36":"images/PS_FR_FCM36-20261117.3.webp","PS_FR_AMC35":"images/PS_FR_AMC35-20261117.3.webp","PS_FR_H35":"images/PS_FR_H35-20261117.3.webp"});
-  Object.assign(captions, {"images/PS_FR_P16-20261117.3.webp":["France, 1940","L’équipage du Panhard-Schneider P16"],"images/PS_FR_AMR33-20261117.3.webp":["France, 1940","AMR 33"],"images/PS_FR_FCM36-20261117.3.webp":["France, avant-guerre","FCM 36 en défilé"],"images/PS_FR_AMC35-20261117.3.webp":["France, 1940","AMC 35"],"images/PS_FR_H35-20261117.3.webp":["France, 1940","Hotchkiss H35/H39"]});
+  Object.assign(files, {"PS_FR_P16":"images/PS_FR_P16-20261117.3.webp","PS_FR_AMR33":"images/PS_FR_AMR33-20261117.3.webp","PS_FR_FCM36":"images/PS_FR_FCM36-20261117.3.webp","PS_FR_AMC35":"images/PS_FR_AMC35-20261117.4.webp","PS_FR_H35":"images/PS_FR_H35-20261117.4.webp"});
+  Object.assign(captions, {"images/PS_FR_P16-20261117.3.webp":["France, 1940","L’équipage du Panhard-Schneider P16"],"images/PS_FR_AMR33-20261117.3.webp":["France, 1940","AMR 33"],"images/PS_FR_FCM36-20261117.3.webp":["France, avant-guerre","FCM 36 en défilé"],"images/PS_FR_AMC35-20261117.4.webp":["France, 1940","AMC 35"],"images/PS_FR_H35-20261117.4.webp":["France, 1940","Hotchkiss H35/H39"]});
+  files.FR_APPUI_HOTCHKISS1914 = "images/FR_APPUI_HOTCHKISS1914-20261117.4.webp";
+  captions["images/FR_APPUI_HOTCHKISS1914-20261117.4.webp"] = ["France, 1940", "Équipe de mitrailleuse Hotchkiss modèle 1914"];
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
@@ -443,7 +445,8 @@
       : /sniper/i.test(supportName) ? 'GER_APPUI_SNIPER'
       : /pak\s*38/i.test(supportName) ? 'GER_APPUI_PAK38'
       : o.model?.type === 'Reco' || /reco.*k[üu]bel/i.test(supportName) ? 'GER_V_KUBEL' : '');
-    const fallbackId = !o.capture && (germanId || (/Vickers/i.test(supportName) ? 'VICKERS_APPUI'
+    const frenchHotchkiss = (nation === "FR" || S.formation.startsWith("PS_FR_")) && /hotchkiss\s*1914/i.test(supportName);
+    const fallbackId = !o.capture && (germanId || (frenchHotchkiss ? "FR_APPUI_HOTCHKISS1914" : /Vickers/i.test(supportName) ? 'VICKERS_APPUI'
       : (nation === 'USA' || S.formation.startsWith('PS_USA_')) && /bazooka/i.test(supportName) ? 'USA_APPUI_BAZOOKA'
       : (nation === 'URSS' || S.formation.startsWith('PS_SOV_')) && /sniper/i.test(supportName) ? 'SOV_SNIPER_APPUI' : ''));
     const html = image(S.formation+'_'+o.id,o.name) || image(fallbackId,o.name);
