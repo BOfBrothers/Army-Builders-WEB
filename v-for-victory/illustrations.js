@@ -20,7 +20,7 @@
   "GER_V_PANTHER": "images/GER_V_PANTHER.webp",
   "USA_V_SHERMAN": "images/USA_V_SHERMAN.webp",
   "PS_USA_V_SHERMAN": "images/USA_V_SHERMAN.webp",
-  "PS_FR_S35": "images/PS_FR_S35-20261117.5.webp",
+  "PS_FR_S35": "images/PS_FR_S35-20261118.1.webp",
   "SOV_V_KV1": "images/SOV_V_KV1.webp",
   "PS_SOV_V_KV1": "images/SOV_V_KV1.webp",
   "PS_CAPTURE_PRISE001_PS_ITA_V_M1139": "images/PS_CAPTURE_PRISE001_PS_ITA_V_M1139.webp",
@@ -77,7 +77,7 @@
     "Ardennes, hiver 1944–1945",
     "Sd.Kfz. 251/1"
   ],
-  "images/PS_FR_S35-20261117.5.webp": [
+  "images/PS_FR_S35-20261118.1.webp": [
     "Quelque part en France, printemps 1940",
     "Somua S35"
   ],
