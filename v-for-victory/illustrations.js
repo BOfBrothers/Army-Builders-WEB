@@ -411,6 +411,30 @@
     "Colonne de StuG III finlandais"
   ]
 });
+  Object.assign(files, {
+  "GER_V_NASHORM": "images/GER_V_NASHORM-20261120.2.webp",
+  "GER_V_WESPE": "images/GER_V_WESPE-20261120.2.webp",
+  "GER_V_STUMMEL": "images/GER_V_STUMMEL-20261120.2.webp",
+  "GER_V_JAGDTIGER": "images/GER_V_JAGDTIGER-20261120.2.webp"
+});
+  Object.assign(captions, {
+  "images/GER_V_NASHORM-20261120.2.webp": [
+    "Front de l’Est, 1943",
+    "Nashorn"
+  ],
+  "images/GER_V_WESPE-20261120.2.webp": [
+    "Front de l’Est, 1944",
+    "Wespe n° 262"
+  ],
+  "images/GER_V_STUMMEL-20261120.2.webp": [
+    "Europe occidentale, 1944",
+    "Sd.Kfz. 250/8 n° 425"
+  ],
+  "images/GER_V_JAGDTIGER-20261120.2.webp": [
+    "Allemagne, printemps 1945",
+    "Jagdtiger"
+  ]
+});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
