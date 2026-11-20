@@ -381,6 +381,36 @@
   Object.assign(captions, {"images/PS_FR_P16-20261117.3.webp":["France, 1940","L’équipage du Panhard-Schneider P16"],"images/PS_FR_AMR33-20261117.3.webp":["France, 1940","AMR 33"],"images/PS_FR_FCM36-20261117.3.webp":["France, avant-guerre","FCM 36 en défilé"],"images/PS_FR_AMC35-20261117.4.webp":["France, 1940","AMC 35"],"images/PS_FR_H35-20261117.4.webp":["France, 1940","Hotchkiss H35/H39"]});
   files.FR_APPUI_HOTCHKISS1914 = "images/FR_APPUI_HOTCHKISS1914-20261117.4.webp";
   captions["images/FR_APPUI_HOTCHKISS1914-20261117.4.webp"] = ["France, 1940", "Équipe de mitrailleuse Hotchkiss modèle 1914"];
+  Object.assign(files, {
+  "GER_V_250_9": "images/GER_V_250_9-20261120.1.webp",
+  "PS_GER_V_250_9": "images/GER_V_250_9-20261120.1.webp",
+  "GER_V_250_10_11": "images/GER_V_250_10_11-20261120.1.webp",
+  "GER_V_PZ_IV": "images/GER_V_PZ_IV-20261120.1.webp",
+  "GER_V_TIGRE_II": "images/GER_V_TIGRE_II-20261120.1.webp",
+  "PS_FIN_V_STUG": "images/PS_FIN_V_STUG-20261120.1.webp"
+});
+  Object.assign(captions, {
+  "images/GER_V_250_9-20261120.1.webp": [
+    "Front de l’Est, 1944",
+    "Sd.Kfz. 250/9"
+  ],
+  "images/GER_V_250_10_11-20261120.1.webp": [
+    "Front de l’Est, 1942",
+    "Sd.Kfz. 250/11"
+  ],
+  "images/GER_V_PZ_IV-20261120.1.webp": [
+    "Front de l’Est, été 1943",
+    "Panzer IV à l’attaque"
+  ],
+  "images/GER_V_TIGRE_II-20261120.1.webp": [
+    "Allemagne, 1944",
+    "Tiger II"
+  ],
+  "images/PS_FIN_V_STUG-20261120.1.webp": [
+    "Finlande, été 1944",
+    "Colonne de StuG III finlandais"
+  ]
+});
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
