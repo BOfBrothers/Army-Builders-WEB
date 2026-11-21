@@ -435,6 +435,8 @@
     "Jagdtiger"
   ]
 });
+  files.GER_V_STUG = "images/GER_V_STUG-20261121.1.webp";
+  captions["images/GER_V_STUG-20261121.1.webp"] = ["Nord de la France, 1943","StuG III"];
   function image(id,label) {
     const file = files[id];
     return file ? renderFile(file,label) : '';
